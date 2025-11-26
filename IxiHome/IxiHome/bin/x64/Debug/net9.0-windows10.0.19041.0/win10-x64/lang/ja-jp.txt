@@ -1,0 +1,663 @@
+language-code = ja-jp
+language = 日本語
+
+; Address Screen
+address-title = Spixi アドレス
+address-description = あなたの Spixi アドレスはメインの ID です。これを使用して他のユーザーとやり取りできます。
+address-copied = アドレスをコピーしました
+address-gen-1 = 生成中
+address-gen-1b = 準備中
+address-gen-2 = Spixi
+address-gen-2b = Spixi
+address-gen-3 = アドレス
+address-gen-4 = ...
+address-tooltip = タップするとクリップボードにコピーされます
+address-copy = コピー
+address-share = 共有
+
+; App Details Screen
+app-details-title = Spixi アプリ
+app-details-publisher = 発行元:
+app-details-version = バージョン:
+app-details-uninstall = アンインストール
+app-details-start = 開始
+app-details-dialog-title = Spixi アプリ管理
+app-details-dialog-removed-text = アプリが正常に削除されました。
+app-details-dialog-removefailed-text = アプリの削除中にエラーが発生しました。
+
+; New App Screen
+app-new-title = 新しいアプリ
+app-new-description = URL を貼り付けて新しい Spixi アプリを追加します。
+app-new-install = インストール
+app-new-dialog-title = Spixi アプリ管理
+app-new-dialog-installed-text = アプリ「{0}」が正常にインストールされました。
+app-new-dialog-installfailed-text = アプリのインストール中にエラーが発生しました。
+
+; Apps Screen
+apps-title = Spixi アプリ
+apps-empty = インストールされているアプリはありません。
+apps-apps-text = アプリ
+apps-not-sure-text = どこから始めればいいかわからない？以下の注目アプリの1つを試してみてください。
+apps-launch = 起動
+apps-launch-app = アプリを起動
+apps-remove-app = このアプリを削除
+apps-find-installed-apps = インストールされたミニアプリを探す
+apps-add-note = 新しいミニアプリを試したいですか？URLを入力するか、QRコードをスキャンしてインストールしてください。
+apps-add-url-placeholder = ミニアプリがあるURLを入力してください...
+apps-get-from-url = URLからアプリを取得
+apps-scan = スキャン
+apps-what-is-title = ミニアプリはSpixi内で安全に動作する軽量なJavaScriptアプリです。
+apps-what-is-description = 信頼できるソースからのみインストールしてください。あなたが常にコントロールします。
+apps-what-is-learn = 詳しくはこちら
+apps-add-invalid-url = 続行する前に有効なURLを入力してください。
+apps-details-description = 説明
+apps-details-capabilities = 機能
+apps-details-details = 詳細
+apps-details-id = ID
+apps-details-version = バージョン
+apps-details-size = サイズ
+apps-details-install-url = インストールURL
+apps-details-download = ダウンロードしてインストール
+apps-details-download-note = アプリはSpixiのサンドボックス環境に安全にインストールされます。
+apps-install-title = ミニアプリをインストール
+apps-source = ソース
+apps-install-confirm = インストールを確認
+apps-install-cancel = キャンセル
+apps-installing-title = アプリをインストール中...
+apps-installing-description = ソースをダウンロードして確認中
+apps-failed-install-title = アプリのインストールに失敗しました
+apps-failed-install-description = インストールを完了できませんでした。接続を確認するか、後で再試行してください。
+apps-failed-install-retry = 再試行
+apps-failed-install-cancel = キャンセル
+apps-success-install-title = インストール成功
+apps-success-install-description = アプリはあなたのミニアプリライブラリにインストールされました。
+apps-success-install-view = アプリの詳細を見る
+apps-remove-title = アプリを削除しますか？
+apps-remove-description = これにより、アプリがデバイスから削除されます。アプリがローカルに保存していない限り、データは失われません。
+apps-remove-confirm = アプリを削除
+apps-remove-cancel = キャンセル
+apps-removing-app = アプリを削除中...
+apps-removing-app-description = アプリのデータが削除されています。
+apps-removing-app-success = アプリが削除されました
+apps-removing-app-description-success = アプリとそのデータはこのデバイスから削除されました。
+apps-removing-app-continue = 続ける
+apps-session-title = あなたは次の相手とセッション中です
+apps-session-return = 戻るにはタップ
+apps-session-leave = 離れる
+apps-session-invite-sent-to = 招待状が送信されました
+apps-session-invite-cancel = 招待状をキャンセル
+
+; App Actions
+app-action-title = サービスアクション
+app-action-description = サービス {0} はアクション {1} を実行したいと考えています。続行してもよろしいですか？
+app-action-unknown = 不明なアクション
+app-action-error-processing-title = アクションの処理中にエラーが発生しました
+app-action-error-processing = アクション {0} の処理中にエラーが発生しました。
+app-action-error-sending-title = アクションの応答送信中にエラーが発生しました
+app-action-error-sending = サービス {0} へのアクション応答送信中にエラーが発生しました。
+app-action-sent = アプリのアクションが送信されました
+app-action-response-confirmation = 次のデータをサービスに送信しますか？ {0}
+
+; Chat Screen
+chat-sent-contact-request = 連絡先リクエストを送信しました
+chat-accept = 承認
+chat-ignore = 無視する
+chat-type-placeholder = メッセージを入力...
+chat-send-file = ファイル
+chat-request-payment = リクエスト
+chat-send-payment = 支払う
+chat-app = アプリ
+chat-status = ステータス
+chat-amount = 金額
+chat-view = 詳細
+chat-payment-request-sent = 支払いリクエストを送信しました
+chat-payment-request-received = 新しい支払いリクエストを受信しました
+chat-payment-sent = 支払いが送信されました
+chat-payment-received = 支払いを受け取りました
+chat-payment-status-waiting-confirmation = 確認待ち
+chat-payment-status-declined = 拒否されました
+chat-payment-status-pending = 保留中
+chat-payment-status-confirmed = 確認済み
+chat-call-outgoing = 発信中
+chat-call-incoming = 着信
+chat-call-no-answer = 応答なし
+chat-call-missed = 不在着信
+chat-call-ended = 通話終了
+chat-online = オンライン
+chat-offline = オフライン
+chat-waiting-for-response = 応答待ち
+chat-text-too-long = テキストが長すぎます
+chat-member-count = {0} 人のメンバー
+chat-context-pin-message = メッセージを固定
+chat-context-copy-message = メッセージをコピー
+chat-context-copy-selected = 選択部分をコピー
+chat-context-tip-user = チップを送る
+chat-context-like-message = メッセージを「いいね」
+chat-context-user-info = ユーザー情報
+chat-context-send-contact-request = 連絡先を追加
+chat-context-report-message = メッセージを報告
+chat-context-kick-user = 退会させる
+chat-context-ban-user = ブロック
+chat-context-delete-message = メッセージを削除
+chat-message-cost-bar = メッセージの送信には {0} / kB の費用がかかります
+chat-request-sent-title = 連絡先リクエスト送信済み
+chat-request-sent-details = 相手が承認すると、安全にチャットができます。
+chat-request-sent-undo = 取り消す
+chat-request-received-title = 連絡先リクエスト受信
+chat-request-received-details = 誰かがあなたとつながりたいと考えています！承認すると、安全にチャットができます。
+
+chat-app-invite-sent = 招待送信済み
+chat-app-invite-received = 招待受信済み
+chat-app-get = アプリを取得
+chat-app-back = アプリに戻る
+chat-app-launch = アプリを起動
+
+chat-modal-tip-title = {0} にチップを送りますか？
+chat-modal-tip-body = 送信する金額を選択または入力してください。
+chat-modal-tip-custom = カスタム
+chat-modal-tip-pay-button = 支払う
+chat-modal-tip-confirmation-body = 「{0}」に {1} のチップを送信しようとしています。この金額はウォレットから引き落とされます。
+chat-modal-tip-confirmed-body = 「{0}」に {1} のチップを正常に送信しました。金額はウォレットから引き落とされました。
+chat-modal-tip-error-body = チップの送信中に予期しないエラーが発生しました。
+
+chat-bot-details-info = グループ情報
+chat-bot-address = グループアドレス
+chat-bot-toggle-notifications = 通知のオン/オフ
+chat-bot-invite = 連絡先をこのグループに招待
+chat-bot-leave = グループを退出
+
+chat-bot-user-address = ユーザーアドレス
+chat-bot-user-send-contact-request = 連絡先を追加
+
+chat-modal-kick-title = {0} を退会させますか？
+chat-modal-kick-body = 「{0}」をこのサーバーから削除しますか？
+chat-modal-kick-kick-button = ユーザーを削除
+chat-modal-kicked-title = {0} を削除しました
+chat-modal-kicked-body = 「{0}」はこのサーバーから削除されました。
+
+chat-modal-ban-title = {0} をブロックしますか？
+chat-modal-ban-body = 「{0}」をこのサーバーでブロックしますか？
+chat-modal-ban-ban-button = ユーザーをブロック
+chat-modal-banned-title = {0} をブロックしました
+chat-modal-banned-body = 「{0}」はこのサーバーでブロックされました。
+
+chat-bot-not-ready-title = グループの準備ができていません
+chat-bot-not-ready-body = グループがまだ準備できていません。数分後に再試行してください。
+
+chat-kicked = あなたはこのグループから削除されました。
+chat-banned = あなたはこのグループでブロックされました。
+
+chat-report-title = コンテンツを報告
+chat-report-details = このコンテンツを報告しますか？
+chat-report = 報告する
+chat-report-cancel = キャンセル
+
+chat-private-note-title = このチャットはプライベートです。
+chat-private-note-message = メッセージはあなたのデバイスにのみ保存され、最先端の暗号化を使用して直接あなたの連絡先に送信されます。
+
+; Contact Details Screen
+contact-details-chat = チャット
+contact-details-send = 送信
+contact-details-receive = 受信
+contact-details-notifications = 通知
+contact-details-history = 履歴
+contact-details-account-address = Spixi アドレス
+contact-details-address-1 = 取得中
+contact-details-address-2 = Spixi
+contact-details-address-3 = アドレス...
+contact-details-removecontact = 連絡先を削除
+contact-details-removedcontact-title = 削除済み
+contact-details-removedcontact-text = 連絡先が削除されました。
+contact-details-deletehistory = 履歴を削除
+contact-details-deletedhistory-title = 削除済み
+contact-details-deletedhistory-text = メッセージ履歴が削除されました。
+contact-details-delete-history-modal-title = チャット履歴を消去しますか？
+contact-details-delete-history-modal-subtitle = チャットの全履歴が削除されます。
+contact-details-delete-history-modal-confirm = はい、チャットを消去
+contact-details-delete-contact-modal-title = 連絡先から削除
+contact-details-delete-contact-modal-subtitle = これにより相手が連絡先リストから削除されます。再追加するまでメッセージの送受信はできません。
+contact-details-delete-contact-modal-confirm = はい、連絡先を削除
+
+; New Contact Screen
+contact-new-title = 新しい連絡先を追加
+contact-new-description = Spixi アドレスを貼り付けるか入力して新しい連絡先を追加できます。また、QR コードをスキャンすることもできます。
+contact-new-placeholder = アドレスを貼り付けるか入力
+contact-new-send-request = 連絡先を追加
+contact-new-invalid-address-self-text = 入力されたアドレスは自分の Spixi アドレスです。
+contact-new-invalid-address-exists-text = この連絡先はすでに追加されています。
+contact-new-scan = スキャン
+contact-new-scan-help = または QR コードをスキャン
+contact-new-send = 送信
+contact-new-cancel = キャンセル
+contact-new-confirm-title = 連絡先を追加しますか？
+contact-new-confirm-details = 次の Spixi アドレスに連絡先リクエストを送信します：
+
+; Downloads Screen
+downloads-title = ダウンロード
+downloads-empty = ダウンロードしたファイルはありません。
+
+; Contributors Screen
+contributors-title = 貢献者
+contributors-thanks = 特別な感謝を私たちの貢献者に
+contributors-special-thanks-title = 特別な感謝を私たちの貢献者に
+
+; Index Screen
+index-balance = IXI 残高
+index-balance-show = 表示
+index-balance-hide = 非表示
+index-balance-info = 非表示中
+index-notifications = 通知
+index-unread-chats = 未読チャット
+index-no-conversations-title = チャットなし
+index-no-conversations = 連絡先を追加して会話を始めよう。
+index-no-contacts-title = 連絡先がありません
+index-no-contacts = 誰かを追加するとチャットできます。
+index-new-chat-button = 新しいチャット
+index-no-transactions-title = 取引はまだありません
+index-no-transactions = IXIを使い始めると、ここに表示されます。
+index-send = 送信
+index-scan = スキャン
+index-receive = 受信
+index-all = すべて
+index-sent = 送信済み
+index-received = 受信済み
+index-recent-activity = 最近のアクティビティ
+index-contacts-placeholder = 連絡先を検索
+index-tab-home = ホーム
+index-tab-chats = チャット
+index-tab-wallet = ウォレット
+index-tab-contacts = 連絡先
+index-tab-address = マイアドレス
+index-new-title = 新規
+index-new-contact = 連絡先
+index-new-chat = チャット
+index-new-send = IXI を送信
+index-new-request = IXI をリクエスト
+index-new-cancel = キャンセル
+index-side-title = Spixi ユーザー
+index-side-myaddress = 自分の Spixi アドレス
+index-side-apps = アプリ
+index-side-downloads = ダウンロード
+index-side-settings = 設定
+index-side-security = セキュリティ
+index-side-backup = バックアップ
+index-side-password = パスワード
+index-side-about = Spixi について
+index-side-contributors = 貢献者
+index-side-howtouse = Spixi の使い方
+index-side-sendlog = アプリのログを送信
+index-devmode = 開発者モードが有効
+index-excerpt-payment-request-sent = 支払いリクエストを送信しました
+index-excerpt-payment-request-received = 支払いリクエストを受信しました
+index-excerpt-payment-sent = 支払いを送信しました
+index-excerpt-payment-received = 支払いを受信しました
+index-excerpt-contact-accepted = 連絡先リクエストを承認しました
+index-excerpt-contact-request = 連絡先リクエスト
+index-excerpt-file = ファイル
+index-excerpt-voice-call = 音声通話
+index-excerpt-self = 
+index-excerpt-typing = 入力中...
+index-side-settings-subtitle = テーマ、言語、ニックネーム、データ
+index-side-password-subtitle = Spixiのパスワードを変更
+index-side-backup-subtitle = バックアップファイルを作成
+index-side-how-to-subtitle = Spixiの使い方を学ぶ
+index-side-about-subtitle = 情報、ヘルプ、お問い合わせ、プライバシーポリシー
+index-missing-tx-title = いくつかの取引が欠落していますか？
+index-missing-tx-text = Spixiはブロックチェーンから直接読み取ります。中央集権型のサーバーではないため、同期に少し時間がかかることがあります。
+index-missing-tx-view-all = エクスプローラーで全ての取引を表示
+index-backup-prompt-title = バックアップを忘れずに
+index-backup-prompt-desc = Spixiは完全に分散型です - あなたのデータはあなたのデバイスにのみ保存されます。連絡先を安全に保ち、後で全てを復元するために、今すぐバックアップを作成してください。
+index-backup-prompt-create = はい、バックアップ作成
+index-backup-prompt-not-now = 今はしない
+index-backup-prompt-note = 新しい連絡先を追加するたびにバックアップを作成することをお勧めします。
+
+; Onboarding Screen
+onboarding-choose-language = 言語を選択
+onboarding-get-started = はじめよう
+onboarding-step-skip = スキップ
+onboarding-step-back = 戻る
+onboarding-step-next = 次へ
+onboarding-step-1-title = あなたのチャット、あなたのデバイス、あなたのルール。
+onboarding-step-1-subtitle = Spixi はサーバーを使用しません。メッセージは端末に保存され、暗号化されたうえで直接連絡先に送信されます。
+onboarding-step-2-title = アドレスがあなたの唯一の ID。
+onboarding-step-2-subtitle = Spixi は電話番号やメールを必要としません。接続にはあなたの一意な Spixi アドレスだけで十分です。
+onboarding-step-3-title = IXI 決済を送受信
+onboarding-step-3-subtitle = 内蔵ウォレットを使って、チャット内で直接 IXI コインを送受信できます。メッセージを送るような感覚で簡単です。
+onboarding-step-4-title = チャット内でミニアプリを見つけよう
+onboarding-step-4-subtitle = Spixi ミニアプリでは、チャット内でゲームをしたりツールを使ったり、新機能をすぐに利用したりできます。
+
+; Onboarding Create Account Screen
+create-account-title = はじめましょう。
+create-account-description = 新しいアカウントを作成するか、バックアップから復元します。
+create-account-new = 新規アカウント
+create-account-already = すでにアカウントをお持ちですか？
+create-account-restore = アカウントを復元
+create-account-step = ステップ
+create-account-step-of = ／
+create-account-step-1-title = ニックネームと写真を設定
+create-account-step-1-subtitle = あなたのニックネームとアバターは連絡先に表示されます。いつでも変更可能です。
+create-account-step-1-tap = タップしてアップロード
+create-account-step-1-nickname-placeholder = ニックネームを入力
+create-account-step-2-title = バックアップ用パスワードを作成
+create-account-step-2-subtitle = バックアップファイルから Spixi アカウントを復元するには、このパスワードが必要です。安全に保管してください。
+create-account-step-2-password-placeholder = パスワードを入力
+create-account-step-2-password-confirm = パスワードを確認
+create-account-step-2-password-confirm-note = パスワードは10文字以上である必要があります。
+create-account-step-2-password-confirm-note-success = パスワードが一致しました
+create-account-step-2-password-confirm-note-error = パスワードが一致しません
+create-account-step-2-note-title = Spixi はこのパスワードを保存しません。
+create-account-step-2-note-subtitle = これまたはバックアップファイルがなければ、アカウントやウォレットを復元できません。
+create-account-finish-setup = 設定を完了
+create-account-creating = アカウントを作成中…
+create-account-creating-description = もうすぐ完了します。アカウントを安全に構築中です。
+
+; Intro Restore Screen
+intro-restore-title = アカウントを復元
+intro-restore-subtitle = バックアップファイルを選択して Spixi アカウントの復元を開始します。
+intro-restore-select-file = バックアップファイルを選択
+intro-restore-pass-title = バックアップパスワードを入力
+intro-restore-pass-subtitle = Spixi アカウントを復元するには、バックアップファイルを保護したパスワードを入力してください。
+intro-restore-pass-placeholder = パスワードを入力
+intro-restore-note-title = Spixi はこのパスワードを保存しません。
+intro-restore-note-subtitle = あなた以外にこのバックアップファイルを解錠できる人はいません。
+intro-restore-button = アカウントを復元
+intro-restoring-title = アカウントを復元中…
+intro-restoring-subtitle = 少々お待ちください。安全にアカウントを解除しています。
+intro-restore-pass-error = パスワードが誤っています。もう一度お試しください。
+
+; Intro Retry Screen
+intro-retry-description-1 = パスワードを再入力してください
+intro-retry-description-2 = アカウントへのアクセス時に問題が発生しました。続行するには、もう一度パスワードを入力してください。
+intro-retry-placeholder = パスワードを入力
+intro-retry-proceed = 続行
+intro-retry-title = ウォレットアクセスの復元中
+intro-retry-info = これには数分かかる場合があります
+intro-retry-invalidpassword-title = 無効なパスワード
+intro-retry-invalidpassword-text = ウォレットを復号できませんでした。もう一度お試しください。
+
+; Lock Screen
+lock-description = Spixi はロックされています
+lock-placeholder = パスワードを入力
+lock-error = パスワードが間違っています
+lock-unlock = ロック解除
+lock-change = ウォレットを変更
+
+; Settings Screen
+settings-title = 設定
+settings-save = 保存
+settings-cancel = キャンセル
+settings-confirm = 確認
+settings-description = Spixi アカウントとこのデバイスに保存されているデータを管理します。
+settings-account-information = 基本設定
+settings-account-description = 言語、アバター、ニックネームを変更します。
+settings-account-language-edit = 言語
+settings-account-appearance-edit = 外観
+settings-account-appearance-automatic = 自動
+settings-account-appearance-light = ライト
+settings-account-appearance-dark = ダーク
+settings-account-image-edit = アバター
+settings-account-nick-edit = ニックネーム
+settings-account-nick-placeholder = 新しいニックネームを入力
+settings-account-deleteinfo = Spixi アカウントとそのすべてのデータをこのデバイスから完全に削除できます。<br/><br/><b>重要：</b> 削除後は、新しいアカウントを作成するか、バックアップから復元する必要があります。
+settings-account-delete = アカウントを完全に削除
+settings-deletea-title = Spixi アカウントを完全に削除しますか？
+settings-deletea-text = 本当にこの Spixi アカウントを完全に削除しますか？<br/><br/>この操作は元に戻せません！削除する前にバックアップを作成することをおすすめします。復元にはバックアップが必要です。
+settings-deleteda-title = 削除完了
+settings-deleteda-text = Spixi アカウントが削除されました。
+settings-wallet-settings = ウォレット設定
+settings-wallet-description = このウォレットは Spixi アカウントに紐付いています。ウォレット、アカウント、すべての取引履歴を削除するには、以下のボタンを使用してください。
+settings-wallet-delete = ウォレットを削除
+settings-deletew-title = このウォレットを削除しますか？
+settings-deletew-text = 本当にこのウォレットを削除しますか？<br/><br/>この操作は元に戻せません！ウォレットの資金へアクセスできなくなります。復元にはバックアップファイルとパスワードが必要です。
+settings-deletew-error-title = エラー
+settings-deletew-error-text = ウォレットファイルを削除できませんでした。
+settings-history = メッセージ履歴
+settings-history-description = すべてのメッセージ履歴とダウンロードファイルはこのデバイスに保存されます。以下のボタンで削除できます。
+settings-history-delete = メッセージ履歴を削除
+settings-downloads-delete = すべてのダウンロードを削除
+settings-deleteh-title = メッセージ履歴を削除しますか？
+settings-deleteh-text = 本当にすべてのメッセージ履歴を削除しますか？この操作は元に戻せません！
+settings-deletedh-title = 削除完了
+settings-deletedh-text = メッセージ履歴が削除されました。
+settings-deleted-title = すべてのダウンロードを削除しますか？
+settings-deleted-text = 本当にすべてのダウンロードを削除しますか？Spixi でダウンロードしたファイルがすべて削除されます！この操作は元に戻せません！
+settings-deletedd-title = 削除完了
+settings-deletedd-text = {0} 個のダウンロードファイルが削除されました。
+settings-deleted-error-title = エラー
+settings-deleted-error-text = 不明なエラーが発生しました。
+settings-emptynick-title = 無効なニックネーム
+settings-emptynick-text = ニックネームを入力してください。
+settings-unsaved-changes-modal-title = 保存されていない変更
+settings-unsaved-changes-modal-subtitle = このまま移動すると、変更内容は失われます。続行しますか？
+
+; Settings Backup Screen
+settings-backup-title = アカウントのバックアップ
+settings-backup-description = このバックアップファイルをダウンロードすると、このSpixiアカウントを復元できます。連絡先はデバイスにのみ保存され、追加後に作成されたバックアップに含まれます。
+settings-backup-save = ウォレットを保存
+settings-backup-account-save = アカウントを保存
+settings-backup-notice = 次の場合に備えて、バックアップとパスワードを保存してください：
+settings-backup-notice2 = - このデバイスを紛失した場合<br />- Spixi をアンインストールした場合<br />- Spixi アカウントを削除した場合<br />- ウォレットを削除した場合
+settings-backup-invalidpassword-title = 無効なパスワード
+settings-backup-invalidpassword-text = 有効なパスワードを入力してください。
+
+; Settings Encryption Screen
+settings-encryption-title = パスワード
+settings-encryption-description = このパスワードはアカウントとウォレットに関連付けられています。アカウントまたはウォレットを復元する際に必要になります。
+settings-encryption-edit = パスワードを変更
+settings-encryption-type = <b>現在の</b> パスワードを入力してください。
+settings-encryption-placeholder = 現在のパスワード
+settings-encryption-typenew = <b>新しい</b> パスワードを入力してください。
+settings-encryption-placeholdernew = 新しいパスワード
+settings-encryption-placeholderretype = 新しいパスワードを再入力
+settings-encryption-change = パスワードを変更
+settings-encryption-password10 = パスワードは 10 文字以上である必要があります。
+settings-encryption-passwordconf = パスワードを確認
+settings-encryption-passwordnomatch = パスワードが一致しません
+settings-encryption-passwordmatch = パスワードが一致しました
+settings-encryption-invalidpassword-title = 無効なパスワード
+settings-encryption-invalidpassword-text = 有効なパスワードを入力してください。
+settings-encryption-passwordchanged-title = パスワード
+settings-encryption-passwordchanged-text = パスワードが正常に変更されました。
+settings-encryption-invalidpassword-current-text = 現在のパスワードが間違っています。もう一度お試しください。
+
+; Settings Lock Screen
+settings-lock-title = Spixi をロック
+settings-lock-description = パスワードを設定して、このデバイス上で Spixi へのアクセスを制限します。
+settings-lock-status = セキュリティステータス:
+settings-lock-unlocked = ロック解除済み
+settings-lock-locked = ロック済み
+settings-lock-passwordinfo = パスワードを設定または変更
+settings-lock-password = <b>現在の</b> パスワードを入力してください
+settings-lock-password-new = <b>新しい</b> パスワードを入力してください
+settings-lock-placeholder-1 = 現在のパスワードを入力
+settings-lock-placeholder-2 = 新しいパスワードを入力
+settings-lock-placeholder-3 = 新しいパスワードを再入力
+settings-lock-info = Spixi を起動するたびに、このパスワードを入力する必要があります。
+settings-lock-save = パスワードを設定
+settings-lock-authinfo = Spixi をロック解除するには、生体認証またはパスワードが必要です。
+settings-lock-confirm-text = 変更は保存後に適用されます。
+
+; Wallet Contact Request Screen
+wallet-contact-request-title = 支払いリクエスト
+wallet-contact-request-subtitle = 支払いリクエスト元:
+wallet-contact-request-amount = 金額
+wallet-contact-request-info = ユーザーが次の金額の支払いをリクエストしました。
+wallet-contact-request-respond = 支払いリクエストへの対応
+wallet-contact-request-respondinfo = リクエストを拒否または支払うことができます。リクエストを送信したユーザーには、あなたの決定が通知されます。
+wallet-contact-request-decline = 拒否
+wallet-contact-request-proceed = 支払いを送信
+
+; Wallet Recipient Screen
+wallet-recipient-title = 受取人を選択
+wallet-recipient-search-placeholder = 連絡先を検索
+wallet-recipient-empty = 受取人が選択されていません
+wallet-recipient-add = 受取人を追加
+wallet-recipient-selected = 選択された受取人
+wallet-recipient-new-contact-button = 新しい連絡先を追加
+wallet-recipient-no-contact-button = 新しい連絡先
+
+; Wallet Request Screen
+wallet-request-title = 支払いをリクエスト
+wallet-request-subtitle = 特定の金額をリクエスト
+wallet-request-amount-placeholder = 金額を入力
+wallet-request-address = 受取人のアドレス
+wallet-request-send-info = 次の受取人にリクエストを送信：
+wallet-request-add = 同じ金額の支払いリクエストを複数のユーザーに送信できます。<br/>追加のユーザーまたはアドレスを入力してください。
+wallet-request-placeholder = アドレスを貼り付けるか入力
+wallet-request-send = リクエストを送信
+wallet-request-error-title = エラー
+wallet-request-error-text = すべての必須フィールドに正しい情報を入力してください。
+
+; Wallet Send Screen
+wallet-send-title = IXI を送信
+wallet-send-details = 支払い先のアドレスを貼り付けるか入力してください。連絡先を選択するか、QR コードをスキャンすることもできます。
+wallet-send-subdetails = IXI を送信先:
+wallet-send-add = 受取人を追加
+wallet-send-placeholder = アドレスを貼り付けるか入力
+wallet-send-more = この取引に追加の受取人を追加できます。各受取人に同じ金額が送信されます。
+wallet-send-recipients = 受取人
+wallet-send-norecipients = 受取人が選択されていません
+wallet-send-next = 次へ
+wallet-send-max = 最大金額を送信
+wallet-send-select = 連絡先を選択
+wallet-send-or = または
+
+; Wallet Send 2 Screen
+wallet-send2-title = 支払いを確認
+wallet-send2-policy = ネットワーク手数料ポリシー
+wallet-send2-info = IXI の取引は取り消しできません。
+wallet-send2-feeinfo = ネットワーク手数料 (IXI 手数料) は支払いに含まれています。
+wallet-send2-normal = 通常
+wallet-send2-high = 高速
+wallet-send2-custom = カスタム
+wallet-send2-placeholder = 送信する金額は？
+wallet-send2-amount = 金額
+wallet-send2-max-amount = 最大金額を送信
+wallet-send2-max-amount-warning = ウォレット内のすべての資金を送信します！
+wallet-send2-fee = 取引手数料合計
+wallet-send2-total = 総支払い額
+wallet-send2-send = IXI を送信
+wallet-send2-confirm-title = 送信を確認
+wallet-send2-confirm = 確認
+wallet-send2-cancel = キャンセル
+wallet-send2-edit = 支払いを編集
+wallet-send2-remove-recipient = 受取人を削除
+wallet-send2-done = 完了
+wallet-send2-yourbalance = 現在の残高
+
+; Wallet Sent Screen
+wallet-sent-title = 支払いの詳細
+wallet-sent-subtitle = 支払い送信先:
+wallet-status-sent-pending = 支払い処理中
+wallet-status-receive-pending = 受信処理中
+wallet-status-sent = 支払いが完了しました
+wallet-status-receive = 支払いを受け取りました
+wallet-status-failed = 支払いに失敗しました
+wallet-sent-amount = 金額
+wallet-sent-status = 支払いステータス
+wallet-sent-confirmed = 確認済み
+wallet-sent-unconfirmed = 未確認
+wallet-sent-details = 送信した金額が残高から引き落とされました。
+wallet-sent-fee = 取引手数料
+wallet-sent-feeinfo = この取引にはネットワーク手数料が含まれています：
+wallet-sent-txid = 取引 ID
+wallet-sent-view-explorer = ブロックエクスプローラーで表示
+wallet-sent-dismiss = 閉じる
+wallet-sent-unconfirmed-details = 支払いは送信されましたが、まだネットワークで確認されていません。確認後、取引 ID とブロックエクスプローラーのリンクが表示されます。
+wallet-unknown-sender = 送信者不明
+wallet-unknown-recipient = 受信者不明
+wallet-sentrecv-title = 支払いを受け取りました
+wallet-sentrecv-subtitle = 支払い元:
+wallet-sentrecv-amount = 金額
+wallet-sentrecv-details = この金額がウォレット残高に追加されました。
+
+; Global Wallet Errors
+wallet-error-amount-title = 無効な金額
+wallet-error-amount-text = 正しい金額を入力してください。
+wallet-error-amountdecimal-text = 正しい小数点以下の金額を入力してください。
+wallet-error-balance-title = 残高不足
+wallet-error-balance-text = この取引を完了するための残高が不足しています。取引の総額は {0}、現在の残高は {1} です。
+
+; Onboarding join official bot
+onboarding-bot-title = Spixi の旅に参加しよう
+onboarding-bot-subtitle = 公式グループチャットに参加して、フィードバックを共有し、チームとつながり、最新機能を知りましょう。
+onboarding-bot-join-button = コミュニティに参加
+onboarding-bot-skip = 今はスキップ
+
+; Onboarding 1
+onboarding-screen1-title = 安全な接続
+onboarding-screen1-text = 世界で最も安全でプライベートなメッセージングアプリの 1 つで、通信と支払いを管理しましょう。
+onboarding-screen1-get-started = 開始
+onboarding-screen1-skip = イントロをスキップ
+
+; Onboarding 2
+onboarding-screen2-title = Spixi アドレスがあなたの唯一の ID です
+onboarding-screen2-text = Spixi では電話番号やメールアドレスは不要です。アドレスがあなたの唯一の ID となり、他のユーザーを追加する際に使用します。
+
+; Onboarding 3
+onboarding-screen3-title = IXI の送受信
+onboarding-screen3-text = 内蔵ウォレットを使用して、簡単に IXI の送受信ができます。メッセージを送るのと同じくらいシンプルです。
+
+; Onboarding send and receive payments
+onboarding-screen4-title = IXI の送受信
+onboarding-screen4-text = ウォレットを使用すると、簡単に IXI の送受信ができます。メッセージを送るのと同じくらいシンプルです。
+onboarding-skip = スキップ
+onboarding-back = 戻る
+onboarding-next = 次へ
+onboarding-finish = 完了
+
+; Empty State
+empty-state-title = Spixiへようこそ
+empty-state-detail-1 = 統合されたウォレットを備えたあなたの安全なピアツーピアチャットアプリ。
+empty-state-detail-2 = あなたのメッセージはあなたのデバイスとあなたの連絡先の間だけで保存され、送信されることを保証する暗号化された会話をお楽しみください。あなたのプライバシーはそのまま保たれます。
+
+; Ixinames
+ixinames-request-title = IXI Names への接続リクエスト
+ixinames-request-details = この Spixi アカウントを IXI Names に接続しますか？このサービスはあなたのアドレス情報にアクセスします。
+ixinames-request-decline = 拒否
+ixinames-request-connect = 接続
+ixinames-message-connected = Spixi アカウントが IXI Names に正常に接続されました。
+ixinames-message-error = Spixi は IXI Names に接続できませんでした。再試行してください。
+
+; Rating
+rating-request-title = Spixi は気に入りましたか？
+rating-request-details = あなたのフィードバックが、アプリの改善に役立ちます。
+rating-request-no = ちょっと微妙...
+rating-request-yes = はい！気に入っています！
+
+; Global
+global-connecting-s2 = Ixian S2 に接続中...
+global-connecting-dlt = Ixian ネットワークに接続中...
+global-received = 受信済み
+global-sent = 送信済み
+global-app-accept = 承認
+global-app-reject = 拒否
+global-app-wants-to-use = {0} が {1} を使用してあなたとやり取りしたいと考えています。
+global-call-in-call = 通話中
+global-call-dialing = 発信中...
+global-call-incoming = 着信中
+
+global-dialog-error = エラー
+global-dialog-ok = OK
+global-dialog-cancel = キャンセル
+global-invalid-address-title = 無効なアドレス
+global-invalid-address-text = 正しいアドレスを入力してください。
+
+global-friend-request-accepted = {0} があなたの連絡先リクエストを承認しました。
+
+global-update-available = Spixi の新しいバージョン ({0}) が利用可能です。最新のエクスペリエンスのために更新してください。
+global-modal-external-link-title = 外部リンク
+global-modal-external-link-body = 外部リンク ({0}) へ移動しようとしています。外部リンクにはリスクが伴う可能性があるため、ご注意ください。
+global-modal-external-link-button-visit = 続行
+
+global-lock-auth-text = 認証が必要です
+global-lock-invalidpassword-title = 認証に失敗しました
+global-lock-invalidpassword-text = Spixi をロック解除するには、パスワードを入力してください。
+
+global-time-justnow = たった今
+global-time-aminuteago = 1 分前
+global-time-minutesago = 分前
+
+global-share-choose = 操作を選択
+global-share-savefile = ファイルを保存
+global-share-sharefile = ファイルを共有

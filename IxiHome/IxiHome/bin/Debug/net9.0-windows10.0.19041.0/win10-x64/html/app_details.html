@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- saved from url=(0016)http://localhost -->
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no">
+
+    <title>Spixi</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/*SL{SpixiThemeMode}">
+
+    <link rel="stylesheet" type="text/css" href="libs/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="libs/fontawesome/css/solid.min.css">
+
+
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/qrcode.min.js"></script>
+    <script src="js/spixi.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+
+</head>
+<body onload="ixian:onload();">
+    <div id="wrap" class="container-fluid noselect">
+
+        <!-- Toolbar -->
+        <div class="spixi-toolbar shadow" id="toolbar">
+            <div class="spixi-toolbar-row">
+                <div id="backbtn" onclick="location.href = 'ixian:back';">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div>
+                    *SL{app-details-title}
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="spixi-toolbar-holder"></div>
+        <!-- End Toolbar -->
+
+        <section class="spixi-app-details" id="appDetailsSection">
+            <div id="toastbar" class="spixi-toastbar">*SL{address-copied}</div>
+            <div class="spixi-app-details-header">
+                <img data-role="AppIcon" class="spixi-app-details-image" />
+                <div class="spixi-app-details-title">
+                    <span class="heading-xs s-text-01" data-role="AppName"></span>
+                    <span class="label-sm s-text-02" data-role="AppPublisher"></span>
+                    <!--                    TODO: add display none if not verified-->
+                    <span class="label-xs s-text-success" style="display:none;"><i class="fas fa-lock"></i> Verified</span>
+                </div>
+            </div>
+            <div class="spixi-app-details-properties">
+                <span class="label-sm s-text-02">*SL{apps-details-description}</span>
+                <span class="body-sm s-text-01" id="AppDescription"></span>
+            </div>
+            <div class="spixi-app-details-properties ">
+                <div class="spixi-app-details-properties-single-div">
+                    <span class="label-sm s-text-02">*SL{apps-details-capabilities}</span>
+                    <div class="app-capabilities-list" data-role="capabilitiesList"></div>
+                </div>
+                <div class="spixi-app-details-properties-single-div">
+                    <span class="label-sm s-text-02">*SL{apps-details-details}</span>
+                    <div class="spixi-app-details-info">
+                        <span class="body-sm s-text-02">*SL{apps-details-id}</span>
+                        <span class="label-sm s-text-01" id="AppID"></span>
+                    </div>
+                    <div class="spixi-app-details-info">
+                        <span class="body-sm s-text-02">*SL{apps-details-version}</span>
+                        <span class="label-sm s-text-01" id="AppVersion"></span>
+                    </div>
+                    <div class="spixi-app-details-info">
+                        <span class="body-sm s-text-02">*SL{apps-details-size}</span>
+                        <!--                    TODO: missing app size data-->
+                        <span class="label-sm s-text-01" id="AppSize"></span>
+                    </div>
+                </div>
+                <div class="spixi-app-details-properties-single-div">
+                    <span class="label-sm s-text-02">*SL{apps-details-install-url}</span>
+                    <div class="urlContainer">
+                        <span class="body-sm s-text-01" id="installUrlValue"></span>
+                        <i class="fas fa-copy" id="copyUrlIcon" style="cursor: pointer"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>  <!-- Wrap -->
+    <div class="action-slide-up-container" id="install-mini-app-prompt">
+        <p class="label-md s-text-01 text-center">*SL{apps-install-title}</p>
+        <div>
+            <div class="spixi-app-details-header">
+                <img data-role="AppIcon" class="spixi-app-details-image" />
+                <div class="spixi-app-details-title">
+                    <span class="heading-xs s-text-01" data-role="AppName"></span>
+                    <span class="label-sm s-text-02" data-role="AppPublisher"></span>
+                    <span class="label-xs s-text-success" id="AppVerified"><i class="fas fa-lock"></i> Verified</span>
+                </div>
+            </div>
+            <div class="spixi-app-details-properties ">
+                <div class="spixi-app-details-properties-single-div">
+                    <span class="label-sm s-text-02">*SL{apps-details-capabilities}</span>
+                    <div class="app-capabilities-list" data-role="capabilitiesList"></div>
+                </div>
+                <div class="spixi-app-details-properties-single-div">
+                    <span class="label-sm s-text-02">*SL{apps-source}</span>
+                    <div class="urlContainer">
+                        <span class="body-sm s-text-01" id="source"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add-mini-app-buttons spixi-app-details-buttons">
+            <div class="spixi-flat-button label-sm" onclick="confirmInstallCall()">
+                <i class="fas fa-check"></i>&nbsp; *SL{apps-install-confirm}
+            </div>
+            <div class="spixi-flat-button label-sm button outline" onclick="toggleAnimatedSlider('install-mini-app-prompt')">
+                *SL{apps-install-cancel}
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-modal-wrapper" id="installingAppLoadingModal" style="display: none;">
+        <div class="loading-modal-container">
+            <span class="spixi-loader"></span>
+            <div class="new-modal-texts">
+                <span class="label-lg">*SL{apps-installing-title}</span>
+                <span class="body-sm">*SL{apps-installing-description}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-modal-wrapper" id="removingAppLoader" style="display: none;">
+        <div class="loading-modal-container">
+            <span class="spixi-loader"></span>
+            <div class="new-modal-texts">
+                <span class="label-lg">*SL{apps-removing-app}</span>
+                <span class="body-sm">*SL{apps-removing-description}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-modal-wrapper" id="appFailedToInstallModal" style="display: none;">
+        <div class="new-modal-container">
+            <img src="img/err-modal-icon.png" alt="err-img" width="32" height="32" />
+            <div class="new-modal-texts">
+                <span class="label-lg">*SL{apps-failed-install-title}</span>
+                <span class="body-sm">*SL{apps-failed-install-description}</span>
+            </div>
+            <div class="new-modal-buttons">
+                <div class="spixi-flat-button label-sm">
+                    *SL{apps-failed-install-retry}
+                </div>
+                <div class="spixi-flat-button label-sm button outline" onclick="document.getElementById('appFailedToInstallModal').style.display = 'none'">
+                    *SL{apps-failed-install-cancel}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-modal-wrapper" id="appSuccessfullyInstalledModal" style="display: none;">
+        <div class="new-modal-container">
+            <img src="img/app-success-modal-icon.png" alt="success-img" width="32" height="32" />
+            <div class="new-modal-texts">
+                <span class="label-lg">*SL{apps-success-install-title}</span>
+                <span class="body-sm">*SL{apps-success-install-description}</span>
+            </div>
+            <div class="new-modal-buttons">
+                <div class="spixi-flat-button label-sm" onclick="viewAppDetails()">
+                    <i class="fas fa-arrow-right"></i>*SL{apps-success-install-view}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-modal-wrapper" id="removeAppModal" style="display: none;">
+        <div class="new-modal-container">
+            <i class="fa fa-trash-can modal-trash-icon"></i>
+            <div class="new-modal-texts">
+                <span class="label-lg">*SL{apps-remove-title}</span>
+                <span class="body-sm">*SL{apps-remove-description}</span>
+            </div>
+            <div class="new-modal-buttons">
+                <div class="spixi-flat-button label-sm" onclick="confirmRemoveApp()">
+                    *SL{apps-remove-confirm}
+                </div>
+                <div class="spixi-flat-button label-sm button outline" onclick="document.getElementById('removeAppModal').style.display = 'none'">
+                    *SL{apps-remove-cancel}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-modal-wrapper" id="appRemovedModal" style="display: none;">
+        <div class="new-modal-container">
+            <img src="img/check-icon.png" alt="check-icon" width="32" height="32" />
+            <div class="new-modal-texts">
+                <span class="label-lg">*SL{apps-removing-app-success}</span>
+                <span class="body-sm">*SL{apps-removing-app-description-success}</span>
+            </div>
+            <div class="new-modal-buttons">
+                <div class="spixi-flat-button label-sm" onclick="location.href='ixian:back'">
+                    <i class="fas fa-arrow-right"></i> *SL{apps-removing-app-continue}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Multi user app modal -->
+    <div id="multiUserAppModal" class="new-modal-wrapper" style="display: none;">
+        <div class="new-modal-container" id="multiUserModalContent">
+            <img src="img/people-arrows-icon.png" alt="people-arrows-icon" width="32" height="32" />
+            <div class="new-modal-texts">
+                <span class="label-lg">Multi-user App</span>
+                <span class="body-sm">This app supports more than one user. Would you like to invite one of your contacts?</span>
+            </div>
+            <div class="new-modal-buttons">
+                <div class="spixi-flat-button label-sm"
+                     onclick="launchMultiUserMode(this)">
+                    <i class="fas fa-user-plus"></i>Invite Contact
+                </div>
+                <div class="spixi-flat-button label-sm button outline"
+                     onclick="launchSoloMode(this)">
+                    <i class="fas fa-person"></i>Launch Solo Mode
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function init(name, icon, publisher, description, version, url, size, capabilities, appId, isSingleUser, isMultiuser, isAppInstalled, isAppVerified, displayLaunch) {
+            icon = icon.replace(/&#92;/g, '\\');
+
+            const mappedCapsToArray = capabilities?.split(',').map(cap => cap.trim()) || [];
+
+            document.querySelectorAll('[data-role="AppName"]').forEach(item => {
+                item.textContent = name;
+            });
+            document.querySelectorAll('[data-role="AppIcon"]').forEach(img => {
+                img.src = icon;
+            });
+            document.querySelectorAll('[data-role="AppPublisher"]').forEach(item => {
+                item.textContent = publisher;
+            });
+
+            document.getElementById("AppDescription").textContent = description;
+            document.getElementById("AppVersion").textContent = version;
+            document.getElementById("AppSize").textContent = size;
+            document.getElementById("installUrlValue").textContent = url;
+
+            document.getElementById("source").textContent = url;
+
+            document.querySelectorAll('[data-role="capabilitiesList"]').forEach(item => {
+                item.innerHTML = mappedCapsToArray?.map(cap => `<span class="label-xs s-text-inverse single-capability">${cap}</span>`).join('');
+            });
+            document.getElementById("AppID").textContent = appId;
+
+            if (parseBoolean(isAppVerified) == false) {
+                document.getElementById("AppVerified").style.display = "none";
+            }
+
+            //check if installed and append correct content
+            const appDetailsSection = document.getElementById("appDetailsSection");
+            if (parseBoolean(isAppInstalled)) {
+                var launchAppItem = `
+                     <div id="launchButton" class="add-mini-app-buttons spixi-app-details-buttons" data-single-user="${parseBoolean(isSingleUser)}" data-multi-user="${parseBoolean(isMultiuser)}">`;
+                if (parseBoolean(displayLaunch)) {
+                    launchAppItem += `
+                        <div class="spixi-flat-button label-sm" onclick="onLaunchHandler(this.parentNode)">
+                            <i class="fas fa-arrow-right"></i>&nbsp; *SL{apps-launch-app}
+                        </div>`;
+                }
+                launchAppItem += `
+                        <div class="spixi-flat-button label-sm button outline" onclick="removeAppHandler()">
+                             *SL{apps-remove-app}
+                        </div>
+                    </div>`;
+
+                appDetailsSection.insertAdjacentHTML("beforeend", launchAppItem);
+
+            } else {
+                const installAppItem = `
+                    <div class="add-mini-app-buttons spixi-app-details-buttons">
+                        <div class="spixi-flat-button label-sm" onclick="toggleAnimatedSlider('install-mini-app-prompt')">
+                            <i class="fas fa-arrows-down-to-line"></i>&nbsp; *SL{apps-details-download}
+                        </div>
+                        <span class="label-xs s-text-02" style="max-width: 244px;text-align: center">
+                            *SL{apps-details-download-note}
+                        </span>
+                    </div>
+                    `;
+
+                appDetailsSection.insertAdjacentHTML("beforeend", installAppItem);
+            }
+        }
+
+        const clipboard = new ClipboardJS('#copyUrlIcon', {
+            text: function () {
+                return document.getElementById("installUrlValue")?.textContent;
+            }
+        });
+
+        clipboard.on('success', function (e) {
+            e.clearSelection();
+            const toast = document.getElementById("toastbar");
+            toast.className = "spixi-toastbar show";
+            setTimeout(() => {
+                toast.className = toast.className.replace("show", "");
+            }, 3000);
+        });
+
+        function viewAppDetails() {
+            window.location.href = 'ixian:details';
+        }
+
+        function onLaunchHandler(element) {
+            const multiUserModal = document.getElementById("multiUserAppModal");
+            const modalContent = document.getElementById("multiUserModalContent");
+
+            multiUserModal.setAttribute("data-app-id", null);
+
+            const appId = document.getElementById("AppID").textContent;
+            const isSingleUser = element.getAttribute('data-single-user') === "true";
+            const isMultiuser = element.getAttribute('data-multi-user') === "true";
+
+            //show multi-user modal if true
+            if (isSingleUser
+                && isMultiuser) {
+                multiUserModal.style.display = "flex";
+                multiUserModal.setAttribute("data-app-id", appId);
+
+                setTimeout(() => {
+                    function handleClickOutside(event) {
+                        const clickedInsideModal = modalContent.contains(event.target);
+                        const clickedInsideWrapper = multiUserModal.contains(event.target);
+
+                        if (clickedInsideWrapper && !clickedInsideModal) {
+                            multiUserModal.style.display = "none";
+                            document.removeEventListener("click", handleClickOutside);
+                        }
+                    }
+
+                    document.addEventListener("click", handleClickOutside);
+                }, 10);
+            }
+            //else just start the app in solo mode
+            else if (isSingleUser) {
+                window.location.href = `ixian:startApp:${appId}`;
+            }
+            //else just start the app in multiuser mode
+            else if (isMultiuser) {
+                window.location.href = `ixian:startAppMulti:${appId}`;
+            }
+        }
+
+        function launchSoloMode(buttonElement) {
+            const multiUserModal = document.getElementById("multiUserAppModal");
+            const appId = buttonElement.closest('#multiUserAppModal')?.getAttribute('data-app-id');
+
+            if (appId) {
+                multiUserModal.style.display = "none";
+                window.location.href = `ixian:startApp:${appId}`;
+            } else {
+                console.error("App ID not found.");
+            }
+        }
+
+        function launchMultiUserMode(buttonElement) {
+            const multiUserModal = document.getElementById("multiUserAppModal");
+            const appId = buttonElement.closest('#multiUserAppModal')?.getAttribute('data-app-id');
+
+            if (appId) {
+                multiUserModal.style.display = "none";
+                window.location.href = `ixian:startAppMulti:${appId}`;
+            } else {
+                console.error("App ID not found.");
+            }
+        }
+
+        function removeAppHandler() {
+            const removeAppModal = document.getElementById("removeAppModal");
+            removeAppModal.style.display = "flex";
+        }
+
+        function showInstalling() {
+            document.getElementById("installingAppLoadingModal").style.display = "flex";
+        }
+
+        function showInstallSuccess() {
+            document.getElementById("installingAppLoadingModal").style.display = "none";
+            document.getElementById("appSuccessfullyInstalledModal").style.display = "flex";
+        }
+
+        function showInstallFailed() {
+            document.getElementById("installingAppLoadingModal").style.display = "none";
+            document.getElementById("appFailedToInstallModal").style.display = "flex";
+        }
+
+
+        function confirmInstallCall() {
+            location.href = 'ixian:install';
+            toggleAnimatedSlider('install-mini-app-prompt');
+        }
+
+        function confirmRemoveApp() {
+            document.getElementById('removeAppModal').style.display = 'none';
+            document.getElementById("removingAppLoader").style.display = "flex";
+            location.href = 'ixian:uninstall';
+        }
+
+        function showAppRemoved() {
+            document.getElementById("removingAppLoader").style.display = "none";
+            document.getElementById("appRemovedModal").style.display = "flex";
+        }
+
+    </script>
+
+</body>
+</html>

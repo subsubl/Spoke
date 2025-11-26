@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <title>Create Account</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/*SL{SpixiThemeMode}">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="libs/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="libs/fontawesome/css/solid.min.css">
+</head>
+<body onload="onload()">
+<div id="wrap" class="onboarding-container">
+    <section class="create-account-start-section" id="createAccountStart">
+        <img src="img/*SL{SpixiThemeName}/spixi-logo-full.svg" alt="spixi logo full" class="intro-new-start-logo"/>
+        <div class="details">
+            <span class="heading-xs">*SL{create-account-title}</span>
+            <div class="body-sm">*SL{create-account-description}</div>
+            <img src="img/*SL{SpixiThemeName}/create-account/create-start.svg" alt="create-start"/>
+        </div>
+        <div class="create-account-start-actions">
+            <div class="spixi-flat-button label-sm" style="width: 100%" onclick="onNewAccountClick()">
+                *SL{create-account-new} <i
+                    class="fa fa-arrow-right"></i></div>
+            <span class="body-sm s-text-01">*SL{create-account-already}</span>
+            <span class="label-sm s-text-action" onclick="onRestoreAccount()" style="cursor: pointer">*SL{create-account-restore}</span>
+        </div>
+        <div id="version" class="bottom-version body-xs">Spixi V</div>
+    </section>
+
+    <section class="onboarding-section" id="onboardingSection" style="display: none">
+        <div class="onboarding-stepper-header label-lg s-text-02 typing">
+            <span class="back" id="stepperBack" onclick="prevStep()">*SL{onboarding-step-back}</span>
+        </div>
+        <div class="create-account-stepper-header">
+            <img src="img/*SL{SpixiThemeName}/spixi-logo-full.svg" alt="spixi logo full"/>
+
+        </div>
+        <div id="step1" class="single-step create-step active">
+            <div class="step-number label-sm">*SL{create-account-step} <span class="stepNumberSpan">1</span>
+                *SL{create-account-step-of} <span
+                        class="stepTotalSpan">2</span></div>
+            <span class="label-lg">*SL{create-account-step-1-title}</span>
+            <div class="body-md">*SL{create-account-step-1-subtitle}</div>
+            <div class="upload-img-container" onclick="location='ixian:avatar'">
+                <img id="avatar" src="img/*SL{SpixiThemeName}/create-account/upload-img.png" alt="upload img"/>
+                <span class="label-md s-text-01">*SL{create-account-step-1-tap}</span>
+            </div>
+            <input id="nicknameInput" autofocus maxlength="256" oninput="onInputHandler()" type="text"
+                   class="create-account-username body-sm"
+                   placeholder="*SL{create-account-step-1-nickname-placeholder}"/>
+        </div>
+        <div id="step2" class="single-step create-step">
+            <div class="step-number label-sm">*SL{create-account-step} <span class="stepNumberSpan">1</span>
+                *SL{create-account-step-of} <span
+                        class="stepTotalSpan">2</span></div>
+            <span class="label-lg">*SL{create-account-step-2-title}</span>
+            <div class="body-md">*SL{create-account-step-2-subtitle}</div>
+            <div class="password-inputs">
+                <div class="pass-input-wrapper">
+                    <input id="password" autofocus maxlength="256" oninput="onPasswordCheck()" type="password"
+                           class="create-account-username body-sm"
+                           placeholder="*SL{create-account-step-2-password-placeholder}"/>
+                    <i class="fa fa-eye password-eye" onclick="togglePasswordVisible('password', this)"></i>
+                </div>
+                <div class="pass-input-wrapper">
+                    <input id="passwordConfirm" autofocus maxlength="256" oninput="onPasswordCheck()" type="password"
+                           class="create-account-username body-sm"
+                           placeholder="*SL{create-account-step-2-password-confirm}"/>
+                    <i class="fa fa-eye password-eye" onclick="togglePasswordVisible('passwordConfirm', this)"></i>
+                </div>
+                <span id="pass-match-label"
+                      class="label-xs s-text-01">*SL{create-account-step-2-password-confirm-note}</span>
+            </div>
+            <div class="create-password-note">
+                <span class="label-sm s-text-01">*SL{create-account-step-2-note-title}</span>
+                <span class="body-sm s-text-01">*SL{create-account-step-2-note-subtitle}</span>
+            </div>
+        </div>
+        <div class="onboarding-stepper-footer">
+            <div id="stepperNext" onclick="nextStep()" class="spixi-flat-button label-sm" style="width: 100%">
+                *SL{onboarding-step-next} <i
+                    class="fa fa-arrow-right"></i></div>
+            <div id="finishSetup" onclick="onFinishSetup()" class="spixi-flat-button label-sm"
+                 style="width: 100%;display: none">
+                *SL{create-account-finish-setup} <i
+                    class="fa fa-arrow-right"></i></div>
+        </div>
+    </section>
+
+    <section class="create-account-start-section" id="creatingAccount" style="display: none">
+        <div class="loading-modal-container">
+            <img src="img/*SL{SpixiThemeName}/spixi-logo-full.svg" alt="spixi logo full" style="margin-bottom: 64px;"/>
+            <span class="spixi-loader loader-create-acc"></span>
+            <div class="new-modal-texts">
+                <span class="label-lg">*SL{create-account-creating}</span>
+                <span class="body-sm">*SL{create-account-creating-description}</span>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="js/spixi.js"></script>
+<script type="text/javascript">
+    const steps = Array.from(document.querySelectorAll('.single-step'));
+    let currentStep = 1;
+    let nickname = "";
+    let password = "";
+    let passwordConfirm = "";
+
+    function setVersion(version) {
+        if (version.startsWith("spixi-")) {
+            version = "v" + version.substring(6);
+        }
+        document.getElementById("version").innerHTML = version;
+    }
+
+    document.getElementsByName("stepTotalSpan").innerText = steps.length.toString();
+    document.getElementsByName("stepNumberSpan").innerText = currentStep.toString();
+
+    function toggleStep() {
+        steps.forEach(el => el.classList.remove('active'));
+        document.getElementById(`step${currentStep}`).classList.add('active');
+        document.getElementsByName("stepNumberSpan").innerText = currentStep.toString();
+        if (currentStep === steps.length) {
+            document.getElementById("stepperNext").style.display = "none";
+            document.getElementById("finishSetup").style.display = "flex";
+            if (document.getElementById("password").value < 10) {
+                document.getElementById("finishSetup").classList.add('disabled');
+            } else {
+                document.getElementById("finishSetup").classList.remove('disabled');
+            }
+        } else {
+            document.getElementById("stepperNext").style.display = "flex";
+            document.getElementById("finishSetup").style.display = "none";
+        }
+    }
+
+    function nextStep() {
+        if (currentStep < steps.length) {
+            currentStep++;
+            toggleStep()
+        }
+    }
+
+    function prevStep() {
+        if (currentStep === 1 && document.getElementById("createAccountStart").style.display === "none") {
+            document.getElementById("createAccountStart").style.display = "flex";
+            document.getElementById("onboardingSection").style.display = "none";
+        } else {
+            currentStep--;
+            toggleStep(currentStep)
+        }
+    }
+
+    function onRestoreAccount() {
+        location.href = "ixian:restore";
+    }
+
+    function onNewAccountClick() {
+        document.getElementById("createAccountStart").style.display = "none";
+        document.getElementById("onboardingSection").style.display = "flex";
+        if (nickname.length === 0) {
+            document.getElementById("stepperNext").classList.add('disabled');
+        }
+    }
+
+    function loadAvatar(avatar_path) {
+        avatar_path = avatar_path.replace(/&#92;/g, '\\');
+        document.getElementById("avatar").src = avatar_path + "?t=" + new Date().getTime();
+    }
+
+    function onInputHandler() {
+        const input = document.getElementById("nicknameInput");
+        nickname = input.value.trim();
+        if (nickname.length > 0) {
+            input.classList.remove('error');
+            document.getElementById("stepperNext").classList.remove('disabled');
+        } else {
+            input.classList.add('error');
+            document.getElementById("stepperNext").classList.add('disabled');
+        }
+    }
+
+    function onPasswordCheck() {
+        const passwordElement = document.getElementById("password");
+        const passwordConfirmElement = document.getElementById("passwordConfirm");
+        password = passwordElement.value.trim();
+        passwordConfirm = passwordConfirmElement.value.trim();
+
+        if (passwordElement.value.length < 10) {
+            passwordElement.classList.add('error');
+            document.getElementById("finishSetup").classList.add('disabled');
+            return false;
+        } else {
+            passwordElement.classList.remove('error');
+            document.getElementById("finishSetup").classList.remove('disabled');
+
+        }
+        if (passwordElement.value !== passwordConfirmElement.value) {
+            document.getElementById("pass-match-label").classList.remove("success-match");
+            document.getElementById("pass-match-label").classList.add("error-match");
+            document.getElementById("pass-match-label").innerText = "*SL{create-account-step-2-password-confirm-note-error}";
+            document.getElementById("finishSetup").classList.add('disabled');
+            return false;
+        } else {
+            document.getElementById("pass-match-label").classList.remove("error-match");
+            document.getElementById("pass-match-label").classList.add("success-match");
+            document.getElementById("pass-match-label").innerText = "*SL{create-account-step-2-password-confirm-note-success}";
+            document.getElementById("finishSetup").classList.remove('disabled');
+        }
+        return true;
+    }
+
+    function onFinishSetup() {
+        if (nickname && password && password === passwordConfirm) {
+            location.href = "ixian:create:" + nickname + ":" + password;
+            document.getElementById("onboardingSection").style.display = "none";
+            document.getElementById("creatingAccount").style.display = "flex";
+        }
+    }
+
+    function togglePasswordVisible(inputId, node) {
+        const input = document.getElementById(inputId);
+        const isPassword = input.type === 'password';
+
+        input.type = isPassword ? 'text' : 'password';
+
+        node.classList.remove('fa-eye', 'fa-eye-slash');
+        node.classList.add(isPassword ? 'fa-eye-slash' : 'fa-eye');
+    }
+</script>
+</body>
+</html>

@@ -2,6 +2,8 @@ using IXICore;
 using IXICore.Meta;
 using IXICore.Network;
 using IxiHome.Meta;
+using IxiHome.TestRunner;
+using System;
 using System.Globalization;
 
 namespace IxiHome;
@@ -24,6 +26,11 @@ public partial class App : Application
 
     public App()
     {
+#if RUN_TESTS
+        // Run tests instead of GUI app
+        Program.Main(Array.Empty<string>()).Wait();
+        Environment.Exit(0);
+#else
         InitializeComponent();
 
         // Prepare the personal folder
@@ -73,19 +80,24 @@ public partial class App : Application
         }
 
         // Note: Node.init() will be called manually after QuIXI settings are configured in GUI
+#endif
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
+        if (MainPage == null)
+        {
+            MainPage = new AppShell();
+        }
+
         var window = base.CreateWindow(activationState);
         window.Title = "IxiHome";
-        
+
         if (appWindow == null)
         {
             appWindow = window;
         }
 
-        window.Page = new AppShell();
         return window;
     }
     
@@ -101,6 +113,21 @@ public partial class App : Application
             
             // Start sync service
             _ = Services.SyncService.Instance.StartAsync();
+
+            // Initialize notifications
+            Notifications.NotificationManager.Instance.NotificationsEnabled = Config.enableNotifications;
+
+            // Start sensor collection
+            Sensors.SensorManager.Instance.StartAllSensors();
+
+            // Start automation processing
+            Data.AutomationManager.Instance.Start();
+
+            // Start widget manager
+            Widgets.WidgetManager.Instance.Start();
+
+            // Create sample scenes and automations for testing
+            CreateSampleScenesAndAutomations();
         }
         catch (Exception ex)
         {
@@ -161,5 +188,41 @@ public partial class App : Application
         Logging.info("IxiHome shutdown complete");
         Logging.flush();
         Logging.stop();
+    }
+
+    private static void CreateSampleScenesAndAutomations()
+    {
+        try
+        {
+            // Create a sample scene
+            var movieScene = new Data.Scene
+            {
+                Id = "sample_movie_scene",
+                Name = "Movie Night",
+                Icon = "mdi:movie"
+            };
+
+            // Add some sample entities (these would normally come from Home Assistant)
+            movieScene.AddEntityState("light.living_room", "off");
+            movieScene.AddEntityState("light.kitchen", "off");
+            movieScene.AddEntityState("switch.tv", "on");
+
+            Data.SceneManager.Instance.AddOrUpdateScene(movieScene);
+
+            // Create a sample automation
+            var motionLightAutomation = Data.AutomationManager.Instance.CreateSimpleAutomation(
+                "Motion Light",
+                "binary_sensor.motion_living_room", // trigger entity
+                "on", // trigger state
+                "light.living_room", // action entity
+                "on" // action state
+            );
+
+            Logging.info("Sample scenes and automations created");
+        }
+        catch (Exception ex)
+        {
+            Logging.error($"Error creating sample scenes and automations: {ex.Message}");
+        }
     }
 }

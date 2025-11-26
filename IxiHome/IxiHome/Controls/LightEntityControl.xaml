@@ -1,0 +1,55 @@
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:IxiHome.Data"
+             x:Class="IxiHome.Controls.LightEntityControl"
+             x:Name="LightControl">
+    <ContentView.Content>
+        <Border StrokeShape="RoundRectangle 8" StrokeThickness="1" Padding="12" BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,Auto">
+                <!-- Header -->
+                <HorizontalStackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Spacing="8">
+                    <Label Text="{Binding Entity.Icon, Source={x:Reference LightControl}}" 
+                           FontSize="20" 
+                           VerticalOptions="Center"/>
+                    <Label Text="{Binding Entity.Name, Source={x:Reference LightControl}}" 
+                           FontSize="16" 
+                           FontAttributes="Bold" 
+                           VerticalOptions="Center"/>
+                    <Label Text="{Binding Entity.GetDisplayState, Source={x:Reference LightControl}}" 
+                           FontSize="14" 
+                           TextColor="Gray" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="EndAndExpand"/>
+                </HorizontalStackLayout>
+
+                <!-- Power Toggle -->
+                <Switch Grid.Row="1" 
+                        Grid.Column="0" 
+                        IsToggled="{Binding Entity.IsOn, Source={x:Reference LightControl}}" 
+                        Toggled="OnPowerToggled"
+                        VerticalOptions="Center" 
+                        Margin="0,8,0,0"/>
+
+                <!-- Brightness Slider -->
+                <Slider Grid.Row="2" 
+                        Grid.Column="0" 
+                        Grid.ColumnSpan="2" 
+                        Minimum="0" 
+                        Maximum="255" 
+                        Value="{Binding Entity.Brightness, Source={x:Reference LightControl}}" 
+                        ValueChanged="OnBrightnessChanged"
+                        IsEnabled="{Binding Entity.IsOn, Source={x:Reference LightControl}}"
+                        Margin="0,8,0,0"/>
+
+                <!-- Brightness Label -->
+                <Label Grid.Row="1" 
+                       Grid.Column="1" 
+                       Text="{Binding Entity.Brightness, Source={x:Reference LightControl}, StringFormat='{0}%'}" 
+                       FontSize="14" 
+                       VerticalOptions="Center" 
+                       HorizontalOptions="End" 
+                       Margin="8,8,0,0"/>
+            </Grid>
+        </Border>
+    </ContentView.Content>
+</ContentView>

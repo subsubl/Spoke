@@ -1,0 +1,91 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IxiHome.Pages.AutomationsPage"
+             Title="Automations"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Header -->
+        <Grid Grid.Row="0" Padding="16,8" BackgroundColor="{StaticResource PrimaryColor}">
+            <Label Text="Automations"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"/>
+            <Button Text="+"
+                    FontSize="20"
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Clicked="OnAddAutomationClicked"/>
+        </Grid>
+
+        <!-- Automations List -->
+        <CollectionView Grid.Row="1"
+                       x:Name="AutomationsCollectionView"
+                       ItemsSource="{Binding Automations}"
+                       SelectionMode="None"
+                       Margin="16">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="8"
+                           Padding="16"
+                           Margin="0,4"
+                           BackgroundColor="{Binding IsEnabled, Converter={StaticResource BoolToColorConverter}, ConverterParameter='Enabled:#F8F9FA;Disabled:#F5F5F5'}"
+                           BorderColor="{StaticResource CardBorderColor}">
+
+                        <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,Auto">
+                            <!-- Automation Name and Status -->
+                            <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Spacing="4">
+                                <Label Text="{Binding Name}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource PrimaryTextColor}"/>
+
+                                <Label Text="{Binding Description}"
+                                       FontSize="14"
+                                       TextColor="{StaticResource SecondaryTextColor}"
+                                       MaxLines="2"
+                                       LineBreakMode="TailTruncation"/>
+                            </StackLayout>
+
+                            <!-- Trigger Count -->
+                            <Label Grid.Row="1" Grid.Column="0"
+                                   Text="{Binding TriggerCount, StringFormat='Triggered {0} times'}"
+                                   FontSize="12"
+                                   TextColor="{StaticResource SecondaryTextColor}"/>
+
+                            <!-- Last Triggered -->
+                            <Label Grid.Row="2" Grid.Column="0"
+                                   Text="{Binding LastTriggered, StringFormat='Last: {0:g}'}"
+                                   FontSize="12"
+                                   TextColor="{StaticResource SecondaryTextColor}"
+                                   IsVisible="{Binding LastTriggered, Converter={StaticResource IsNotMinDateConverter}}"/>
+
+                            <!-- Enable/Disable Toggle -->
+                            <Switch Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"
+                                    IsToggled="{Binding IsEnabled}"
+                                    Toggled="OnAutomationToggled"
+                                    VerticalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.EmptyView>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="16">
+                    <Label Text="No automations created yet"
+                           FontSize="18"
+                           TextColor="{StaticResource SecondaryTextColor}"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="Tap the + button to create your first automation"
+                           FontSize="14"
+                           TextColor="{StaticResource SecondaryTextColor}"
+                           HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </Grid>
+</ContentPage>

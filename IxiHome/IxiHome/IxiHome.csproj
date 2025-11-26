@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <DefineConstants>$(DefineConstants);__MOBILE__</DefineConstants>
+    <DefineConstants Condition="'$(RunTests)' == 'true'">$(DefineConstants);RUN_TESTS</DefineConstants>
     <TargetFrameworks>net9.0-android</TargetFrameworks>
     <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
@@ -27,7 +28,7 @@
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
     <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
     
-    <DefaultLanguage>en</DefaultLanguage>
+    <DefaultLanguage>en-US</DefaultLanguage>
     <Platforms>AnyCPU;x64;arm64</Platforms>
   </PropertyGroup>
   
@@ -50,11 +51,8 @@
   
   <PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
     <SatelliteResourceLanguages>en-US;en</SatelliteResourceLanguages>
-    <WindowsPackageType>MSIX</WindowsPackageType>
-    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
-    <GenerateTestArtifacts>False</GenerateTestArtifacts>
-    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+    <AppxPackage>false</AppxPackage>
+    <PublishAppxPackage>false</PublishAppxPackage>
     <WindowsAppSdkDeploymentManagerInitialize>false</WindowsAppSdkDeploymentManagerInitialize>
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
   </PropertyGroup>
@@ -74,6 +72,7 @@
   <!-- strip exited with code 139 workaround -->
   <PropertyGroup>
     <MtouchNoSymbolStrip Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">True</MtouchNoSymbolStrip>
+    <WindowsPackageType>None</WindowsPackageType>
   </PropertyGroup>
   
   <ItemGroup>
@@ -99,6 +98,7 @@
     <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.50" />
     <PackageReference Include="Microcharts.Maui" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
     <PackageReference Include="Open.NAT" Version="2.1.0" />

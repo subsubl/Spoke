@@ -1,4 +1,6 @@
 using IxiHome.Meta;
+using IxiHome.Sensors;
+using Microsoft.Maui.Storage;
 
 namespace IxiHome.Pages;
 
@@ -19,6 +21,11 @@ public partial class SettingsPage : ContentPage
         DarkThemeSwitch.IsToggled = Config.useDarkTheme;
         NotificationsSwitch.IsToggled = Config.enableNotifications;
         AuthSwitch.IsToggled = Config.requireAuthentication;
+
+        // Load sensor settings
+        LocationSensorSwitch.IsToggled = Preferences.Default.Get("sensor_location_enabled", false);
+        BatterySensorSwitch.IsToggled = Preferences.Default.Get("sensor_battery_enabled", true);
+        NetworkSensorSwitch.IsToggled = Preferences.Default.Get("sensor_network_enabled", true);
     }
 
     private async void OnTestConnectionClicked(object sender, EventArgs e)
@@ -58,6 +65,29 @@ public partial class SettingsPage : ContentPage
     private void OnDarkThemeToggled(object sender, ToggledEventArgs e)
     {
         Application.Current!.UserAppTheme = e.Value ? AppTheme.Dark : AppTheme.Light;
+    }
+
+    private void OnLocationSensorToggled(object sender, ToggledEventArgs e)
+    {
+        SensorManager.Instance.LocationSensor.IsEnabled = e.Value;
+        SensorManager.Instance.SaveSensorSettings();
+    }
+
+    private void OnBatterySensorToggled(object sender, ToggledEventArgs e)
+    {
+        SensorManager.Instance.BatterySensor.IsEnabled = e.Value;
+        SensorManager.Instance.SaveSensorSettings();
+    }
+
+    private void OnNetworkSensorToggled(object sender, ToggledEventArgs e)
+    {
+        SensorManager.Instance.NetworkSensor.IsEnabled = e.Value;
+        SensorManager.Instance.SaveSensorSettings();
+    }
+
+    private void OnNotificationsToggled(object sender, ToggledEventArgs e)
+    {
+        Notifications.NotificationManager.Instance.NotificationsEnabled = e.Value;
     }
 
     private async void OnSaveClicked(object sender, EventArgs e)

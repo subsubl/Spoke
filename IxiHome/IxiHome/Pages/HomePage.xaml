@@ -26,19 +26,48 @@
                 <controls:GraphEntityControl Entity="{Binding .}"/>
             </DataTemplate>
             
+            <DataTemplate x:Key="LightTemplate">
+                <controls:LightEntityControl Entity="{Binding .}"/>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="ClimateTemplate">
+                <controls:ClimateEntityControl Entity="{Binding .}"/>
+            </DataTemplate>
+            
             <!-- Template Selector -->
             <utils:EntityTemplateSelector x:Key="EntitySelector"
                                           ToggleTemplate="{StaticResource ToggleTemplate}"
                                           SensorTemplate="{StaticResource SensorTemplate}"
                                           GaugeTemplate="{StaticResource GaugeTemplate}"
                                           GraphTemplate="{StaticResource GraphTemplate}"
+                                          LightTemplate="{StaticResource LightTemplate}"
+                                          ClimateTemplate="{StaticResource ClimateTemplate}"
                                           DefaultTemplate="{StaticResource SensorTemplate}"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     
-    <Grid RowDefinitions="*,Auto" Padding="10">
+    <Grid RowDefinitions="Auto,*,Auto" Padding="10">
+        <!-- Local Sensors Section -->
+        <VerticalStackLayout Grid.Row="0" Margin="0,0,0,20">
+            <Label Text="📊 Local Sensors" FontSize="18" FontAttributes="Bold" Margin="0,0,0,10"/>
+            <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto">
+                <!-- Location Sensor -->
+                <Label Text="📍 Location" Grid.Row="0" Grid.Column="0" FontSize="14"/>
+                <Label x:Name="LocationSensorLabel" Text="Not available" Grid.Row="1" Grid.Column="0" FontSize="12" TextColor="Gray"/>
+                
+                <!-- Battery Sensor -->
+                <Label Text="🔋 Battery" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+                <Label x:Name="BatterySensorLabel" Text="Not available" Grid.Row="1" Grid.Column="1" FontSize="12" TextColor="Gray"/>
+                
+                <!-- Network Sensor -->
+                <Label Text="📶 Network" Grid.Row="0" Grid.Column="2" FontSize="14"/>
+                <Label x:Name="NetworkSensorLabel" Text="Not available" Grid.Row="1" Grid.Column="2" FontSize="12" TextColor="Gray"/>
+            </Grid>
+        </VerticalStackLayout>
+        
         <!-- Entities List -->
         <CollectionView x:Name="EntitiesCollection"
+                        Grid.Row="1"
                         SelectionMode="None"
                         ItemTemplate="{StaticResource EntitySelector}">
             <CollectionView.ItemsLayout>
@@ -62,7 +91,7 @@
 
         <!-- Add Entity Button -->
         <Button Text="+ Add Entity" 
-                Grid.Row="1"
+                Grid.Row="2"
                 Clicked="OnAddEntityClicked"
                 HeightRequest="50"
                 CornerRadius="25"

@@ -169,6 +169,78 @@ public partial class LightEntity : ToggleEntity
 }
 
 /// <summary>
+/// Climate entity for temperature control
+/// </summary>
+public partial class ClimateEntity : Entity
+{
+    [ObservableProperty]
+    private double _currentTemperature = 20.0;
+
+    [ObservableProperty]
+    private double _targetTemperature = 20.0;
+
+    [ObservableProperty]
+    private string _hvacMode = "off"; // off, heat, cool, auto, etc.
+
+    [ObservableProperty]
+    private string _hvacAction = "idle"; // idle, heating, cooling
+
+    [ObservableProperty]
+    private double _minTemp = 15.0;
+
+    [ObservableProperty]
+    private double _maxTemp = 30.0;
+
+    public override void UpdateState(string state, Dictionary<string, object> attributes)
+    {
+        base.UpdateState(state, attributes);
+        HvacMode = state;
+
+        if (attributes.ContainsKey("current_temperature"))
+        {
+            if (double.TryParse(attributes["current_temperature"]?.ToString(), out double temp))
+            {
+                CurrentTemperature = temp;
+            }
+        }
+
+        if (attributes.ContainsKey("temperature"))
+        {
+            if (double.TryParse(attributes["temperature"]?.ToString(), out double temp))
+            {
+                TargetTemperature = temp;
+            }
+        }
+
+        if (attributes.ContainsKey("hvac_action"))
+        {
+            HvacAction = attributes["hvac_action"]?.ToString() ?? "idle";
+        }
+
+        if (attributes.ContainsKey("min_temp"))
+        {
+            if (double.TryParse(attributes["min_temp"]?.ToString(), out double temp))
+            {
+                MinTemp = temp;
+            }
+        }
+
+        if (attributes.ContainsKey("max_temp"))
+        {
+            if (double.TryParse(attributes["max_temp"]?.ToString(), out double temp))
+            {
+                MaxTemp = temp;
+            }
+        }
+    }
+
+    public override string GetDisplayState()
+    {
+        return $"{CurrentTemperature:F1}°C → {TargetTemperature:F1}°C ({HvacMode})";
+    }
+}
+
+/// <summary>
 /// Gauge entity for visual display of numeric values
 /// </summary>
 public partial class GaugeEntity : SensorEntity

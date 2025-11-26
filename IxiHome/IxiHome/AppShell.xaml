@@ -35,6 +35,18 @@
         <ShellContent Route="home" ContentTemplate="{DataTemplate pages:HomePage}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Scenes" Icon="scenes_icon.png">
+        <ShellContent Route="scenes" ContentTemplate="{DataTemplate pages:ScenesPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Automations" Icon="automations_icon.png">
+        <ShellContent Route="automations" ContentTemplate="{DataTemplate pages:AutomationsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Widgets" Icon="widgets_icon.png">
+        <ShellContent Route="widgets" ContentTemplate="{DataTemplate pages:WidgetsPage}" />
+    </FlyoutItem>
+
     <FlyoutItem Title="Settings" Icon="settings_icon.png">
         <ShellContent Route="settings" ContentTemplate="{DataTemplate pages:SettingsPage}" />
     </FlyoutItem>

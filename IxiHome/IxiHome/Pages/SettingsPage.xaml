@@ -27,6 +27,25 @@
                 </VerticalStackLayout>
             </Frame>
 
+            <!-- Sensor Settings -->
+            <Frame Padding="15" HasShadow="True" CornerRadius="10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Sensors" FontSize="18" FontAttributes="Bold"/>
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Location Sensor" VerticalOptions="Center"/>
+                        <Switch x:Name="LocationSensorSwitch" Grid.Column="1" Toggled="OnLocationSensorToggled"/>
+                    </Grid>
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Battery Sensor" VerticalOptions="Center"/>
+                        <Switch x:Name="BatterySensorSwitch" Grid.Column="1" Toggled="OnBatterySensorToggled"/>
+                    </Grid>
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Network Sensor" VerticalOptions="Center"/>
+                        <Switch x:Name="NetworkSensorSwitch" Grid.Column="1" Toggled="OnNetworkSensorToggled"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
             <!-- App Settings -->
             <Frame Padding="15" HasShadow="True" CornerRadius="10">
                 <VerticalStackLayout Spacing="10">
@@ -37,7 +56,7 @@
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <Label Text="Enable Notifications" VerticalOptions="Center"/>
-                        <Switch x:Name="NotificationsSwitch" Grid.Column="1"/>
+                        <Switch x:Name="NotificationsSwitch" Grid.Column="1" Toggled="OnNotificationsToggled"/>
                     </Grid>
                     <Grid ColumnDefinitions="*,Auto">
                         <Label Text="Require Authentication" VerticalOptions="Center"/>

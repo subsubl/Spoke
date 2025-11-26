@@ -1,0 +1,663 @@
+language-code = sr-sp
+language = Srpski
+
+; Address Screen
+address-title = Spixi adresa
+address-description = Vaša Spixi adresa je vaš glavni ID. Koristite je za interakciju sa drugim korisnicima.
+address-copied = Adresa je kopirana
+address-gen-1 = Generišem
+address-gen-1b = Pripremam
+address-gen-2 = Spixi
+address-gen-2b = Spixi
+address-gen-3 = adresu
+address-gen-4 = ...
+address-tooltip = Dodirnite da kopirate u ostavu
+address-copy = Kopiraj
+address-share = Podeli
+
+; App Details Screen
+app-details-title = Spixi aplikacija
+app-details-publisher = Izdavač:
+app-details-version = Verzija:
+app-details-uninstall = Deinstaliraj
+app-details-start = Pokreni
+app-details-dialog-title = Spixi menadžer aplikacija
+app-details-dialog-removed-text = Aplikacija je uspešno uklonjena.
+app-details-dialog-removefailed-text = Došlo je do greške prilikom uklanjanja aplikacije.
+
+; New App Screen
+app-new-title = Nova aplikacija
+app-new-description = Dodajte novu mini aplikaciju tako što ćete nalepiti URL adresu.
+app-new-install = Instaliraj
+app-new-dialog-title = Spixi menadžer aplikacija
+app-new-dialog-installed-text = Aplikacija '{0}' je uspešno instalirana.
+app-new-dialog-installfailed-text = Došlo je do greške prilikom instalacije aplikacije.
+
+; Apps Screen
+apps-title = Mini aplikacije
+apps-empty = Nemate instaliranih aplikacija.
+apps-apps-text = Aplikacije
+apps-not-sure-text = Niste sigurni odakle da počnete? Isprobajte neku od naših preporučenih aplikacija ispod.
+apps-launch = Pokreni
+apps-launch-app = Pokreni aplikaciju
+apps-remove-app = Ukloni ovu aplikaciju
+apps-find-installed-apps = Pronađi instalirane mini aplikacije
+apps-add-note = Želite da isprobate novu mini aplikaciju? Unesite URL adresu ili skenirajte QR kod da je instalirate.
+apps-add-url-placeholder = Unesite URL na kojem se nalazi mini aplikacija...
+apps-get-from-url = Preuzmi aplikaciju sa URL-a
+apps-scan = Skeniraj
+apps-what-is-title = Mini aplikacije su lagane JavaScript aplikacije koje bezbedno rade unutar Spixi-ja.
+apps-what-is-description = Instalirajte samo iz pouzdanih izvora. Uvek imate kontrolu.
+apps-what-is-learn = Saznaj više
+apps-add-invalid-url = Molimo unesite validan URL pre nego što nastavite.
+apps-details-description = Opis
+apps-details-capabilities = Mogućnosti
+apps-details-details = Detalji
+apps-details-id = ID
+apps-details-version = Verzija
+apps-details-size = Veličina
+apps-details-install-url = URL za instalaciju
+apps-details-download = Preuzmi i instaliraj
+apps-details-download-note = Aplikacija će biti instalirana u vaš Spixi
+apps-install-title = Instaliraj mini aplikaciju
+apps-source = Izvor
+apps-install-confirm = Potvrdi instalaciju
+apps-install-cancel = Otkaži
+apps-installing-title = Instalacija aplikacije...
+apps-installing-description = Preuzimanje i provera izvora
+apps-failed-install-title = Instalacija nije uspela
+apps-failed-install-description = Neuspešna instalacija. Proverite internet vezu ili pokušajte ponovo kasnije.
+apps-failed-install-retry = Pokušaj ponovo
+apps-failed-install-cancel = Otkaži
+apps-success-install-title = Uspešno instalirano
+apps-success-install-description = Aplikacija je instalirana u vašu biblioteku mini aplikacija.
+apps-success-install-view = Prikaži detalje aplikacije
+apps-remove-title = Ukloniti aplikaciju?
+apps-remove-description = Ovo će ukloniti aplikaciju sa uređaja. Podaci će ostati sačuvani osim ako aplikacija ne koristi lokalno skladište.
+apps-remove-confirm = Ukloni aplikaciju
+apps-remove-cancel = Otkaži
+apps-removing-app = Uklanjanje aplikacije...
+apps-removing-app-description = Uklanjanje podataka aplikacije.
+apps-removing-app-success = Aplikacija uklonjena
+apps-removing-app-description-success = Aplikacija i njeni podaci su uklonjeni sa uređaja.
+apps-removing-app-continue = Nastavi
+apps-session-title = Trenutno ste u sesiji sa
+apps-session-return = Dodirnite da se vratite
+apps-session-leave = Napusti
+apps-session-invite-sent-to = Pozivnica poslata
+apps-session-invite-cancel = Otkaži pozivnicu
+
+; App Actions
+app-action-title = Akcija servisa
+app-action-description = Servis {0} želi da izvrši akciju {1}. Da li želite da nastavite?
+app-action-unknown = Nepoznata akcija.
+app-action-error-processing-title = Greška u obradi akcije
+app-action-error-processing = Došlo je do greške prilikom obrade akcije {0}.
+app-action-error-sending-title = Greška pri slanju odgovora
+app-action-error-sending = Došlo je do greške pri slanju odgovora servisu {0}.
+app-action-sent = Akcija aplikacije je poslata
+app-action-response-confirmation = Želite li da pošaljete sledeće podatke servisu? {0}
+
+; Chat Screen
+chat-sent-contact-request = je poslao/la zahtev za kontakt
+chat-accept = Prihvati
+chat-ignore = Odbij
+chat-type-placeholder = Unesite poruku...
+chat-send-file = Datoteka
+chat-request-payment = Zatraži
+chat-send-payment = Plati
+chat-app = Aplikacija
+chat-status = Status
+chat-amount = Iznos
+chat-view = Detalji
+chat-payment-request-sent = Zahtev za uplatu poslat
+chat-payment-request-received = Novi zahtev za uplatu
+chat-payment-sent = Uplata poslata
+chat-payment-received = Uplata primljena
+chat-payment-status-waiting-confirmation = Čeka potvrdu
+chat-payment-status-declined = ODBIJENO
+chat-payment-status-pending = NA ČEKANJU
+chat-payment-status-confirmed = POTVRĐENO
+chat-call-outgoing = Odlazni poziv
+chat-call-incoming = Dolazni poziv
+chat-call-no-answer = Nema odgovora
+chat-call-missed = Propušten poziv
+chat-call-ended = Poziv završen
+chat-online = Na mreži
+chat-offline = Van mreže
+chat-waiting-for-response = Čekanje odgovora
+chat-text-too-long = Tekst je predugačak.
+chat-member-count = {0} članova
+chat-context-pin-message = Zakači poruku
+chat-context-copy-message = Kopiraj poruku
+chat-context-copy-selected = Kopiraj izabrano
+chat-context-tip-user = Pošalji IXI
+chat-context-like-message = Sviđa mi se poruka
+chat-context-user-info = Podaci korisnika
+chat-context-send-contact-request = Dodaj kontakt
+chat-context-report-message = Prijavi poruku
+chat-context-kick-user = Ukloni
+chat-context-ban-user = Blokiraj
+chat-context-delete-message = Izbriši poruku
+chat-message-cost-bar = Slanje poruka košta {0} po kB
+chat-request-sent-title = Zahtev za kontakt poslat
+chat-request-sent-details = Moći ćete sigurno razgovarati nakon što vaš zahtev bude prihvaćen.
+chat-request-sent-undo = Poništi
+chat-request-received-title = Primljen zahtev za kontakt
+chat-request-received-details = Neko želi da se poveže! Kada prihvatite zahtev, moći ćete sigurno da ćaskate.
+
+chat-app-invite-sent = Pozivnica poslata
+chat-app-invite-received = Pozivnica primljena
+chat-app-get = Preuzmi aplikaciju
+chat-app-back = Nazad na aplikaciju
+chat-app-launch = Pokreni aplikaciju
+
+chat-modal-tip-title = Pošalji napojnicu korisniku {0}?
+chat-modal-tip-body = Izaberite ili unesite iznos koji želite poslati kao napojnicu.
+chat-modal-tip-custom = Drugi iznos
+chat-modal-tip-pay-button = Plati
+chat-modal-tip-confirmation-body = Poslaćete '{0}' IXI u iznosu od {1}. Iznos će biti oduzet od vašeg novčanika.
+chat-modal-tip-confirmed-body = Uspešno ste poslali IXI korisniku '{0}' u iznosu od {1}. Iznos je oduzet iz vašeg novčanika.
+chat-modal-tip-error-body = Došlo je do nepoznate greške prilikom slanja napojnice.
+
+chat-bot-details-info = Podaci o grupi
+chat-bot-address = Adresa grupe
+chat-bot-toggle-notifications = Uključi/isključi obaveštenja
+chat-bot-invite = Pozovi kontakt u ovu grupu
+chat-bot-leave = Napusti grupu
+
+chat-bot-user-address = Adresa korisnika
+chat-bot-user-send-contact-request = Dodaj kontakt
+
+chat-modal-kick-title = Ukloni korisnika {0}?
+chat-modal-kick-body = Da li ste sigurni da želite da uklonite korisnika '{0}' sa ovog servera?
+chat-modal-kick-kick-button = UKLONI KORISNIKA
+chat-modal-kicked-title = Korisnik {0} uklonjen
+chat-modal-kicked-body = Korisnik '{0}' je uklonjen sa ovog servera.
+
+chat-modal-ban-title = Blokiraj korisnika {0}?
+chat-modal-ban-body = Da li ste sigurni da želite da blokirate korisnika '{0}' na ovom serveru?
+chat-modal-ban-ban-button = BLOKIRAJ KORISNIKA
+chat-modal-banned-title = Korisnik {0} blokiran
+chat-modal-banned-body = Korisnik '{0}' je blokiran na ovom serveru.
+
+chat-bot-not-ready-title = Grupa nije spremna
+chat-bot-not-ready-body = Grupa još nije spremna, molimo pokušajte ponovo za nekoliko minuta.
+
+chat-kicked = Uklonjeni ste iz ove grupe.
+chat-banned = Blokirani ste u ovoj grupi.
+
+chat-report-title = Prijavi sadržaj
+chat-report-details = Da li želite da prijavite ovaj sadržaj?
+chat-report = Prijavi
+chat-report-cancel = Otkaži
+
+chat-private-note-title = Ovaj razgovor je privatan.
+chat-private-note-message = Poruke se čuvaju samo na vašem uređaju i šalju direktno vašem kontaktu koristeći najsavremeniju enkripciju.
+
+; Contact Details Screen
+contact-details-chat = Razgovor
+contact-details-send = Pošalji
+contact-details-receive = Primi
+contact-details-notifications = Obaveštenja
+contact-details-history = Istorija
+contact-details-account-address = Spixi adresa
+contact-details-address-1 = Preuzimam
+contact-details-address-2 = Spixi
+contact-details-address-3 = adresu...
+contact-details-removecontact = Izbriši kontakt
+contact-details-removedcontact-title = Izbrisano
+contact-details-removedcontact-text = Kontakt je izbrisan.
+contact-details-deletehistory = Izbriši istoriju
+contact-details-deletedhistory-title = Izbrisano
+contact-details-deletedhistory-text = Istorija poruka je izbrisana.
+contact-details-delete-history-modal-title = Obrisati istoriju četa?
+contact-details-delete-history-modal-subtitle = Cela istorija četa će biti uklonjena.
+contact-details-delete-history-modal-confirm = Da, obriši čet
+contact-details-delete-contact-modal-title = Ukloniti iz kontakata
+contact-details-delete-contact-modal-subtitle = Ovo će kontakt ukloniti sa vaše liste. Nećete moći slati ni primati poruke dok ga ponovo ne dodate.
+contact-details-delete-contact-modal-confirm = Da, ukloni kontakt
+
+; New Contact Screen
+contact-new-title = Dodaj novi kontakt
+contact-new-description = Da biste dodali novi kontakt, nalepite ili unesite njegovu Spixi adresu. Takođe možete skenirati njegov QR kod.
+contact-new-placeholder = Nalepi ili unesi adresu
+contact-new-send-request = Dodaj kontakt
+contact-new-invalid-address-self-text = Adresa koju ste uneli je vaša sopstvena adresa.
+contact-new-invalid-address-exists-text = Ovaj kontakt je već dodat.
+contact-new-scan = Skeniraj
+contact-new-scan-help = Ili skenirajte QR kod
+contact-new-send = Pošalji
+contact-new-cancel = Otkaži
+contact-new-confirm-title = Dodaj kontakt?
+contact-new-confirm-details = Poslaćete zahtev za kontakt na sledeću Spixi adresu:
+
+; Downloads Screen
+downloads-title = Preuzimanja
+downloads-empty = Nemate preuzetih datoteka.
+
+; Contributors Screen
+contributors-title = Doprinosioci
+contributors-thanks = Posebna zahvalnost
+contributors-special-thanks-title = Posebna zahvalnost svima koji su doprineli razvoju Spixi-ja
+
+; Index Screen
+index-balance = IXI stanje
+index-balance-show = Prikaži
+index-balance-hide = Sakrij
+index-balance-info = Sakriveno
+index-notifications = Obaveštenja
+index-unread-chats = Nepročitani razgovori
+index-no-conversations-title = Nema razgovora
+index-no-conversations = Dodaj kontakt i započni razgovor, ovde će se pojaviti tvoji chatovi.
+index-no-contacts-title = Nema kontakata
+index-no-contacts = Dodaj nekoga da započneš priču. Samo kontakti koje prihvatiš mogu ti pisati.
+index-new-chat-button = Novi razgovor
+index-no-transactions-title = Nema transakcija
+index-no-transactions = Kad pošalješ ili primiš IXI, tvoje transakcije će se pojaviti ovde.
+index-send = Pošalji
+index-scan = Skeniraj
+index-receive = Primi
+index-all = Sve
+index-sent = Poslato
+index-received = Primljeno
+index-recent-activity = Nedavne aktivnosti
+index-contacts-placeholder = Pretraži kontakte
+index-tab-home = Početna
+index-tab-chats = Razgovori
+index-tab-wallet = Novčanik
+index-tab-contacts = Kontakti
+index-tab-address = Adresa
+index-new-title = Novo
+index-new-contact = Kontakt
+index-new-chat = Razgovor
+index-new-send = Pošalji IXI
+index-new-request = Zatraži IXI
+index-new-cancel = Otkaži
+index-side-title = Spixi korisnik
+index-side-myaddress = Moja Spixi adresa
+index-side-apps = Aplikacije
+index-side-downloads = Preuzimanja
+index-side-settings = Podešavanja
+index-side-security = Bezbednost
+index-side-backup = Rezervna kopija
+index-side-password = Šifra
+index-side-about = O aplikaciji
+index-side-contributors = Doprinosioci
+index-side-howtouse = Kako koristiti Spixi
+index-side-sendlog = Pošalji log aplikacije
+index-devmode = Aktiviran režim za programere
+index-excerpt-payment-request-sent = Zahtev za uplatu poslat
+index-excerpt-payment-request-received = Primljen zahtev za uplatu
+index-excerpt-payment-sent = Plaćanje poslato
+index-excerpt-payment-received = Plaćanje primljeno
+index-excerpt-contact-accepted = Kontakt prihvaćen
+index-excerpt-contact-request = Zahtev za kontakt
+index-excerpt-file = Datoteka
+index-excerpt-voice-call = Poziv
+index-excerpt-self = 
+index-excerpt-typing = Piše...
+index-side-settings-subtitle = Teme, jezik, nadimak i podaci
+index-side-password-subtitle = Promeni Spixi šifru
+index-side-backup-subtitle = Kreiraj rezervnu kopiju
+index-side-how-to-subtitle = Naučite kako da koristite Spixi
+index-side-about-subtitle = Informacije, pomoć, kontakt, politika privatnosti
+index-missing-tx-title = Nedostaju neke transakcije?
+index-missing-tx-text = Spixi čita direktno iz blockchain-a, ne sa centralizovanih servera, pa sinhronizacija može potrajati.
+index-missing-tx-view-all = Prikaži sve transakcije u istraživaču
+index-backup-prompt-title = Ne zaboravite da sačuvate rezervnu kopiju
+index-backup-prompt-desc = Spixi je potpuno decentralizovan — vaši podaci ostaju samo na vašem uređaju. Da biste sačuvali kontakte i kasnije ih mogli vratiti, kreirajte rezervnu kopiju sada.
+index-backup-prompt-create = Da, kreiraj kopiju
+index-backup-prompt-not-now = Ne sada
+index-backup-prompt-note = Preporučuje se da napravite rezervnu kopiju svaki put kada dodate novi kontakt.
+
+; Onboarding Screen
+onboarding-choose-language = Izaberite jezik
+onboarding-get-started = Započni
+onboarding-step-skip = Preskoči
+onboarding-step-back = Nazad
+onboarding-step-next = Sledeće
+onboarding-step-1-title = Vaš čet, vaš uređaj, vaša pravila.
+onboarding-step-1-subtitle = Spixi ne koristi servere. Poruke ostaju na vašem uređaju i šalju se samo nakon enkripcije, direktno kontaktu.
+onboarding-step-2-title = Vaša adresa je vaš jedini ID.
+onboarding-step-2-subtitle = Spixi ne zahteva vaš broj telefona ili email. Jedinstvena Spixi adresa je sve što vam treba da se povežete.
+onboarding-step-3-title = Slanje i primanje IXI uplata.
+onboarding-step-3-subtitle = Koristite ugrađeni novčanik za slanje ili primanje IXI kovanica direktno u četu. Jednostavno kao slanje poruke.
+onboarding-step-4-title = Otkrijte Mini aplikacije unutar četa.
+onboarding-step-4-subtitle = Spixi Mini aplikacije vam omogućavaju igranje igara, korišćenje alata ili otključavanje novih funkcija, sve unutar razgovora.
+
+; Onboarding Create Account Screen
+create-account-title = Hajde da počnemo.
+create-account-description = Napravite novi nalog, ili ga vratite koristeći rezervnu kopiju.
+create-account-new = Novi nalog
+create-account-already = Već imate nalog?
+create-account-restore = Vrati nalog
+create-account-step = Korak
+create-account-step-of = od
+create-account-step-1-title = Podesite nadimak i fotografiju
+create-account-step-1-subtitle = Vaš nadimak i avatar će biti vidljivi vašim kontaktima. Možete ih promeniti u bilo kom trenutku.
+create-account-step-1-tap = dodirnite za učitavanje
+create-account-step-1-nickname-placeholder = Unesite nadimak
+create-account-step-2-title = Kreirajte rezervnu lozinku
+create-account-step-2-subtitle = Trebaće vam ova lozinka da vratite Spixi nalog iz rezervne kopije. Čuvajte je na sigurnom.
+create-account-step-2-password-placeholder = Unesite lozinku
+create-account-step-2-password-confirm = Potvrdite lozinku
+create-account-step-2-password-confirm-note = Lozinka mora imati najmanje 10 karaktera.
+create-account-step-2-password-confirm-note-success = Lozinke se poklapaju
+create-account-step-2-password-confirm-note-error = Lozinke moraju biti iste
+create-account-step-2-note-title = Spixi ne čuva ovu lozinku.
+create-account-step-2-note-subtitle = Bez nje ili vaše rezervne kopije, vaš nalog i novčanik ne mogu biti vraćeni.
+create-account-finish-setup = Završite podešavanje
+create-account-creating = Kreiranje vašeg naloga…
+create-account-creating-description = Neće potrajati. Vaš nalog se bezbedno kreira.
+
+; Intro Restore Screen
+intro-restore-title = Vrati nalog
+intro-restore-subtitle = Izaberite rezervnu kopiju da počnete vraćanje vašeg Spixi naloga.
+intro-restore-select-file = Izaberite rezervnu kopiju
+intro-restore-pass-title = Unesite rezervnu lozinku
+intro-restore-pass-subtitle = Da biste vratili svoj Spixi nalog, unesite lozinku kojom je rezervna kopija zaštićena.
+intro-restore-pass-placeholder = Unesite lozinku
+intro-restore-note-title = Spixi ne čuva ovu lozinku.
+intro-restore-note-subtitle = Samo vi možete otključati ovu rezervnu kopiju.
+intro-restore-button = Vrati nalog
+intro-restoring-title = Vraćanje vašeg naloga…
+intro-restoring-subtitle = Sačekajte. Sigurno otključavamo vaš nalog.
+intro-restore-pass-error = Pogrešna lozinka. Pokušajte ponovo.
+
+; Intro Retry Screen
+intro-retry-description-1 = Ponovo unesite šifru
+intro-retry-description-2 = Došlo je do problema prilikom pristupa vašem računu. Molimo, ponovo unesite šifru.
+intro-retry-placeholder = Unesite šifru
+intro-retry-proceed = Nastavi
+intro-retry-title = Obnavljanje pristupa<br />vašem novčaniku
+intro-retry-info = Ovo može potrajati nekoliko trenutaka
+intro-retry-invalidpassword-title = Nevažeća šifra
+intro-retry-invalidpassword-text = Ne mogu da dešifrujem novčanik, pokušajte ponovo.
+
+; Lock Screen
+lock-description = Spixi je zaključan
+lock-placeholder = Unesite šifru
+lock-error = Neispravna šifra
+lock-unlock = Otključaj
+lock-change = Promeni novčanik
+
+; Settings Screen
+settings-title = Podešavanja
+settings-save = Sačuvaj
+settings-cancel = Otkaži
+settings-confirm = Potvrdi
+settings-description = Upravljajte svojim Spixi nalogom i podacima sačuvanim na ovom uređaju.
+settings-account-information = Osnovna podešavanja
+settings-account-description = Promenite jezik, avatar i nadimak.
+settings-account-language-edit = Jezik
+settings-account-appearance-edit = Izgled
+settings-account-appearance-automatic = Automatski
+settings-account-appearance-light = Svetli
+settings-account-appearance-dark = Tamni
+settings-account-image-edit = Avatar
+settings-account-nick-edit = Nadimak
+settings-account-nick-placeholder = Unesite novi nadimak
+settings-account-deleteinfo = Ovaj Spixi nalog i sve povezane podatke možete trajno obrisati sa ovog uređaja u bilo koje vreme.<br/><br/><b>Važno:</b> Nakon brisanja, moraćete da kreirate ili obnovite nalog kako biste nastavili da koristite Spixi.
+settings-account-delete = Trajno izbriši nalog
+settings-deletea-title = Trajno izbriši ovaj Spixi nalog?
+settings-deletea-text = Da li ste sigurni da želite trajno da izbrišete ovaj Spixi nalog?<br/><br/>Ova akcija je nepovratna! Pre brisanja preporučujemo kreiranje rezervne kopije naloga. Biće vam potrebna rezervna kopija za kasnije vraćanje naloga.
+settings-deleteda-title = Izbrisano
+settings-deleteda-text = Spixi nalog je izbrisan.
+settings-wallet-settings = Podešavanja novčanika
+settings-wallet-description = Ovaj novčanik je povezan sa ovim Spixi nalogom. Za brisanje novčanika, naloga i svih podataka o plaćanjima sa ovog uređaja dodirnite dugme ispod.
+settings-wallet-delete = Izbriši moj novčanik
+settings-deletew-title = Izbrisati ovaj novčanik?
+settings-deletew-text = Da li ste sigurni da želite da izbrišete ovaj novčanik?<br/><br/>Ova akcija je nepovratna! Izgubićete pristup svim sredstvima u novčaniku. Potrebna vam je rezervna kopija i šifra za vraćanje novčanika.
+settings-deletew-error-title = Greška
+settings-deletew-error-text = Datoteku novčanika nije moguće obrisati.
+settings-history = Istorija poruka
+settings-history-description = Celokupna istorija poruka i preuzete datoteke se čuvaju na ovoj napravi. Možete ih izbrisati u bilo kom trenutku korišćenjem dugmadi ispod.
+settings-history-delete = Izbriši istoriju poruka
+settings-downloads-delete = Izbriši sva preuzimanja
+settings-deleteh-title = Izbrisati istoriju poruka?
+settings-deleteh-text = Da li ste sigurni da želite da izbrišete CELU istoriju poruka? Ova akcija je nepovratna!
+settings-deletedh-title = Izbrisano
+settings-deletedh-text = Istorija poruka je izbrisana.
+settings-deleted-title = Izbrisati sva preuzimanja?
+settings-deleted-text = Sigurni ste da želite da izbrišete SVA preuzimanja? Sve datoteke koje ste preuzeli u aplikaciji Spixi biće obrisane! Ova akcija je nepovratna!
+settings-deletedd-title = Izbrisano
+settings-deletedd-text = Izbrisano je {0} preuzetih datoteka.
+settings-deleted-error-title = Greška
+settings-deleted-error-text = Došlo je do nepoznate greške.
+settings-emptynick-title = Nevažeći nadimak
+settings-emptynick-text = Molimo unesite nadimak.
+settings-unsaved-changes-modal-title = Nesačuvane izmene
+settings-unsaved-changes-modal-subtitle = Ako sada izađete, izmene će biti izgubljene. Da li želite da nastavite?
+
+; Settings Backup Screen
+settings-backup-title = Rezervna kopija naloga
+settings-backup-description = Preuzmite rezervnu kopiju koja omogućava obnavljanje ovog Spixi naloga. Kontakti se čuvaju samo lokalno i uključeni su u rezervne kopije napravljene nakon njihovog dodavanja.
+settings-backup-save = SAČUVAJ NOVČANIK
+settings-backup-account-save = SAČUVAJ NOVČANIK I KONTAKTE
+settings-backup-notice = Trebaće vam rezervna kopija i povezano geslo za vraćanje pristupa ako:
+settings-backup-notice2 = - izgubite ovaj uređaj<br />- deinstalirate Spixi sa ovog uređaja<br />- izbrišete ovaj Spixi nalog<br />- izbrišete ovaj novčanik
+settings-backup-invalidpassword-title = Nevažeća šifra
+settings-backup-invalidpassword-text = Molimo unesite važeću šifru.
+
+; Settings Encryption Screen
+settings-encryption-title = Šifra
+settings-encryption-description = Šifra je povezana sa ovim nalogom i novčanikom. Biće vam potrebna ako ikada budete morali da obnovite pristup ovom Spixi nalogu ili novčaniku.
+settings-encryption-edit = Promeni šifru
+settings-encryption-type = Unesite <b>TRENUTNU</b> šifru.
+settings-encryption-placeholder = Trenutna šifra
+settings-encryption-typenew = Unesite <b>NOVU</b> šifru.
+settings-encryption-placeholdernew = Nova šifra
+settings-encryption-placeholderretype = Ponovo unesite novu šifru
+settings-encryption-change = Promeni šifru
+settings-encryption-password10 = Šifra mora imati najmanje 10 znakova.
+settings-encryption-passwordconf = Potvrdite šifru
+settings-encryption-passwordnomatch = Šifre se ne podudaraju
+settings-encryption-passwordmatch = Šifre se podudaraju
+settings-encryption-invalidpassword-title = Nevažeća šifra
+settings-encryption-invalidpassword-text = Molimo unesite važeću šifru.
+settings-encryption-passwordchanged-title = Šifra
+settings-encryption-passwordchanged-text = Šifra je uspešno promenjena.
+settings-encryption-invalidpassword-current-text = Trenutna šifra je pogrešna, molimo pokušajte ponovo.
+
+; Settings Lock Screen
+settings-lock-title = Zaključaj moj Spixi
+settings-lock-description = Postavite šifru kako biste osigurali da samo vi imate pristup Spixi aplikaciji na ovom uređaju.
+settings-lock-status = Sigurnosni status:
+settings-lock-unlocked = OTKLJUČANO
+settings-lock-locked = ZAKLJUČANO
+settings-lock-passwordinfo = Postavite ili promenite šifru
+settings-lock-password = Unesite <b>TRENUTNU</b> šifru
+settings-lock-password-new = Unesite <b>NOVU</b> šifru
+settings-lock-placeholder-1 = Unesite trenutnu šifru
+settings-lock-placeholder-2 = Unesite novu šifru
+settings-lock-placeholder-3 = Ponovo unesite novu šifru
+settings-lock-info = Moraćete da unesete ovu šifru svaki put kada pokrenete Spixi aplikaciju.
+settings-lock-save = Postavi šifru
+settings-lock-authinfo = Potrebna vam je biometrijska autentifikacija ili vaša šifra za otključavanje aplikacije Spixi.
+settings-lock-confirm-text = Promene će biti primenjene nakon čuvanja.
+
+; Wallet Contact Request Screen
+wallet-contact-request-title = Zahtev za uplatu
+wallet-contact-request-subtitle = Zahtev za uplatu od:
+wallet-contact-request-amount = Iznos
+wallet-contact-request-info = Korisnik je zatražio sledeći iznos za uplatu
+wallet-contact-request-respond = Odgovorite na zahtev za uplatu
+wallet-contact-request-respondinfo = Odbijte ili pošaljite uplatu. Korisnik koji je poslao zahtev biće obavešten o vašoj odluci.
+wallet-contact-request-decline = Odbij
+wallet-contact-request-proceed = Pošalji uplatu
+
+; Wallet Recipient Screen
+wallet-recipient-title = Izaberite primaoca
+wallet-recipient-search-placeholder = Pretraži kontakte
+wallet-recipient-empty = 0 izabranih primaoca
+wallet-recipient-add = Dodaj primaoce
+wallet-recipient-selected = Izabrani primaoci
+wallet-recipient-new-contact-button = Dodaj novi kontakt
+wallet-recipient-no-contact-button = Novi kontakt
+
+; Wallet Request Screen
+wallet-request-title = Zahtevaj uplatu
+wallet-request-subtitle = Zahtevajte određeni iznos
+wallet-request-amount-placeholder = Unesite iznos
+wallet-request-address = Adresa primaoca
+wallet-request-send-info = Pošalji zahtev sledećim primaocima:
+wallet-request-add = Možete poslati ovaj zahtev za isti iznos većem broju korisnika.<br/>Dodajte dodatne korisnike ili adrese za slanje ovog zahteva.
+wallet-request-placeholder = Nalepite ili unesite adresu
+wallet-request-send = Pošalji zahtev
+wallet-request-error-title = Greška
+wallet-request-error-text = Molimo unesite ispravne informacije u sva obavezna polja.
+
+; Wallet Send Screen
+wallet-send-title = Pošalji IXI
+wallet-send-details = Nalepite ili unesite adresu na koju želite poslati uplatu. Izaberite kontakt ili skenirajte QR kod.
+wallet-send-subdetails = Pošalji IXI na
+wallet-send-add = Dodaj primaoce
+wallet-send-placeholder = Nalepite ili unesite adresu
+wallet-send-more = Dodajte dodatne primaoce za ovu transakciju. Svaki će primiti isti iznos.
+wallet-send-recipients = Primaoci
+wallet-send-norecipients = Nema izabranih primaoca
+wallet-send-next = Dalje
+wallet-send-max = Pošalji maksimalni iznos
+wallet-send-select = Izaberi kontakt
+wallet-send-or = ili
+
+; Wallet Send 2 Screen
+wallet-send2-title = Potvrda uplate
+wallet-send2-policy = Pravila o mrežnim naknadama
+wallet-send2-info = Transakcije IXI nije moguće poništiti.
+wallet-send2-feeinfo = Mrežna provizija (IXI fee) je uključena u uplatu.
+wallet-send2-normal = Standardna
+wallet-send2-high = Visoka
+wallet-send2-custom = Prilagođena
+wallet-send2-placeholder = Koliko želite poslati?
+wallet-send2-amount = Iznos
+wallet-send2-max-amount = Pošalji maksimalni iznos
+wallet-send2-max-amount-warning = Poslaćete celokupan iznos sa vašeg računa!
+wallet-send2-fee = Ukupna provizija za transakciju
+wallet-send2-total = Ukupan iznos za uplatu
+wallet-send2-send = Pošalji IXI
+wallet-send2-confirm-title = Slanje
+wallet-send2-confirm = Potvrdi
+wallet-send2-cancel = Otkaži
+wallet-send2-edit = Izmeni uplatu
+wallet-send2-remove-recipient = Ukloni primaoca
+wallet-send2-done = Završeno
+wallet-send2-yourbalance = Trenutno stanje
+
+; Wallet Sent Screen
+wallet-sent-title = Detalji uplate
+wallet-sent-subtitle = Uplata poslata korisniku:
+wallet-status-sent-pending = Uplata se šalje
+wallet-status-receive-pending = Dolazeća uplata
+wallet-status-sent = Uplata uspešno poslata
+wallet-status-receive = Uplata primljena
+wallet-status-failed = Uplata neuspešna
+wallet-sent-amount = Iznos
+wallet-sent-status = Status uplate
+wallet-sent-confirmed = POTVRĐENO
+wallet-sent-unconfirmed = NEPOTVRĐENO
+wallet-sent-details = Poslati iznos je oduzet od vašeg stanja.
+wallet-sent-fee = Provizija uplate
+wallet-sent-feeinfo = Ova uplata uključuje mrežnu proviziju u iznosu od
+wallet-sent-txid = ID transakcije
+wallet-sent-view-explorer = Pogledaj u istraživaču
+wallet-sent-dismiss = Zatvori
+wallet-sent-unconfirmed-details = Uplata je poslata, ali još uvek nije potvrđena od strane mreže. Kada bude potvrđena, videćete ID transakcije i vezu ka istraživaču blokova.
+wallet-unknown-sender = Nepoznat pošiljalac
+wallet-unknown-recipient = Nepoznat primalac
+wallet-sentrecv-title = Primljena uplata
+wallet-sentrecv-subtitle = Uplata primljena od:
+wallet-sentrecv-amount = Iznos
+wallet-sentrecv-details = Iznos je dodat na stanje vašeg novčanika.
+
+; Global wallet errors
+wallet-error-amount-title = Nevažeći iznos
+wallet-error-amount-text = Unesite važeći iznos.
+wallet-error-amountdecimal-text = Unesite ispravan decimalni iznos.
+wallet-error-balance-title = Nedovoljan iznos na stanju
+wallet-error-balance-text = Nemate dovoljno sredstava za ovu transakciju. Ukupni trošak transakcije je {0}, a vaše trenutno stanje je {1}.
+
+; Onboarding join official bot
+onboarding-bot-title = Postanite deo Spixi priče
+onboarding-bot-subtitle = Pridružite se našoj zvaničnoj grupi za čet, podelite povratne informacije, povežite se sa timom i ostanite u toku sa najnovijim funkcijama.
+onboarding-bot-join-button = Pridružite se zajednici
+onboarding-bot-skip = Preskočite za sada
+
+; Onboarding 1
+onboarding-screen1-title = Povežite se sa sigurnošću
+onboarding-screen1-text = Preuzmite kontrolu nad komunikacijom i plaćanjima uz jednu od najbezbednijih i najprivatnijih aplikacija na svetu.
+onboarding-screen1-get-started = Započni
+onboarding-screen1-skip = Preskoči uvod
+
+; Onboarding 2
+onboarding-screen2-title = Spixi adresa je vaš jedini ID
+onboarding-screen2-text = Spixi ne zahteva vaš broj telefona ili email. Umesto toga koristi jedinstvenu Spixi adresu. Dodajte kontakte pomoću njihovih Spixi adresa.
+
+; Onboarding 3
+onboarding-screen3-title = Šaljite i primajte IXI uplate
+onboarding-screen3-text = Koristite novčanik za brzo slanje i primanje IXI uplata, jednostavno kao slanje poruka.
+
+; Onboarding send and receive payments
+onboarding-screen4-title = Šaljite i primajte IXI uplate
+onboarding-screen4-text = Pomoću novčanika možete lako slati i primati IXI uplate, jednostavno kao slanje poruka.
+onboarding-skip = Preskoči
+onboarding-back = Nazad
+onboarding-next = Dalje
+onboarding-finish = Završi
+
+; Empty State
+empty-state-title = Dobrodošli u Spixi
+empty-state-detail-1 = Vaša sigurna peer-to-peer aplikacija za razgovor sa integrisanim novčanikom.
+empty-state-detail-2 = Poruke su šifrovane i prenose se isključivo između vašeg uređaja i uređaja vašeg kontakta — vaša privatnost je u potpunosti zaštićena.
+
+; Ixinames
+ixinames-request-title = IXI Names želi povezivanje
+ixinames-request-details = Da li ste sigurni da želite da povežete ovaj Spixi nalog sa servisom IXI Names? Servis će imati pristup ovoj adresi.
+ixinames-request-decline = Odbij
+ixinames-request-connect = Poveži
+ixinames-message-connected = Vaš Spixi nalog je sada povezan sa servisom IXI Names.
+ixinames-message-error = Spixi nije uspeo da se poveže sa servisom IXI Names. Molimo pokušajte ponovo.
+
+; Rating
+rating-request-title = Da li vam se dopada Spixi?
+rating-request-details = Vaše mišljenje nam pomaže da poboljšamo aplikaciju.
+rating-request-no = Ne baš...
+rating-request-yes = Da, dopada mi se!
+
+; Global
+global-connecting-s2 = Povezivanje sa Ixian S2...
+global-connecting-dlt = Povezivanje na Ixian mrežu...
+global-received = PRIMLJENO
+global-sent = POSLATO
+global-app-accept = Prihvati
+global-app-reject = Odbij
+global-app-wants-to-use = {0} želi da koristi {1} sa vama.
+global-call-in-call = U pozivu
+global-call-dialing = Pozivanje...
+global-call-incoming = Dolazni poziv
+
+global-dialog-error = Greška
+global-dialog-ok = U redu
+global-dialog-cancel = Otkaži
+global-invalid-address-title = Nevažeća adresa
+global-invalid-address-text = Molimo unesite važeću adresu.
+
+global-friend-request-accepted = {0} je prihvatio/la vaš zahtev za kontakt.
+
+global-update-available = Nova verzija aplikacije Spixi ({0}) je dostupna. Molimo ažurirajte aplikaciju za najbolji doživljaj.
+global-modal-external-link-title = Eksterni link
+global-modal-external-link-body = Posetićete eksterni link ({0}). Eksterni linkovi mogu biti opasni; nastavite na sopstveni rizik.
+global-modal-external-link-button-visit = Nastavi
+
+global-lock-auth-text = Potrebna autentifikacija
+global-lock-invalidpassword-title = Neuspešna autentifikacija
+global-lock-invalidpassword-text = Unesite šifru za otključavanje aplikacije Spixi.
+
+global-time-justnow = upravo
+global-time-aminuteago = 1 min
+global-time-minutesago = min
+
+global-share-choose = Izaberite akciju
+global-share-savefile = Sačuvaj datoteku
+global-share-sharefile = Podeli datoteku

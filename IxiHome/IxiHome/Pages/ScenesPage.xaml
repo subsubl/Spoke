@@ -1,0 +1,86 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IxiHome.Pages.ScenesPage"
+             Title="Scenes"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Header -->
+        <Grid Grid.Row="0" Padding="16,8" BackgroundColor="{StaticResource PrimaryColor}">
+            <Label Text="Scenes" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="White"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"/>
+            <Button Text="+" 
+                    FontSize="20" 
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Clicked="OnAddSceneClicked"/>
+        </Grid>
+
+        <!-- Scenes List -->
+        <CollectionView Grid.Row="1" 
+                       x:Name="ScenesCollectionView"
+                       ItemsSource="{Binding Scenes}"
+                       SelectionMode="None"
+                       Margin="16">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="8" 
+                           Padding="16" 
+                           Margin="0,4"
+                           BackgroundColor="{StaticResource CardBackgroundColor}"
+                           BorderColor="{StaticResource CardBorderColor}">
+
+                        <Grid ColumnDefinitions="*,Auto">
+                            <!-- Scene Info -->
+                            <StackLayout Grid.Column="0" Spacing="4">
+                                <Label Text="{Binding Name}" 
+                                       FontSize="18" 
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource PrimaryTextColor}"/>
+
+                                <Label Text="{Binding Entities.Count, StringFormat='{0} entities'}" 
+                                       FontSize="14"
+                                       TextColor="{StaticResource SecondaryTextColor}"/>
+
+                                <Label Text="{Binding LastActivated, StringFormat='Last activated: {0:g}'}"
+                                       FontSize="12"
+                                       TextColor="{StaticResource SecondaryTextColor}"
+                                       IsVisible="{Binding LastActivated, Converter={StaticResource IsNotMinDateConverter}}"/>
+                            </StackLayout>
+
+                            <!-- Activate Button -->
+                            <Button Grid.Column="1" 
+                                    Text="Activate"
+                                    BackgroundColor="{StaticResource AccentColor}"
+                                    TextColor="White"
+                                    CornerRadius="4"
+                                    Padding="12,6"
+                                    VerticalOptions="Center"
+                                    Clicked="OnActivateSceneClicked"
+                                    CommandParameter="{Binding .}"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.EmptyView>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="16">
+                    <Label Text="No scenes created yet" 
+                           FontSize="18" 
+                           TextColor="{StaticResource SecondaryTextColor}"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="Tap the + button to create your first scene" 
+                           FontSize="14" 
+                           TextColor="{StaticResource SecondaryTextColor}"
+                           HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,641 @@
+language-code = de-de
+language = German
+
+; Address Screen
+address-title = Spixi Adresse
+address-description = Deine SPIXI Adresse ist deine persönliche ID. Verwende Sie um mit anderen Nutzen zu interagieren.
+address-copied = Adresse in Zwischenablage kopiert
+address-gen-1 = Generiere
+address-gen-1b = Vorberitng
+address-gen-2 = Spixi
+address-gen-2b = Spixi
+address-gen-3 = adresse
+address-gen-4 = ...
+address-tooltip = Drücke zum Kopieren
+address-copy = Kopieren
+address-share = Teilen
+
+; App Details Screen
+app-details-title = Spixi App
+app-details-publisher = Herausgeber:
+app-details-version = Version:
+app-details-uninstall = Deinstallieren
+app-details-start = Starten
+app-details-dialog-title = Spixi App Manager
+app-details-dialog-removed-text = Die App wurde erfolgreich entfernt.
+app-details-dialog-removefailed-text = Ein Fehler ist beim Entfernen der App aufgetreten.
+
+; New App Screen
+app-new-title = Neue App
+app-new-description = Füge eine neue App hinzu indem du eine URL einfügst.
+app-new-install = Installieren
+app-new-dialog-title = Spixi App Manager
+app-new-dialog-installed-text = App '{0}' wurde erfolgreich installiert.
+app-new-dialog-installfailed-text = Ein Fehler ist beim Installieren der App aufgetreten.
+
+; Apps Screen
+apps-title = Spixi Apps
+apps-empty = Du hast keine Apps installiert.
+apps-apps-text = Apps
+apps-not-sure-text = Du weißt nicht, wo du anfangen sollst? Probiere eine unserer empfohlenen Apps unten aus.
+apps-launch = Starten
+apps-launch-app = App starten
+apps-remove-app = Diese App entfernen
+apps-find-installed-apps = Installierte Mini-Apps finden
+apps-add-note = Möchtest du eine neue Mini-App ausprobieren? Gib einfach die URL ein oder scanne einen QR-Code, um sie zu installieren.
+apps-add-url-placeholder = Bitte gib die URL ein, unter der sich die Mini-App befindet...
+apps-get-from-url = App über URL abrufen
+apps-scan = Scannen
+apps-what-is-title = Was sind Mini-Apps?
+apps-what-is-description = Mini-Apps sind leichtgewichtige JavaScript-Anwendungen, die sicher innerhalb von Spixi ausgeführt werden.
+apps-what-is-learn = Mehr erfahren
+apps-add-invalid-url = Bitte gib eine gültige URL ein, bevor du fortfährst.
+apps-details-description = Beschreibung
+apps-details-capabilities = Funktionen
+apps-details-details = Details
+apps-details-id = ID
+apps-details-version = Version
+apps-details-size = Größe
+apps-details-install-url = Installations-URL
+apps-details-download = Herunterladen und installieren
+apps-details-download-note = Die App wird sicher in der Spixi-Sandbox installiert.
+apps-install-title = Mini-App installieren
+apps-source = Quelle
+apps-install-confirm = Installation bestätigen
+apps-install-cancel = Abbrechen
+apps-installing-title = App wird installiert...
+apps-installing-description = Quelle wird heruntergeladen und überprüft
+apps-failed-install-title = App konnte nicht installiert werden
+apps-failed-install-description = Die Installation konnte nicht abgeschlossen werden. Bitte überprüfe deine Verbindung oder versuche es später erneut.
+apps-failed-install-retry = Erneut versuchen
+apps-failed-install-cancel = Abbrechen
+apps-success-install-title = Erfolgreich installiert
+apps-success-install-description = Die App wurde in deiner Mini-Apps-Bibliothek installiert.
+apps-success-install-view = App-Details anzeigen
+apps-remove-title = App entfernen?
+apps-remove-description = Dadurch wird die App von deinem Gerät gelöscht. Es gehen keine Daten verloren, es sei denn, die App speichert sie lokal.
+apps-remove-confirm = App entfernen
+apps-remove-cancel = Abbrechen
+apps-removing-app = App wird entfernt...
+apps-removing-app-description = App-Daten werden gelöscht.
+apps-removing-app-success = App entfernt
+apps-removing-app-description-success = App und Daten wurden von diesem Gerät gelöscht.
+apps-removing-app-continue = Weiter
+apps-session-title = Du bist in einer Sitzung mit
+apps-session-return = Tippen, um zurückzukehren
+apps-session-leave = Verlassen
+apps-session-invite-sent-to = Einladung gesendet an
+apps-session-invite-cancel = Einladung abbrechen
+
+; App Actions
+app-action-title = Dienstaktion
+app-action-description = Der Dienst {0} möchte die Aktion {1} ausführen. Bist du sicher, dass du fortfahren möchtest?
+app-action-unknown = Unbekannte Aktion.
+app-action-error-processing-title = Fehler beim Verarbeiten der Aktion
+app-action-error-processing = Fehler beim Verarbeiten der Aktion {0}.
+app-action-error-sending-title = Fehler beim Senden der Antwort
+app-action-error-sending = Fehler beim Senden der Antwort an den Dienst {0}.
+app-action-sent = App-Aktion gesendet
+app-action-response-confirmation = Möchtest du dem Dienst folgende Daten senden? {0}
+
+; Chat Screen
+chat-sent-contact-request = hat dir eine Kontaktanfrage gesendet
+chat-accept = Akzeptieren
+chat-ignore = Ablehnen
+chat-type-placeholder = Schreibe eine Nachricht...
+chat-send-file = Datei
+chat-request-payment = Anfordern
+chat-send-payment = Zahlen
+chat-app = App
+chat-status = Status
+chat-amount = Menge
+chat-view = Details
+chat-payment-request-sent = Zahlungsanfrage gesendet
+chat-payment-request-received = Neue Zahlungsanfrage
+chat-payment-sent = Zahlung gesendet
+chat-payment-received = Zahlung erhalten
+chat-payment-status-waiting-confirmation = Bestätigung ausstehend
+chat-payment-status-declined = ABGELEHNT
+chat-payment-status-pending = WARTEND
+chat-payment-status-confirmed = BESTÄTIGT
+chat-call-outgoing = Ausgehender Anruf
+chat-call-incoming = Eingehender Anruf
+chat-call-no-answer = Keine Antwort
+chat-call-missed = Verpasster Anruf
+chat-call-ended = Anruf beendet
+chat-online = Online
+chat-offline = Offline
+chat-waiting-for-response = Warte auf Antwort
+chat-text-too-long = Text ist zu lang.
+chat-member-count = {0} Mitglieder
+chat-context-pin-message = Nachricht anpinnen
+chat-context-copy-message = Nachricht kopieren
+chat-context-copy-selected = Auswahl kopieren
+chat-context-tip-user = Spende an Benutzer
+chat-context-like-message = Nachricht liken
+chat-context-user-info = Benutzer Info
+chat-context-send-contact-request = Kontakt hinzufügen
+chat-context-report-message = Nachricht melden
+chat-context-kick-user = Kicken
+chat-context-ban-user = Bannen
+chat-context-delete-message = Nachricht löschen
+chat-message-cost-bar = Nachricht senden kostet {0} per kB
+chat-request-sent-title = Kontakt Anfrage gesendet
+chat-request-sent-details = Sobald deine Anfrage angenommen wurde, kannst du sicher chatten.
+chat-request-sent-undo = Rückgangig
+chat-request-received-title = Kontakt Anfrage erhalten
+chat-request-received-details = Jemand möchte sich mit dir verbinden! Sobald du angenommen hast, kannst du sicher chatten.
+
+chat-app-invite-sent = Einladung gesendet
+chat-app-invite-received = Einladung erhalten
+chat-app-get = App holen
+chat-app-back = Zurück zur App
+chat-app-launch = App starten
+
+chat-modal-tip-title = Spende {0}?
+chat-modal-tip-body = Wähle oder füge die zu spendende Menge ein.
+chat-modal-tip-custom = Benutzerdefiniert
+chat-modal-tip-pay-button = Bezahlen
+chat-modal-tip-confirmation-body = Sie sind dabei, {1} als Trinkgeld an '{0}' zu senden. Dieser Betrag wird von Ihrer Wallet abgezogen.
+chat-modal-tip-confirmed-body = Sie haben erfolgreich {1} als Trinkgeld an '{0}' gesendet. Der Betrag wurde von Ihrer Wallet abgezogen.
+chat-modal-tip-error-body = Ein unbekannter Fehler ist während der Spende aufgetreten.
+
+chat-bot-details-info = Gruppen Info
+chat-bot-address = Gruppen Adresse
+chat-bot-toggle-notifications = Benachrichtigungen umschalten
+chat-bot-invite = Kontakt zu dieser Gruppe einladen
+chat-bot-leave = Gruppe verlassen
+
+chat-bot-user-address = Benutzeradresse
+chat-bot-user-send-contact-request = Kontakt hinzufügen
+
+chat-modal-kick-title = {0} kicken?
+chat-modal-kick-body = Bist du sicher, dass du '{0}' von diesem Server kicken möchtest?
+chat-modal-kick-kick-button = BENUTZER KICKEN
+chat-modal-kicked-title = {0} gekickt
+chat-modal-kicked-body = Du hast '{0}' von diesem Server gekickt.
+
+chat-modal-ban-title = {0} bannen?
+chat-modal-ban-body = Bist du sicher, dass du '{0}' von diesem Server bannen möchtest?
+chat-modal-ban-ban-button = BENUTZER BANNEN
+chat-modal-banned-title = {0} gebannt
+chat-modal-banned-body = Du hast '{0}' von diesem Server gebannt.
+
+chat-bot-not-ready-title = Gruppe nicht bereit
+chat-bot-not-ready-body = Die Gruppe ist noch nicht bereit, bitte versuche es in ein paar Minuten erneut.
+
+chat-kicked = Du wurdest aus diesem Gruppenchat entfernt.
+chat-banned = Du wurdest aus dieser Gruppe gebannt.
+
+chat-report-title = Inhalt melden
+chat-report-details = Möchten Sie diesen Inhalt melden?
+chat-report = Melden
+chat-report-cancel = Abbrechen
+
+chat-private-note-title = Dieser Chat ist privat.
+chat-private-note-message = Nachrichten werden nur auf deinem Gerät gespeichert und direkt mit modernster Verschlüsselung an deinen Kontakt gesendet.
+
+; Contact Details Screen
+contact-details-chat = Chat
+contact-details-send = Senden
+contact-details-receive = Empfangen
+contact-details-notifications = Benachrichtigungen
+contact-details-history = Verlauf
+contact-details-account-address = Spixi-Adresse
+contact-details-address-1 = Abrufen
+contact-details-address-2 = Spixi
+contact-details-address-3 = Adresse...
+contact-details-removecontact = Kontakt löschen
+contact-details-removedcontact-title = Gelöscht
+contact-details-removedcontact-text = Kontakt gelöscht.
+contact-details-deletehistory = Verlauf löschen
+contact-details-deletedhistory-title = Gelöscht
+contact-details-deletedhistory-text = Nachrichtenverlauf gelöscht.
+contact-details-delete-history-modal-title = Chatverlauf löschen?
+contact-details-delete-history-modal-subtitle = Der gesamte Chatverlauf wird entfernt.
+contact-details-delete-history-modal-confirm = Ja, Verlauf löschen
+contact-details-delete-contact-modal-title = Kontakt entfernen
+contact-details-delete-contact-modal-subtitle = Dieser Kontakt wird aus deiner Liste entfernt. Du kannst keine Nachrichten mehr senden oder empfangen, es sei denn, du fügst ihn erneut hinzu.
+contact-details-delete-contact-modal-confirm = Ja, Kontakt entfernen
+
+; New Contact Screen
+contact-new-title = Neuen Kontakt hinzufügen
+contact-new-description = Um einen neuen Kontakt hinzuzufügen, gib die Spixi-Adresse ein oder scanne den QR-Code.
+contact-new-placeholder = Adresse einfügen oder eingeben
+contact-new-send-request = Kontakt hinzufügen
+contact-new-invalid-address-self-text = Die eingegebene Adresse ist deine eigene Adresse.
+contact-new-invalid-address-exists-text = Dieser Kontakt ist bereits hinzugefügt.
+contact-new-scan = Scannen
+contact-new-scan-help = Oder scann den QR-Code
+contact-new-send = Senden
+contact-new-cancel = Abbrechen
+contact-new-confirm-title = Kontakt hinzufügen?
+contact-new-confirm-details = Du bist dabei, eine Kontaktanfrage an die folgende Spixi-Adresse zu senden:
+
+; Downloads Screen
+downloads-title = Downloads
+downloads-empty = Du hast keine Dateien heruntergeladen.
+
+; Contributors Screen
+contributors-title = Mitwirkende
+contributors-thanks = Besonderer Dank an unsere Mitwirkenden
+contributors-special-thanks-title = Besonderer Dank an unsere Mitwirkenden
+
+; Index Screen
+index-balance = IXI-Guthaben
+index-balance-show = Anzeigen
+index-balance-hide = Verstecken
+index-balance-info = Versteckt
+index-notifications = Benachrichtigungen
+index-unread-chats = Ungelesene Chats
+index-no-conversations-title = Dein Posteingang wartet
+index-no-conversations = Füge einen Kontakt hinzu und sag Hallo, deine Chats erscheinen dann hier.
+index-no-contacts-title = Hier ist es noch ruhig
+index-no-contacts = Füge jemanden hinzu, um loszulegen. Nur Kontakte, die du akzeptierst, können dir schreiben.
+index-new-chat-button = Neuer Chat
+index-no-transactions-title = Noch keine Aktivitäten
+index-no-transactions = Sobald du IXI sendest oder empfängst, erscheinen deine Transaktionen hier.
+index-send = Senden
+index-scan = Scannen
+index-receive = Empfangen
+index-all = Alle
+index-sent = Gesendet
+index-received = Empfangen
+index-recent-activity = Aktivitäten
+index-contacts-placeholder = Kontakte suchen
+index-tab-home = Start
+index-tab-chats = Chats
+index-tab-wallet = Wallet
+index-tab-contacts = Kontakte
+index-tab-address = Adresse
+index-new-title = Neu
+index-new-contact = Kontakt
+index-new-chat = Chat
+index-new-send = IXI senden
+index-new-request = IXI anfordern
+index-new-cancel = Abbrechen
+index-side-title = Spixi-Benutzer
+index-side-myaddress = Meine Spixi-Adresse
+index-side-apps = Apps
+index-side-downloads = Downloads
+index-side-settings = Einstellungen
+index-side-security = Sicherheit
+index-side-backup = Sicherung
+index-side-password = Passwort
+index-side-about = Über
+index-side-contributors = Mitwirkende
+index-side-howtouse = So verwendest du Spixi
+index-side-sendlog = App-Log senden
+index-devmode = Entwicklermodus aktiviert
+index-excerpt-payment-request-sent = Zahlungsanfrage gesendet
+index-excerpt-payment-request-received = Zahlungsanfrage erhalten
+index-excerpt-payment-sent = Zahlung gesendet
+index-excerpt-payment-received = Zahlung erhalten
+index-excerpt-contact-accepted = Kontakt akzeptiert
+index-excerpt-contact-request = Kontaktanfrage
+index-excerpt-file = Datei
+index-excerpt-voice-call = Sprachanruf
+index-excerpt-self = 
+index-excerpt-typing = Tippt...
+index-side-settings-subtitle = Themen, Sprache, Spitzname und Daten
+index-side-password-subtitle = Spixi-Passwort ändern
+index-side-backup-subtitle = Sicherungsdatei erstellen
+index-side-how-to-subtitle = Erfahre, wie du Spixi verwendest
+index-side-about-subtitle = Informationen, Hilfe, Kontakt, Datenschutzerklärung
+index-missing-tx-title = Fehlende Transaktionen?
+index-missing-tx-text = Spixi liest direkt von der Blockchain, nicht von zentralen Servern. Die Synchronisierung kann daher etwas länger dauern.
+index-missing-tx-view-all = Alle Transaktionen im Explorer anzeigen
+index-backup-prompt-title = Nicht vergessen zu sichern
+index-backup-prompt-desc = Spixi ist vollständig dezentralisiert – deine Daten bleiben nur auf deinem Gerät. Um deine Kontakte zu schützen und alles später wiederherstellen zu können, erstelle jetzt ein Backup.
+index-backup-prompt-create = Ja, Backup erstellen
+index-backup-prompt-not-now = Jetzt nicht
+index-backup-prompt-note = Es wird empfohlen, nach jedem neuen Kontakt ein Backup zu erstellen.
+
+; Onboarding Screen
+onboarding-choose-language = Wähle deine Sprache
+onboarding-get-started = Loslegen
+onboarding-step-skip = Überspringen
+onboarding-step-back = Zurück
+onboarding-step-next = Weiter
+onboarding-step-1-title = Dein Chat, dein Gerät, deine Regeln.
+onboarding-step-1-subtitle = Spixi verwendet keine Server. Nachrichten bleiben auf deinem Gerät und werden nur verschlüsselt direkt an deinen Kontakt gesendet.
+onboarding-step-2-title = Deine Adresse ist deine einzige ID.
+onboarding-step-2-subtitle = Spixi benötigt weder Telefonnummer noch E-Mail. Deine eindeutige Spixi-Adresse reicht völlig aus.
+onboarding-step-3-title = Sende und empfange IXI-Zahlungen.
+onboarding-step-3-subtitle = Nutze die integrierte Wallet, um direkt in deinen Chats IXI-Coins zu senden oder zu empfangen. So einfach wie eine Nachricht.
+onboarding-step-4-title = Entdecke Mini-Apps in deinen Chats.
+onboarding-step-4-subtitle = Mit Spixi Mini-Apps kannst du Spiele spielen, Tools verwenden oder neue Funktionen freischalten – alles direkt im Chat.
+
+; Onboarding Create Account Screen
+create-account-title = Los geht's.
+create-account-description = Erstelle ein neues Konto oder stelle eines mit deinem Backup wieder her.
+create-account-new = Neues Konto
+create-account-already = Hast du schon ein Konto?
+create-account-restore = Konto wiederherstellen
+create-account-step = Schritt
+create-account-step-of = von
+create-account-step-1-title = Wähle deinen Spitznamen und ein Foto
+create-account-step-1-subtitle = Dein Spitzname und Avatar sind für deine Kontakte sichtbar. Du kannst sie jederzeit ändern.
+create-account-step-1-tap = tippen zum Hochladen
+create-account-step-1-nickname-placeholder = Spitznamen eingeben
+create-account-step-2-title = Erstelle ein Backup-Passwort
+create-account-step-2-subtitle = Du brauchst dieses Passwort, um dein Spixi-Konto aus einer Backup-Datei wiederherzustellen. Bewahre es sicher auf.
+create-account-step-2-password-placeholder = Passwort eingeben
+create-account-step-2-password-confirm = Passwort bestätigen
+create-account-step-2-password-confirm-note = Das Passwort muss mindestens 10 Zeichen lang sein.
+create-account-step-2-password-confirm-note-success = Passwörter stimmen überein
+create-account-step-2-password-confirm-note-error = Passwörter müssen übereinstimmen
+create-account-step-2-note-title = Spixi speichert dieses Passwort nicht.
+create-account-step-2-note-subtitle = Ohne das Passwort oder dein Backup kann dein Konto und Wallet nicht wiederhergestellt werden.
+create-account-finish-setup = Einrichtung abschließen
+create-account-creating = Dein Konto wird erstellt ...
+create-account-creating-description = Das dauert nicht lange. Dein Konto wird gerade gesichert.
+
+; Intro Restore Screen
+intro-restore-title = Konto wiederherstellen
+intro-restore-subtitle = Wähle deine Backup-Datei, um dein Spixi-Konto wiederherzustellen.
+intro-restore-select-file = Backup-Datei auswählen
+intro-restore-pass-title = Backup-Passwort eingeben
+intro-restore-pass-subtitle = Gib das Passwort ein, mit dem deine Backup-Datei geschützt ist, um dein Spixi-Konto wiederherzustellen.
+intro-restore-pass-placeholder = Passwort eingeben
+intro-restore-note-title = Spixi speichert dieses Passwort nicht.
+intro-restore-note-subtitle = Nur du kannst diese Backup-Datei entsperren.
+intro-restore-button = Konto wiederherstellen
+intro-restoring-title = Konto wird wiederhergestellt...
+intro-restoring-subtitle = Einen Moment bitte. Dein Konto wird sicher entsperrt.
+intro-restore-pass-error = Falsches Passwort. Bitte versuche es erneut.
+
+; Intro Retry Screen
+intro-retry-description-1 = Passwort erneut eingeben
+intro-retry-description-2 = Es scheint ein Problem beim Zugriff auf dein Konto zu geben. Bitte gib dein Passwort ein, um fortzufahren.
+intro-retry-placeholder = Passwort eingeben
+intro-retry-proceed = Fortfahren
+intro-retry-title = Zugang zu deiner Wallet wird wiederhergestellt
+intro-retry-info = Dies kann eine Weile dauern
+intro-retry-invalidpassword-title = Ungültiges Passwort
+intro-retry-invalidpassword-text = Wallet kann nicht entschlüsselt werden, bitte versuche es erneut.
+
+; Lock Screen
+lock-description = Spixi ist gesperrt
+lock-placeholder = Passkey eingeben
+lock-error = Falsches Passwort
+lock-unlock = Entsperren
+lock-change = Wallet wechseln
+
+; Settings Screen
+settings-title = Einstellungen
+settings-save = Speichern
+settings-cancel = Abbrechen
+settings-confirm = Bestätigen
+settings-description = Verwalte dein Spixi-Konto und die auf diesem Gerät gespeicherten Daten.
+settings-account-information = Grundeinstellungen
+settings-account-description = Ändere deine Sprache, deinen Avatar und deinen Spitznamen.
+settings-account-language-edit = Sprache
+settings-account-appearance-edit = Erscheinungsbild
+settings-account-appearance-automatic = Automatisch
+settings-account-appearance-light = Hell
+settings-account-appearance-dark = Dunkel
+settings-account-image-edit = Avatar
+settings-account-nick-edit = Spitzname
+settings-account-nick-placeholder = Neuen Spitznamen eingeben
+settings-account-deleteinfo = Du kannst dieses Spixi-Konto und alle zugehörigen Daten jederzeit dauerhaft von diesem Gerät löschen. <b>Wichtig:</b> Nach dem Löschen musst du ein Konto erstellen oder wiederherstellen, um Spixi weiter zu nutzen.
+settings-account-delete = Konto löschen
+settings-deletea-title = Delete This Spixi Account?
+settings-deletea-text = Bist du sicher, dass du dieses Spixi-Konto löschen möchtest?<br/><br/>Diese Aktion ist nicht umkehrbar! Es wird empfohlen, dieses Konto vor dem Löschen zu sichern. Du benötigst die Sicherungsdatei, falls du später wieder Zugriff auf dieses Konto erhalten möchtest.
+settings-deleteda-title = Gelöscht
+settings-deleteda-text = Spixi-Konto wurde gelöscht.
+settings-wallet-settings = Wallet-Einstellungen
+settings-wallet-description = Diese Wallet ist mit diesem Spixi-Konto verknüpft. Um die Wallet, das Konto und den gesamten Zahlungsverlauf auf diesem Gerät zu löschen, tippe auf den Button unten.
+settings-wallet-delete = Meine Wallet löschen
+settings-deletew-title = Diese Wallet löschen?
+settings-deletew-text = Bist du sicher, dass du diese Wallet löschen möchtest? Diese Aktion ist nicht rückgängig zu machen! Durch das Löschen dieser Wallet verlierst du den Zugriff auf alle darin enthaltenen Gelder! Um diese Wallet wiederherzustellen, benötigst du die Sicherungsdatei und das Verschlüsselungspasswort!
+settings-deletew-error-title = Fehler
+settings-deletew-error-text = Wallet-Datei kann nicht gelöscht werden.
+settings-history = Nachrichtenverlauf
+settings-history-description = Der gesamte Nachrichtenverlauf und alle von dir heruntergeladenen Dateien werden auf diesem Gerät gespeichert. Lösche den gesamten Nachrichtenverlauf oder alle Downloads jederzeit mit den Buttons unten.
+settings-history-delete = Nachrichtenverlauf löschen
+settings-downloads-delete = Alle Downloads löschen
+settings-deleteh-title = Nachrichtenverlauf löschen?
+settings-deleteh-text = Bist du sicher, dass du den GESAMTEN Nachrichtenverlauf löschen möchtest? Diese Aktion ist nicht rückgängig zu machen!
+settings-deletedh-title = Gelöscht
+settings-deletedh-text = Nachrichtenverlauf wurde gelöscht.
+settings-deleted-title = Alle Downloads löschen?
+settings-deleted-text = Bist du sicher, dass du ALLE Downloads löschen möchtest? Alle Dateien, die du in Spixi heruntergeladen hast, werden gelöscht! Diese Aktion ist nicht rückgängig zu machen!
+settings-deletedd-title = Gelöscht
+settings-deletedd-text = {0} heruntergeladene Dateien wurden gelöscht.
+settings-deleted-error-title = Fehler
+settings-deleted-error-text = Ein unbekannter Fehler ist aufgetreten.
+settings-emptynick-title = Ungültiger Spitzname
+settings-emptynick-text = Bitte gib einen Spitznamen ein.
+settings-unsaved-changes-modal-title = Nicht gespeicherte Änderungen
+settings-unsaved-changes-modal-subtitle = Wenn Sie jetzt verlassen, gehen Ihre Änderungen verloren. Möchten Sie fortfahren?
+
+; Settings Backup Screen
+settings-backup-title = Konto sichern
+settings-backup-description = settings-backup-description = Lade eine Sicherungsdatei herunter, mit der du dieses Spixi-Konto wiederherstellen kannst. Kontakte werden nur auf deinem Gerät gespeichert und sind nur in Backups enthalten, die nach dem Hinzufügen erstellt wurden.
+settings-backup-save = WALLET SICHERN
+settings-backup-account-save = WALLET UND KONTAKTE SICHERN
+settings-backup-notice = Dieses Backup und das damit verknüpfte Passwort werden benötigt, um den Zugang wiederherzustellen, falls du:y
+settings-backup-notice2 = - dieses Gerät verlierst<br />- Spixi von diesem Gerät deinstallierst<br />- dieses Spixi Konto löscht<br />- diese Wallet löschst
+settings-backup-invalidpassword-title = Ungültiges Passwort
+settings-backup-invalidpassword-text = Bitte gib ein gültiges Passwort ein.
+
+; Settings Encryption Screen
+settings-encryption-title = Passwort
+settings-encryption-description = Das Passwort ist mit diesem Konto und dieser Wallet verknüpft. Du benötigst dieses Passwort, wenn du jemals versuchst, den Zugang zu diesem Spixi-Konto oder dieser Wallet wiederherzustellen.
+settings-encryption-edit = Passwort bearbeiten
+settings-encryption-type = Gib das <b>AKTUELLE</b> Passwort ein.
+settings-encryption-placeholder = Aktuelles Passwort
+settings-encryption-typenew = Gib das <b>NEUE</b> Passwort ein.
+settings-encryption-placeholdernew = Neues Passwort
+settings-encryption-placeholderretype = Neues Passwort erneut eingeben
+settings-encryption-change = Passwort ändern
+settings-encryption-password10 = Das Passwort muss mindestens 10 Zeichen enthalten
+settings-encryption-passwordconf = Gib die Passwortbestätigung ein
+settings-encryption-passwordnomatch = Passwörter stimmen nicht überein
+settings-encryption-passwordmatch = Passwörter stimmen überein
+settings-encryption-invalidpassword-title = Ungültiges Passwort
+settings-encryption-invalidpassword-text = Bitte gib ein gültiges Passwort ein.
+settings-encryption-passwordchanged-title = Passwort
+settings-encryption-passwordchanged-text = Passwort erfolgreich geändert.
+settings-encryption-invalidpassword-current-text = Aktuelles Passwort ist falsch, bitte versuche es erneut.
+
+; Settings Lock Screen
+settings-lock-title = Mein Spixi sperren
+settings-lock-description = Erstelle einen Passkey, um sicherzustellen, dass nur du auf Spixi auf diesem Gerät zugreifen kannst.
+settings-lock-status = Sicherheitsstatus:
+settings-lock-unlocked = ENTSPERRT
+settings-lock-locked = GESPERRT
+settings-lock-passwordinfo = Passkey erstellen oder bearbeiten
+settings-lock-password = Gib den <b>AKTUELLEN</b> Passkey ein
+settings-lock-password-new = Gib den <b>NEUEN</b> Passkey ein
+settings-lock-placeholder-1 = Aktuellen Passkey eingeben
+settings-lock-placeholder-2 = Neuen Passkey eingeben
+settings-lock-placeholder-3 = Neuen Passkey erneut eingeben
+settings-lock-info = Dieser Passkey wird jedes Mal benötigt, wenn du Spixi startest.
+settings-lock-save = Passkey festlegen
+settings-lock-authinfo = Du benötigst biometrische Authentifizierung oder dein Passwort, um Spixi zu entsperren.
+settings-lock-confirm-text = Die Einstellungen werden nach dem Speichern wirksam.
+
+; Wallet Contact Request Screen
+wallet-contact-request-title = Zahlungsanforderung
+wallet-contact-request-subtitle = Zahlungsanforderung von:
+wallet-contact-request-amount = Betrag
+wallet-contact-request-info = Der Benutzer hat eine Zahlung in folgender Höhe angefordert
+wallet-contact-request-respond = Auf Zahlungsanforderung antworten
+wallet-contact-request-respondinfo = Zahlung ablehnen oder senden. Der Benutzer, der die Anforderung gesendet hat, wird über deine Entscheidung benachrichtigt.
+wallet-contact-request-decline = Ablehnen
+wallet-contact-request-proceed = Zahlung senden
+
+; Wallet Recipient Screen
+wallet-recipient-title = Empfänger auswählen
+wallet-recipient-search-placeholder = Kontakte suchen
+wallet-recipient-empty = 0 Empfänger ausgewählt
+wallet-recipient-add = Empfänger hinzufügen
+wallet-recipient-selected = Empfänger ausgewählt
+wallet-recipient-new-contact-button = Neuen Kontakt hinzufügen
+wallet-recipient-no-contact-button = Neuer Kontakt
+
+; Wallet Request Screen
+wallet-request-title = Zahlung anfordern
+wallet-request-subtitle = Einen bestimmten Betrag anfordern
+wallet-request-amount-placeholder = Betrag eingeben
+wallet-request-address = Adresse des Empfängers
+wallet-request-send-info = Als Anforderung an Empfänger senden:
+wallet-request-add = Du kannst diese Anforderung für den gleichen Betrag an mehr als einen Benutzer senden. <br/>Füge zusätzliche Benutzer/Adressen hinzu, um diese Anforderung zu senden.
+wallet-request-placeholder = Adresse einfügen oder eingeben
+wallet-request-send = Anforderung senden
+wallet-request-error-title = Fehler
+wallet-request-error-text = Bitte gib gültige Details in allen erforderlichen Feldern ein.
+
+; Wallet Send Screen
+wallet-send-title = IXI senden
+wallet-send-details = Füge die Adresse ein oder gib sie ein, an die du die Zahlung senden möchtest. Durchsuche Kontakte oder scanne einen QR-Code.
+wallet-send-subdetails = IXI senden an
+wallet-send-add = Empfänger hinzufügen
+wallet-send-placeholder = Adresse einfügen oder eingeben
+wallet-send-more = Füge zusätzliche Empfänger für diese Transaktion hinzu. Der gleiche Betrag wird an alle gesendet.
+wallet-send-recipients = Empfänger
+wallet-send-norecipients = Keine Empfänger ausgewählt
+wallet-send-next = Weiter
+wallet-send-max = Maximalen Betrag senden
+wallet-send-select = Kontakt auswählen
+wallet-send-or = Oder
+
+; Wallet Send 2 Screen
+wallet-send2-title = Zahlung bestätigen
+wallet-send2-policy = Transaktionsgebührenpolitik
+wallet-send2-info = IXI-Zahlungen können nicht rückgängig gemacht werden.
+wallet-send2-feeinfo = Die IXI-Netzwerkgebühr ist in der Zahlung enthalten.
+wallet-send2-normal = Normal
+wallet-send2-high = Hoch
+wallet-send2-custom = Benutzerdefiniert
+wallet-send2-placeholder = Wie viel möchtest du senden?
+wallet-send2-amount = Betrag
+wallet-send2-max-amount = Maximalen Betrag senden
+wallet-send2-max-amount-warning = Du bist dabei, den gesamten Kontostand zu senden!
+wallet-send2-fee = Gesamte Transaktionsgebühr
+wallet-send2-total = Gesamtbetrag, der vom Kontostand abgebucht wird
+wallet-send2-send = IXI senden
+wallet-send2-confirm-title = Du bist dabei zu senden
+wallet-send2-confirm = Bestätigen
+wallet-send2-cancel = Abbrechen
+wallet-send2-edit = Zahlung bearbeiten
+wallet-send2-remove-recipient = Empfänger entfernen
+wallet-send2-done = Fertig
+wallet-send2-yourbalance = Aktueller Kontostand
+
+; Wallet Sent Screen
+wallet-sent-title = Zahlungsdetails
+wallet-sent-subtitle = Zahlung gesendet an:
+wallet-status-sent-pending = Zahlung wird gesendet
+wallet-status-receive-pending = Zahlung eingehend
+wallet-status-sent = Zahlung erfolgreich gesendet
+wallet-status-receive = Zahlung erhalten
+wallet-status-failed = Zahlung fehlgeschlagen
+wallet-sent-amount = Betrag
+wallet-sent-status = Zahlungsstatus
+wallet-sent-confirmed = BESTÄTIGT
+wallet-sent-unconfirmed = UNBESTÄTIGT
+wallet-sent-details = Der von dir gesendete Betrag wurde von deinem Kontostand abgezogen.
+wallet-sent-fee = Zahlungsgebühr
+wallet-sent-feeinfo = Diese Zahlung hat eine Netzwerkgebühr von
+wallet-sent-txid = Transaktions-ID
+wallet-sent-view-explorer = Im Explorer anzeigen
+wallet-sent-dismiss = Schließen
+wallet-sent-unconfirmed-details = Die Zahlung wurde gesendet, ist aber noch nicht vom Netzwerk bestätigt. Sobald sie bestätigt ist, siehst du die Transaktions-ID und einen Link, um sie im Explorer anzuzeigen.
+wallet-unknown-sender = Unbekannter Absender
+wallet-unknown-recipient = Unbekannter Empfänger
+wallet-sentrecv-title = Zahlung erhalten
+wallet-sentrecv-subtitle = Zahlung erhalten von:
+wallet-sentrecv-amount = Betrag
+wallet-sentrecv-details = Der Betrag wurde deinem Wallet-Guthaben hinzugefügt.
+
+; Global wallet errors
+wallet-error-amount-title = Ungültiger Betrag
+wallet-error-amount-text = Bitte gib einen gültigen Betrag ein.
+wallet-error-amountdecimal-text = Bitte gib den korrekten Dezimalbetrag ein.
+wallet-error-balance-title = Unzureichendes Guthaben
+wallet-error-balance-text = Das Guthaben ist für diese Transaktion zu niedrig. Die Gesamtkosten der Transaktion betragen {0}, während das aktuelle Guthaben {1} beträgt.
+
+; Onboarding join official bot
+onboarding-bot-title = Sei Teil der Spixi-Reise
+onboarding-bot-subtitle = Tritt unserem offiziellen Gruppenchat bei, um Feedback zu geben, mit dem Team in Kontakt zu treten und über alle neuen Funktionen informiert zu bleiben.
+onboarding-bot-join-button = Community beitreten
+onboarding-bot-skip = Jetzt überspringen
+
+; Empty State
+empty-state-title = Willkommen bei Spixi
+empty-state-detail-1 = Deine sichere Peer-to-Peer-Chat-App mit integrierter Wallet.
+empty-state-detail-2 = Genieße verschlüsselte Unterhaltungen, bei denen deine Nachrichten nur zwischen deinem Gerät und dem deines Kontakts gespeichert und übertragen werden – deine Privatsphäre bleibt gewahrt.
+
+; Ixinames
+ixinames-request-title = IXI Names möchte eine Verbindung herstellen
+ixinames-request-details = Bist du sicher, dass du diese Spixi mit IXI Names verbinden möchtest? Der Dienst erhält Zugriff auf diese Adresse.
+ixinames-request-decline = Ablehnen
+ixinames-request-connect = Verbinden
+ixinames-message-connected = Diese Spixi ist jetzt mit IXI Names verbunden.
+ixinames-message-error = Spixi konnte nicht mit IXI Names verbunden werden. Bitte versuche es erneut.
+
+; Rating
+rating-request-title = Gefällt dir Spixi?
+rating-request-details = Dein Feedback hilft uns, es zu verbessern.
+rating-request-no = Nicht so sehr...
+rating-request-yes = Ja, ich liebe es
+
+; Global
+global-connecting-s2 = Verbindung zum Ixian S2 wird hergestellt...
+global-connecting-dlt = Verbindung zum Ixian-Netzwerk wird hergestellt...
+global-received = ERHALTEN
+global-sent = GESENDET
+global-app-accept = Akzeptieren
+global-app-reject = Ablehnen
+global-app-wants-to-use = {0} möchte {1} mit dir nutzen.
+global-call-in-call = Im Anruf
+global-call-dialing = Wählt
+global-call-incoming = Eingehender Anruf
+
+global-dialog-error = Fehler
+global-dialog-ok = Ok
+global-dialog-cancel = Abbrechen
+global-invalid-address-title = Ungültige Adresse
+global-invalid-address-text = Bitte gib eine gültige Adresse ein.
+
+global-friend-request-accepted = {0} hat deine Kontaktanfrage akzeptiert.
+
+global-update-available = Eine neue Version von Spixi ({0}) ist verfügbar. Bitte aktualisieren Sie, um das beste Erlebnis zu haben.
+global-modal-external-link-title = Externen Link besuchen
+global-modal-external-link-body = Sie sind dabei, einen externen Link ({0}) zu besuchen. Externe Links können unsicher sein; fahren Sie auf eigenes Risiko fort.
+global-modal-external-link-button-visit = Fortfahren
+
+global-lock-auth-text = Authentifizierung erforderlich
+global-lock-invalidpassword-title = Authentifizierung fehlgeschlagen
+global-lock-invalidpassword-text = Passwort eingeben, um Spixi zu entsperren
+
+global-time-justnow = jetzt
+global-time-aminuteago = 1 min
+global-time-minutesago = min
+
+global-share-choose = Aktion auswählen
+global-share-savefile = Datei speichern
+global-share-sharefile = Datei teilen

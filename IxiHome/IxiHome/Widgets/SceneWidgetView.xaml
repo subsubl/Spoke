@@ -1,0 +1,65 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IxiHome.Widgets.SceneWidgetView"
+             Title="Scene Widget">
+
+    <ContentPage.Resources>
+        <Style x:Key="WidgetFrameStyle" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#F8F9FA, Dark=#2D2D30}"/>
+            <Setter Property="BorderColor" Value="{AppThemeBinding Light=#DEE2E6, Dark=#3E3E42}"/>
+            <Setter Property="HasShadow" Value="True"/>
+        </Style>
+
+        <Style x:Key="SceneButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="HeightRequest" Value="30"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Padding" Value="6,2"/>
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#007BFF, Dark=#0D6EFD}"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <Frame Style="{StaticResource WidgetFrameStyle}">
+        <VerticalStackLayout Spacing="8">
+            <!-- Header -->
+            <HorizontalStackLayout Spacing="8">
+                <Label Text="Scenes"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"/>
+
+                <Button Text="×"
+                        FontSize="16"
+                        BackgroundColor="Transparent"
+                        TextColor="{AppThemeBinding Light=#6C757D, Dark=#ADB5BD}"
+                        HorizontalOptions="End"
+                        Clicked="OnCloseClicked"/>
+            </HorizontalStackLayout>
+
+            <!-- Scene Buttons -->
+            <CollectionView ItemsSource="{Binding Scenes}"
+                           SelectionMode="None"
+                           HeightRequest="100">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Button Text="{Binding Name}"
+                                Style="{StaticResource SceneButtonStyle}"
+                                Command="{Binding ActivateCommand}"
+                                Margin="2"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+                <CollectionView.EmptyView>
+                    <Label Text="No scenes available"
+                           FontSize="12"
+                           TextColor="Gray"
+                           HorizontalTextAlignment="Center"/>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </VerticalStackLayout>
+    </Frame>
+</ContentPage>

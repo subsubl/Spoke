@@ -151,14 +151,20 @@ public class SyncService
             
             await EntityManager.Instance.UpdateEntityAsync(entity);
             
-            // Show notification for important state changes
-            // TODO: Add NotificationsEnabled property to Entity class
-            // if (entity.NotificationsEnabled)
-            // {
-            //     await NotificationService.Instance.ShowNotificationAsync(
-            //         entity.Name,
-            //         $"State changed to: {e.State}");
-            // }
+            // Trigger automations based on state change
+            var triggerEvent = new AutomationTriggerEvent
+            {
+                Type = "state_changed",
+                EntityId = e.EntityId,
+                OldState = entity.State, // This might not be accurate, but we don't have old state here
+                NewState = e.State,
+                Attributes = e.Attributes ?? new Dictionary<string, object>()
+            };
+            await AutomationManager.Instance.TriggerAutomationsAsync(triggerEvent);
+            
+            // Show notification for state changes
+            Notifications.NotificationManager.Instance.ShowEntityStateChangedNotification(
+                entity.Id, e.State, entity.Name);
         }
         catch (Exception ex)
         {

@@ -81,6 +81,10 @@
               "version": "[9.0.11, )",
               "autoReferenced": true
             },
+            "Microsoft.Toolkit.Uwp.Notifications": {
+              "target": "Package",
+              "version": "[7.1.3, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.4, )"
@@ -137,6 +141,10 @@
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
               "version": "[9.0.50, )"
+            },
+            "Microsoft.Toolkit.Uwp.Notifications": {
+              "target": "Package",
+              "version": "[7.1.3, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

@@ -1,0 +1,168 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IxiHome.Pages.WidgetsPage"
+             Title="Widgets"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Header -->
+        <Grid Grid.Row="0" Padding="16,8" BackgroundColor="{StaticResource PrimaryColor}">
+            <Label Text="Desktop Widgets"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"/>
+        </Grid>
+
+        <!-- Content -->
+        <ScrollView Grid.Row="1" Padding="16">
+            <VerticalStackLayout Spacing="16">
+                <!-- Active Widgets Section -->
+                <Frame CornerRadius="8" Padding="16" BackgroundColor="{StaticResource CardBackgroundColor}">
+                    <VerticalStackLayout Spacing="12">
+                        <Label Text="Active Widgets"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource PrimaryTextColor}"/>
+
+                        <CollectionView x:Name="ActiveWidgetsCollectionView"
+                                       ItemsSource="{Binding ActiveWidgets}"
+                                       SelectionMode="None"
+                                       HeightRequest="150">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame CornerRadius="6" Padding="12" BackgroundColor="{StaticResource SecondaryColor}">
+                                        <Grid ColumnDefinitions="*,Auto">
+                                            <VerticalStackLayout Grid.Column="0" Spacing="4">
+                                                <Label Text="{Binding Title}"
+                                                       FontSize="16"
+                                                       FontAttributes="Bold"
+                                                       TextColor="White"/>
+                                                <Label Text="{Binding Id}"
+                                                       FontSize="12"
+                                                       TextColor="White"
+                                                       Opacity="0.8"/>
+                                            </VerticalStackLayout>
+
+                                            <Button Grid.Column="1"
+                                                    Text="Remove"
+                                                    BackgroundColor="White"
+                                                    TextColor="{StaticResource PrimaryColor}"
+                                                    CornerRadius="4"
+                                                    Clicked="OnRemoveWidgetClicked"
+                                                    CommandParameter="{Binding .}"/>
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                            <CollectionView.EmptyView>
+                                <Label Text="No active widgets"
+                                       FontSize="14"
+                                       TextColor="{StaticResource SecondaryTextColor}"
+                                       HorizontalTextAlignment="Center"/>
+                            </CollectionView.EmptyView>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Create Widgets Section -->
+                <Frame CornerRadius="8" Padding="16" BackgroundColor="{StaticResource CardBackgroundColor}">
+                    <VerticalStackLayout Spacing="12">
+                        <Label Text="Create New Widget"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource PrimaryTextColor}"/>
+
+                        <!-- Sensor Widget -->
+                        <Button Text="Create Sensor Widget"
+                                BackgroundColor="{StaticResource AccentColor}"
+                                TextColor="White"
+                                CornerRadius="6"
+                                HeightRequest="45"
+                                Clicked="OnCreateSensorWidgetClicked"/>
+
+                        <!-- Scene Widget -->
+                        <Button Text="Create Scene Widget"
+                                BackgroundColor="{StaticResource AccentColor}"
+                                TextColor="White"
+                                CornerRadius="6"
+                                HeightRequest="45"
+                                Clicked="OnCreateSceneWidgetClicked"/>
+
+                        <!-- Entity Widgets -->
+                        <Label Text="Entity Widgets"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource PrimaryTextColor}"/>
+
+                        <CollectionView x:Name="EntitiesCollectionView"
+                                       ItemsSource="{Binding AvailableEntities}"
+                                       SelectionMode="None"
+                                       HeightRequest="200">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame CornerRadius="6" Padding="12" BackgroundColor="{StaticResource CardBorderColor}">
+                                        <Grid ColumnDefinitions="*,Auto">
+                                            <VerticalStackLayout Grid.Column="0" Spacing="4">
+                                                <Label Text="{Binding Name}"
+                                                       FontSize="14"
+                                                       FontAttributes="Bold"
+                                                       TextColor="{StaticResource PrimaryTextColor}"/>
+                                                <Label Text="{Binding EntityId}"
+                                                       FontSize="12"
+                                                       TextColor="{StaticResource SecondaryTextColor}"/>
+                                            </VerticalStackLayout>
+
+                                            <Button Grid.Column="1"
+                                                    Text="Create Widget"
+                                                    BackgroundColor="{StaticResource PrimaryColor}"
+                                                    TextColor="White"
+                                                    CornerRadius="4"
+                                                    Clicked="OnCreateEntityWidgetClicked"
+                                                    CommandParameter="{Binding .}"/>
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                            <CollectionView.EmptyView>
+                                <Label Text="No entities available"
+                                       FontSize="14"
+                                       TextColor="{StaticResource SecondaryTextColor}"
+                                       HorizontalTextAlignment="Center"/>
+                            </CollectionView.EmptyView>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Instructions -->
+                <Frame CornerRadius="8" Padding="16" BackgroundColor="{AppThemeBinding Light=#E3F2FD, Dark=#1A237E}">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Widget Instructions"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="{AppThemeBinding Light=#1976D2, Dark=#64B5F6}"/>
+
+                        <Label Text="• Widgets appear as floating windows on your desktop"
+                               FontSize="14"
+                               TextColor="{AppThemeBinding Light=#1976D2, Dark=#64B5F6}"/>
+
+                        <Label Text="• Drag widgets to reposition them"
+                               FontSize="14"
+                               TextColor="{AppThemeBinding Light=#1976D2, Dark=#64B5F6}"/>
+
+                        <Label Text="• Click the × button to close a widget"
+                               FontSize="14"
+                               TextColor="{AppThemeBinding Light=#1976D2, Dark=#64B5F6}"/>
+
+                        <Label Text="• Widgets update automatically every 5 seconds"
+                               FontSize="14"
+                               TextColor="{AppThemeBinding Light=#1976D2, Dark=#64B5F6}"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

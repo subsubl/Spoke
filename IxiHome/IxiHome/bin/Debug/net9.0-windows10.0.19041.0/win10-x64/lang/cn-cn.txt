@@ -1,0 +1,663 @@
+language-code = cn-cn
+language = 中文
+
+; Address Screen
+address-title = Spixi 地址
+address-description = 您的 Spixi 地址是您的主要 ID。使用它与其他用户互动。
+address-copied = 地址已复制
+address-gen-1 = 生成中
+address-gen-1b = 准备中
+address-gen-2 = Spixi
+address-gen-2b = Spixi
+address-gen-3 = 地址
+address-gen-4 = ...
+address-tooltip = 点击复制到剪贴板
+address-copy = 复制
+address-share = 分享
+
+; App Details Screen
+app-details-title = Spixi 应用
+app-details-publisher = 发布者：
+app-details-version = 版本：
+app-details-uninstall = 卸载
+app-details-start = 开始
+app-details-dialog-title = Spixi 应用管理
+app-details-dialog-removed-text = 应用已成功卸载。
+app-details-dialog-removefailed-text = 卸载应用时发生错误。
+
+; New App Screen
+app-new-title = 新应用
+app-new-description = 通过粘贴 URL 添加新的 Spixi 应用。
+app-new-install = 安装
+app-new-dialog-title = Spixi 应用管理
+app-new-dialog-installed-text = 应用 '{0}' 已成功安装。
+app-new-dialog-installfailed-text = 安装应用时发生错误。
+
+; Apps Screen
+apps-title = Spixi 应用
+apps-empty = 您没有已安装的应用。
+apps-apps-text = 应用
+apps-not-sure-text = 不确定从哪里开始？试试下面的精选应用。
+apps-launch = 启动
+apps-launch-app = 启动应用
+apps-remove-app = 移除此应用
+apps-find-installed-apps = 查找已安装的迷你应用
+apps-add-note = 想尝试新的迷你应用？只需输入其 URL 或扫描二维码进行安装。
+apps-add-url-placeholder = 请输入迷你应用的地址 URL...
+apps-get-from-url = 从 URL 获取应用
+apps-scan = 扫描
+apps-what-is-title = 什么是迷你应用？
+apps-what-is-description = 迷你应用是在 Spixi 中安全运行的轻量级 JavaScript 应用。
+apps-what-is-learn = 了解更多
+apps-add-invalid-url = 请输入有效的 URL 后再继续。
+apps-details-description = 描述
+apps-details-capabilities = 功能
+apps-details-details = 详细信息
+apps-details-id = ID
+apps-details-version = 版本
+apps-details-size = 大小
+apps-details-install-url = 安装地址
+apps-details-download = 下载并安装
+apps-details-download-note = 该应用将被安全地安装在 Spixi 的沙盒环境中。
+apps-install-title = 安装迷你应用
+apps-source = 来源
+apps-install-confirm = 确认安装
+apps-install-cancel = 取消
+apps-installing-title = 正在安装应用...
+apps-installing-description = 正在下载并验证来源
+apps-failed-install-title = 应用安装失败
+apps-failed-install-description = 无法完成安装。请检查您的网络连接或稍后重试。
+apps-failed-install-retry = 重试
+apps-failed-install-cancel = 取消
+apps-success-install-title = 安装成功
+apps-success-install-description = 应用已添加到您的迷你应用库中。
+apps-success-install-view = 查看应用详情
+apps-remove-title = 移除应用？
+apps-remove-description = 这将从您的设备中删除该应用。除非应用本地存储了数据，否则不会丢失任何数据。
+apps-remove-confirm = 移除应用
+apps-remove-cancel = 取消
+apps-removing-app = 正在移除应用...
+apps-removing-app-description = 正在移除应用数据。
+apps-removing-app-success = 应用已移除
+apps-removing-app-description-success = 应用及其数据已从该设备中删除。
+apps-removing-app-continue = 继续
+apps-session-title = 当前正在与以下对象会话
+apps-session-return = 点击返回
+apps-session-leave = 离开
+apps-session-invite-sent-to = 邀请已发送至
+apps-session-invite-cancel = 取消邀请
+
+; App Actions
+app-action-title = 服务操作
+app-action-description = 服务 {0} 想要执行操作 {1}，您确定要继续吗？
+app-action-unknown = 未知操作。
+app-action-error-processing-title = 处理操作时出错
+app-action-error-processing = 处理操作 {0} 时出错。
+app-action-error-sending-title = 发送操作响应时出错
+app-action-error-sending = 向服务 {0} 发送操作响应时出错。
+app-action-sent = 应用操作已发送
+app-action-response-confirmation = 您是否要将以下数据发送给服务？{0}
+
+; Chat Screen
+chat-sent-contact-request = 发送了联系人请求
+chat-accept = 接受
+chat-ignore = 拒绝
+chat-type-placeholder = 输入消息...
+chat-send-file = 发送文件
+chat-request-payment = 请求付款
+chat-app = 应用
+chat-send-payment = 发送付款
+chat-status = 状态
+chat-amount = 金额
+chat-view = 详情
+chat-payment-request-sent = 付款请求已发送
+chat-payment-request-received = 收到新的付款请求
+chat-payment-sent = 付款已发送
+chat-payment-received = 付款已收到
+chat-payment-status-waiting-confirmation = 等待确认
+chat-payment-status-declined = 已拒绝
+chat-payment-status-pending = 处理中
+chat-payment-status-confirmed = 已确认
+chat-call-outgoing = 拨出电话
+chat-call-incoming = 来电
+chat-call-no-answer = 无应答
+chat-call-missed = 未接来电
+chat-call-ended = 通话结束
+chat-online = 在线
+chat-offline = 离线
+chat-waiting-for-response = 等待响应
+chat-text-too-long = 文字过长
+chat-member-count = {0} 位成员
+chat-context-pin-message = 置顶消息
+chat-context-copy-message = 复制消息
+chat-context-copy-selected = 复制所选
+chat-context-tip-user = 发送打赏
+chat-context-like-message = 点赞消息
+chat-context-user-info = 用户信息
+chat-context-send-contact-request = 添加联系人
+chat-context-report-message = 举报消息
+chat-context-kick-user = 移除
+chat-context-ban-user = 封禁
+chat-context-delete-message = 删除消息
+chat-message-cost-bar = 发送消息的费用为 {0} 每 kB
+chat-request-sent-title = 联系人请求已发送
+chat-request-sent-details = 对方接受后，您可以安全聊天。
+chat-request-sent-undo = 撤销
+chat-request-received-title = 收到联系人请求
+chat-request-received-details = 有人想与您建立联系！接受后，您可以安全聊天。
+
+chat-app-invite-sent = 邀请已发送
+chat-app-invite-received = 收到邀请
+chat-app-get = 获取应用
+chat-app-back = 返回应用
+chat-app-launch = 启动应用
+
+chat-modal-tip-title = 向 {0} 发送打赏？
+chat-modal-tip-body = 选择或输入要打赏的金额。
+chat-modal-tip-custom = 自定义
+chat-modal-tip-pay-button = 支付
+chat-modal-tip-confirmation-body = 您即将向 '{0}' 发送 {1} 作为打赏。该金额将从您的钱包中扣除。
+chat-modal-tip-confirmed-body = 您已成功向 '{0}' 发送 {1} 作为打赏。金额已从您的钱包中扣除。
+chat-modal-tip-error-body = 发送打赏时发生未知错误。
+
+chat-bot-details-info = 群组信息
+chat-bot-address = 群组地址
+chat-bot-toggle-notifications = 开启/关闭通知
+chat-bot-invite = 邀请联系人加入该群组
+chat-bot-leave = 退出群组
+
+chat-bot-user-address = 用户地址
+chat-bot-user-send-contact-request = 添加联系人
+
+chat-modal-kick-title = 移除 {0}？
+chat-modal-kick-body = 您确定要将 '{0}' 从服务器移除吗？
+chat-modal-kick-kick-button = 移除用户
+chat-modal-kicked-title = 已移除 {0}
+chat-modal-kicked-body = '{0}' 已从服务器移除。
+
+chat-modal-ban-title = 封禁 {0}？
+chat-modal-ban-body = 您确定要封禁 '{0}' 在此服务器上吗？
+chat-modal-ban-ban-button = 封禁用户
+chat-modal-banned-title = 已封禁 {0}
+chat-modal-banned-body = '{0}' 已被封禁在此服务器上。
+
+chat-bot-not-ready-title = 群组未就绪
+chat-bot-not-ready-body = 该群组尚未准备好，请稍后再试。
+
+chat-kicked = 您已被移除该群组。
+chat-banned = 您已被封禁在该群组。
+
+chat-report-title = 举报内容
+chat-report-details = 您想举报此内容吗？
+chat-report = 举报
+chat-report-cancel = 取消
+
+chat-private-note-title = 此聊天为私密聊天。
+chat-private-note-message = 消息仅存储在您的设备上，并通过先进的加密技术直接发送给您的联系人。
+
+; Contact Details Screen
+contact-details-chat = 聊天
+contact-details-send = 发送
+contact-details-receive = 接收
+contact-details-notifications = 通知
+contact-details-history = 历史记录
+contact-details-account-address = Spixi 地址
+contact-details-address-1 = 获取中
+contact-details-address-2 = Spixi
+contact-details-address-3 = 地址...
+contact-details-removecontact = 删除联系人
+contact-details-removedcontact-title = 已删除
+contact-details-removedcontact-text = 联系人已删除。
+contact-details-deletehistory = 删除历史记录
+contact-details-deletedhistory-title = 已删除
+contact-details-deletedhistory-text = 消息历史记录已删除。
+contact-details-delete-history-modal-title = 清除聊天记录？
+contact-details-delete-history-modal-subtitle = 整个聊天记录将被清除。
+contact-details-delete-history-modal-confirm = 是，清除聊天
+contact-details-delete-contact-modal-title = 从联系人中移除
+contact-details-delete-contact-modal-subtitle = 这将把联系人从您的列表中移除。在您重新添加之前，将无法发送或接收消息。
+contact-details-delete-contact-modal-confirm = 是，移除联系人
+
+; New Contact Screen
+contact-new-title = 添加新联系人
+contact-new-description = 通过粘贴或输入 Spixi 地址添加新联系人。您还可以扫描二维码。
+contact-new-placeholder = 粘贴或输入地址
+contact-new-send-request = 添加联系人
+contact-new-invalid-address-self-text = 您输入的地址是您的 Spixi 地址。
+contact-new-invalid-address-exists-text = 此联系人已存在。
+contact-new-scan = 扫描
+contact-new-scan-help = 或扫描二维码
+contact-new-send = 发送
+contact-new-cancel = 取消
+contact-new-confirm-title = 添加联系人？
+contact-new-confirm-details = 您将向以下 Spixi 地址发送联系人请求：
+
+; Downloads Screen
+downloads-title = 下载
+downloads-empty = 您没有已下载的文件。
+
+; Contributors Screen
+contributors-title = 贡献者
+contributors-thanks = 特别感谢我们的贡献者
+contributors-special-thanks-title = 特别感谢我们的贡献者
+
+; Index Screen
+index-balance = IXI 余额
+index-balance-show = 显示
+index-balance-hide = 隐藏
+index-balance-info = 已隐藏
+index-notifications = 通知
+index-unread-chats = 未读聊天
+index-no-conversations-title = 尚无会话
+index-no-conversations = 添加联系人，开始一对一私密聊天。您的消息将显示在此处。
+index-no-contacts-title = 尚未添加联系人
+index-no-contacts = 添加联系人以开始安全聊天。只有您同意的人才能与您通信。
+index-new-chat-button = 新聊天
+index-no-transactions-title = 暂无交易记录
+index-no-transactions = 使用 IXI 钱包后，您的交易将显示在此处。
+index-send = 发送
+index-scan = 扫描
+index-receive = 接收
+index-all = 全部
+index-sent = 已发送
+index-received = 已接收
+index-recent-activity = 最近活动
+index-contacts-placeholder = 搜索联系人
+index-tab-home = 主页
+index-tab-chats = 聊天
+index-tab-wallet = 钱包
+index-tab-contacts = 联系人
+index-tab-address = 地址
+index-new-title = 新建
+index-new-contact = 联系人
+index-new-chat = 聊天
+index-new-send = 发送 IXI
+index-new-request = 请求 IXI
+index-new-cancel = 取消
+index-side-title = Spixi 用户
+index-side-myaddress = 我的 Spixi 地址
+index-side-apps = 应用
+index-side-downloads = 下载
+index-side-settings = 设置
+index-side-security = 安全
+index-side-backup = 备份
+index-side-password = 密码
+index-side-about = 关于
+index-side-contributors = 贡献者
+index-side-howtouse = 如何使用 Spixi
+index-side-sendlog = 发送应用日志
+index-devmode = 开发者模式已启用
+index-excerpt-payment-request-sent = 付款请求已发送
+index-excerpt-payment-request-received = 收到付款请求
+index-excerpt-payment-sent = 付款已发送
+index-excerpt-payment-received = 付款已接收
+index-excerpt-contact-accepted = 联系人请求已接受
+index-excerpt-contact-request = 联系人请求
+index-excerpt-file = 文件
+index-excerpt-voice-call = 语音通话
+index-excerpt-self = 
+index-excerpt-typing = 输入中...
+index-side-settings-subtitle = 主题、语言、昵称和数据
+index-side-password-subtitle = 更改 Spixi 密码
+index-side-backup-subtitle = 创建备份文件
+index-side-how-to-subtitle = 学习如何使用 Spixi
+index-side-about-subtitle = 信息、帮助、联系我们、隐私政策
+index-missing-tx-title = 有些交易丢失了吗？
+index-missing-tx-text = Spixi 直接从区块链读取数据，而不是从中心化服务器，因此同步可能需要更长时间。
+index-missing-tx-view-all = 在浏览器中查看所有交易
+index-backup-prompt-title = 别忘了备份
+index-backup-prompt-desc = Spixi 是完全去中心化的——您的数据仅保存在设备上。为保护联系人并便于以后恢复，请立即创建备份。
+index-backup-prompt-create = 是的，创建备份
+index-backup-prompt-not-now = 暂不备份
+index-backup-prompt-note = 建议每次添加新联系人后都进行备份。
+
+; Onboarding Screen
+onboarding-choose-language = 选择语言
+onboarding-get-started = 开始体验
+onboarding-step-skip = 跳过
+onboarding-step-back = 返回
+onboarding-step-next = 下一步
+onboarding-step-1-title = 您的聊天，您的设备，您的规则。
+onboarding-step-1-subtitle = Spixi 不使用服务器。消息保留在您的设备上，并仅在加密后直接发送给您的联系人。
+onboarding-step-2-title = 您的地址是您的唯一 ID。
+onboarding-step-2-subtitle = Spixi 不需要您的电话号码或电子邮件。您唯一需要连接的内容就是您独特的 Spixi 地址。
+onboarding-step-3-title = 在聊天内发送和接收 IXI 支付。
+onboarding-step-3-subtitle = 使用内置钱包，在聊天中直接发送或接收 IXI 币。就像发送消息一样简单。
+onboarding-step-4-title = 在聊天中发现迷你应用。
+onboarding-step-4-subtitle = Spixi 微型应用让您可以玩游戏、使用工具或解锁新功能，全部直接在对话中完成。
+
+; Onboarding Create Account Screen
+create-account-title = 开始您的体验吧。
+create-account-description = 创建新账户，或使用备份恢复现有账户。
+create-account-new = 新账户
+create-account-already = 已有账户？
+create-account-restore = 恢复账户
+create-account-step = 步骤
+create-account-step-of = 共
+create-account-step-1-title = 设置您的昵称和头像
+create-account-step-1-subtitle = 您的昵称和头像将显示给您的联系人，您可随时更改。
+create-account-step-1-tap = 点击上传
+create-account-step-1-nickname-placeholder = 输入昵称
+create-account-step-2-title = 创建备份密码
+create-account-step-2-subtitle = 您需要此密码才能从备份文件恢复 Spixi 账户。请妥善保管。
+create-account-step-2-password-placeholder = 输入密码
+create-account-step-2-password-confirm = 确认密码
+create-account-step-2-password-confirm-note = 密码必须至少有 10 个字符。
+create-account-step-2-password-confirm-note-success = 密码匹配
+create-account-step-2-password-confirm-note-error = 密码必须匹配
+create-account-step-2-note-title = Spixi 不会存储此密码。
+create-account-step-2-note-subtitle = 没有它或您的备份文件，您的账户和钱包将无法恢复。
+create-account-finish-setup = 完成设置
+create-account-creating = 正在创建您的账户…
+create-account-creating-description = 这不会花太久。您的账户正在被加固。
+
+; Intro Restore Screen
+intro-restore-title = 恢复账户
+intro-restore-subtitle = 选择您的备份文件以开始恢复 Spixi 账户。
+intro-restore-select-file = 选择备份文件
+intro-restore-pass-title = 输入备份密码
+intro-restore-pass-subtitle = 要恢复您的 Spixi 账户，请输入用于保护您的备份文件的密码。
+intro-restore-pass-placeholder = 输入密码
+intro-restore-note-title = Spixi 不会存储此密码。
+intro-restore-note-subtitle = 只有您可以解锁此备份文件。
+intro-restore-button = 恢复账户
+intro-restoring-title = 正在恢复您的账户…
+intro-restoring-subtitle = 请稍候。我们正在安全地解锁您的账户。
+intro-restore-pass-error = 密码不正确。请重试。
+
+; Intro Retry Screen
+intro-retry-description-1 = 请重新输入密码
+intro-retry-description-2 = 访问您的账户时出现问题。请输入密码以继续。
+intro-retry-placeholder = 输入密码
+intro-retry-proceed = 继续
+intro-retry-title = 正在恢复<br />您的钱包访问权限
+intro-retry-info = 这可能需要一些时间
+intro-retry-invalidpassword-title = 无效密码
+intro-retry-invalidpassword-text = 无法解密钱包，请重试。
+
+; Lock Screen
+lock-description = Spixi 已锁定
+lock-placeholder = 请输入密码
+lock-error = 密码错误
+lock-unlock = 解锁
+lock-change = 更改钱包
+
+; Settings Screen
+settings-title = 设置
+settings-save = 保存
+settings-cancel = 取消
+settings-confirm = 确认
+settings-description = 管理您的 Spixi 账户和存储在此设备上的数据。
+settings-account-information = 基本设置
+settings-account-description = 更改语言、头像和昵称。
+settings-account-language-edit = 语言
+settings-account-appearance-edit = 外观
+settings-account-appearance-automatic = 自动
+settings-account-appearance-light = 亮色
+settings-account-appearance-dark = 暗色
+settings-account-image-edit = 头像
+settings-account-nick-edit = 昵称
+settings-account-nick-placeholder = 输入新昵称
+settings-account-deleteinfo = 您可以随时永久删除此 Spixi 账户及其所有相关数据。<br/><br/><b>重要：</b> 删除后，您需要创建或恢复账户才能继续使用 Spixi。
+settings-account-delete = 永久删除账户
+settings-deletea-title = 确认永久删除此 Spixi 账户？
+settings-deletea-text = 您确定要永久删除此 Spixi 账户吗？<br/><br/>此操作无法撤销！我们建议您在删除前创建账户备份。恢复账户时需要备份文件。
+settings-deleteda-title = 已删除
+settings-deleteda-text = Spixi 账户已删除。
+settings-wallet-settings = 钱包设置
+settings-wallet-description = 此钱包已绑定到您的 Spixi 账户。要删除钱包、账户及所有交易历史，请点击下方按钮。
+settings-wallet-delete = 删除我的钱包
+settings-deletew-title = 确认删除此钱包？
+settings-deletew-text = 您确定要删除此钱包吗？<br/><br/>此操作无法撤销！删除钱包后，您将无法访问钱包中的资金。恢复钱包需要备份文件和密码。
+settings-deletew-error-title = 错误
+settings-deletew-error-text = 无法删除钱包文件。
+settings-history = 消息历史
+settings-history-description = 此设备上存储了所有聊天记录和下载的文件。您可以随时删除聊天历史或下载文件。
+settings-history-delete = 删除聊天记录
+settings-downloads-delete = 删除所有下载
+settings-deleteh-title = 确认删除聊天记录？
+settings-deleteh-text = 您确定要删除所有聊天记录吗？此操作无法撤销！
+settings-deletedh-title = 已删除
+settings-deletedh-text = 聊天记录已删除。
+settings-deleted-title = 确认删除所有下载？
+settings-deleted-text = 您确定要删除所有下载的文件吗？所有在 Spixi 应用中下载的文件将被删除！此操作无法撤销！
+settings-deletedd-title = 已删除
+settings-deletedd-text = {0} 个下载文件已删除。
+settings-deleted-error-title = 错误
+settings-deleted-error-text = 发生未知错误。
+settings-emptynick-title = 无效昵称
+settings-emptynick-text = 请输入昵称。
+settings-unsaved-changes-modal-title = 未保存的更改
+settings-unsaved-changes-modal-subtitle = 如果现在离开，您的更改将会丢失。确定要继续吗？
+
+; Settings Backup Screen
+settings-backup-title = 账户备份
+settings-backup-description = 下载备份文件以便恢复此 Spixi 账户。联系人仅存储在您的设备上，并包含在添加后创建的备份中。
+settings-backup-save = 保存钱包
+settings-backup-account-save = 备份钱包和联系人
+settings-backup-notice = 如果发生以下情况，您需要备份文件和密码才能恢复账户：
+settings-backup-notice2 = - 您丢失了此设备<br />- 您卸载了 Spixi<br />- 您删除了此 Spixi 账户<br />- 您删除了此钱包
+settings-backup-invalidpassword-title = 无效密码
+settings-backup-invalidpassword-text = 请输入有效密码。
+
+; Settings Encryption Screen
+settings-encryption-title = 密码
+settings-encryption-description = 该密码绑定至您的账户和钱包。您需要此密码才能恢复账户或钱包访问权限。
+settings-encryption-edit = 更改密码
+settings-encryption-type = 输入 <b>当前</b> 密码。
+settings-encryption-placeholder = 当前密码
+settings-encryption-typenew = 输入 <b>新</b> 密码。
+settings-encryption-placeholdernew = 新密码
+settings-encryption-placeholderretype = 再次输入新密码
+settings-encryption-change = 更改密码
+settings-encryption-password10 = 密码必须至少包含 10 个字符。
+settings-encryption-passwordconf = 确认密码
+settings-encryption-passwordnomatch = 密码不匹配
+settings-encryption-passwordmatch = 密码匹配
+settings-encryption-invalidpassword-title = 无效密码
+settings-encryption-invalidpassword-text = 请输入有效密码。
+settings-encryption-passwordchanged-title = 密码
+settings-encryption-passwordchanged-text = 密码已成功更改。
+settings-encryption-invalidpassword-current-text = 当前密码错误，请重试。
+
+; Settings Lock Screen
+settings-lock-title = 锁定我的 Spixi
+settings-lock-description = 设置密码，以确保只有您可以在此设备上访问 Spixi。
+settings-lock-status = 安全状态：
+settings-lock-unlocked = 未锁定
+settings-lock-locked = 已锁定
+settings-lock-passwordinfo = 设置或更改密码
+settings-lock-password = 输入 <b>当前</b> 密码
+settings-lock-password-new = 输入 <b>新</b> 密码
+settings-lock-placeholder-1 = 输入当前密码
+settings-lock-placeholder-2 = 输入新密码
+settings-lock-placeholder-3 = 再次输入新密码
+settings-lock-info = 每次启动 Spixi 时，您都需要输入此密码。
+settings-lock-save = 设置密码
+settings-lock-authinfo = 您需要生物识别验证或密码才能解锁 Spixi。
+settings-lock-confirm-text = 变更将在保存后生效。
+
+; Wallet Contact Request Screen
+wallet-contact-request-title = 付款请求
+wallet-contact-request-subtitle = 付款请求来自：
+wallet-contact-request-amount = 金额
+wallet-contact-request-info = 用户请求支付以下金额
+wallet-contact-request-respond = 响应付款请求
+wallet-contact-request-respondinfo = 您可以拒绝或支付此请求。发起请求的用户将收到您的决定通知。
+wallet-contact-request-decline = 拒绝
+wallet-contact-request-proceed = 发送付款
+
+; Wallet Recipient Screen
+wallet-recipient-title = 选择收款人
+wallet-recipient-search-placeholder = 搜索联系人
+wallet-recipient-empty = 已选择 0 位收款人
+wallet-recipient-add = 添加收款人
+wallet-recipient-selected = 已选择的收款人
+wallet-recipient-new-contact-button = 添加新联系人
+wallet-recipient-no-contact-button = 新联系人
+
+; Wallet Request Screen
+wallet-request-title = 请求付款
+wallet-request-subtitle = 请求特定金额
+wallet-request-amount-placeholder = 输入金额
+wallet-request-address = 收款人地址
+wallet-request-send-info = 发送请求至以下收款人：
+wallet-request-add = 您可以向多个用户发送相同金额的付款请求。<br/>添加更多用户或地址以发送此请求。
+wallet-request-placeholder = 粘贴或输入地址
+wallet-request-send = 发送请求
+wallet-request-error-title = 错误
+wallet-request-error-text = 请在所有必填字段中输入有效信息。
+
+; Wallet Send Screen
+wallet-send-title = 发送 IXI
+wallet-send-details = 粘贴或输入要付款的地址。您也可以选择联系人或扫描二维码。
+wallet-send-subdetails = 发送 IXI 至
+wallet-send-add = 添加收款人
+wallet-send-placeholder = 粘贴或输入地址
+wallet-send-more = 为此交易添加多个收款人。每位收款人将收到相同的金额。
+wallet-send-recipients = 收款人
+wallet-send-norecipients = 没有选择收款人
+wallet-send-next = 下一步
+wallet-send-max = 发送最大金额
+wallet-send-select = 选择联系人
+wallet-send-or = 或
+
+; Wallet Send 2 Screen
+wallet-send2-title = 确认付款
+wallet-send2-policy = 网络费用策略
+wallet-send2-info = IXI 交易不可撤销。
+wallet-send2-feeinfo = 交易费用（IXI 费用）已包含在付款中。
+wallet-send2-normal = 普通
+wallet-send2-high = 高优先级
+wallet-send2-custom = 自定义
+wallet-send2-placeholder = 输入要发送的金额？
+wallet-send2-amount = 金额
+wallet-send2-max-amount = 发送最大金额
+wallet-send2-max-amount-warning = 您将发送钱包中的所有资金！
+wallet-send2-fee = 交易费用总计
+wallet-send2-total = 付款总金额
+wallet-send2-send = 发送 IXI
+wallet-send2-confirm-title = 发送付款
+wallet-send2-confirm = 确认
+wallet-send2-cancel = 取消
+wallet-send2-edit = 编辑付款
+wallet-send2-remove-recipient = 移除收款人
+wallet-send2-done = 完成
+wallet-send2-yourbalance = 当前余额
+
+; Wallet Sent Screen
+wallet-sent-title = 付款详情
+wallet-sent-subtitle = 付款已发送至：
+wallet-status-sent-pending = 付款处理中
+wallet-status-receive-pending = 收款处理中
+wallet-status-sent = 付款成功
+wallet-status-receive = 付款已收到
+wallet-status-failed = 付款失败
+wallet-sent-amount = 金额
+wallet-sent-status = 付款状态
+wallet-sent-confirmed = 已确认
+wallet-sent-unconfirmed = 未确认
+wallet-sent-details = 发送金额已从您的余额中扣除。
+wallet-sent-fee = 交易费用
+wallet-sent-feeinfo = 此交易包含网络费用：
+wallet-sent-txid = 交易 ID
+wallet-sent-view-explorer = 在区块浏览器中查看
+wallet-sent-dismiss = 关闭
+wallet-sent-unconfirmed-details = 付款已发送，但尚未得到网络确认。确认后，您将看到交易 ID 和区块浏览器链接。
+wallet-unknown-sender = 未知发送方
+wallet-unknown-recipient = 未知接收方
+wallet-sentrecv-title = 付款已收到
+wallet-sentrecv-subtitle = 付款来自：
+wallet-sentrecv-amount = 金额
+wallet-sentrecv-details = 此金额已添加到您的钱包余额。
+
+; Global Wallet Errors
+wallet-error-amount-title = 无效金额
+wallet-error-amount-text = 请输入有效金额。
+wallet-error-amountdecimal-text = 请输入正确的小数金额。
+wallet-error-balance-title = 余额不足
+wallet-error-balance-text = 您的余额不足以完成此交易。交易总费用为 {0}，您的当前余额为 {1}。
+
+; Onboarding join official bot
+onboarding-bot-title = 加入 Spixi 的旅程
+onboarding-bot-subtitle = 加入我们的官方群聊，分享反馈、与团队交流，并随时了解最新功能。
+onboarding-bot-join-button = 加入社区
+onboarding-bot-skip = 暂时跳过
+
+; Onboarding 1
+onboarding-screen1-title = 安全连接
+onboarding-screen1-text = 使用世界上最安全、最私密的聊天应用之一，掌控您的通信和支付。
+onboarding-screen1-get-started = 开始
+onboarding-screen1-skip = 跳过介绍
+
+; Onboarding 2
+onboarding-screen2-title = Spixi 地址是您的唯一 ID
+onboarding-screen2-text = Spixi 无需您的电话号码或电子邮件。它使用您的地址作为唯一身份标识，您可以通过 Spixi 地址添加联系人。
+
+; Onboarding 3
+onboarding-screen3-title = 发送和接收 IXI 付款
+onboarding-screen3-text = 使用内置钱包，快速发送和接收 IXI 付款，就像发送消息一样简单。
+
+; Onboarding send and receive payments
+onboarding-screen4-title = 发送和接收 IXI 付款
+onboarding-screen4-text = 通过钱包可以轻松快捷地发送和接收 IXI 付款，与发送消息一样简单。
+onboarding-skip = 跳过
+onboarding-back = 返回
+onboarding-next = 下一步
+onboarding-finish = 完成
+
+; Empty State
+empty-state-title = 欢迎使用 Spixi
+empty-state-detail-1 = 您的安全点对点聊天应用，内置加密钱包。
+empty-state-detail-2 = 尽享加密聊天，确保您的消息仅在您与联系人之间存储和传输，保障您的隐私。
+
+; Ixinames
+ixinames-request-title = IXI Names 请求连接
+ixinames-request-details = 您是否要将此 Spixi 账户连接到 IXI Names？该服务将获取您的地址信息。
+ixinames-request-decline = 拒绝
+ixinames-request-connect = 连接
+ixinames-message-connected = 您的 Spixi 账户已成功连接至 IXI Names。
+ixinames-message-error = Spixi 无法连接至 IXI Names，请重试。
+
+; Rating
+rating-request-title = 您喜欢 Spixi 吗？
+rating-request-details = 您的反馈对我们改进应用至关重要。
+rating-request-no = 不太喜欢…
+rating-request-yes = 是的，我喜欢！
+
+; Global
+global-connecting-s2 = 正在连接 Ixian S2...
+global-connecting-dlt = 正在连接 Ixian 网络...
+global-received = 已接收
+global-sent = 已发送
+global-app-accept = 接受
+global-app-reject = 拒绝
+global-app-wants-to-use = {0} 想要使用 {1} 与您互动。
+global-call-in-call = 通话中
+global-call-dialing = 拨号中...
+global-call-incoming = 来电
+
+global-dialog-error = 错误
+global-dialog-ok = 确定
+global-dialog-cancel = 取消
+global-invalid-address-title = 无效地址
+global-invalid-address-text = 请输入有效地址。
+
+global-friend-request-accepted = {0} 已接受您的联系人请求。
+
+global-update-available = Spixi 有新版本可用 ({0})。请更新以获得最佳体验。
+global-modal-external-link-title = 外部链接
+global-modal-external-link-body = 您即将访问外部链接 ({0})。外部链接可能存在风险，请谨慎访问。
+global-modal-external-link-button-visit = 继续
+
+global-lock-auth-text = 需要身份验证
+global-lock-invalidpassword-title = 身份验证失败
+global-lock-invalidpassword-text = 请输入密码以解锁 Spixi。
+
+global-time-justnow = 刚刚
+global-time-aminuteago = 1 分钟前
+global-time-minutesago = 分钟前
+
+global-share-choose = 选择操作
+global-share-savefile = 保存文件
+global-share-sharefile = 分享文件
