@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IxiHome.Pages.AddEntity.AddEntityPage"
+             Title="Add Entity">
+    <Grid RowDefinitions="Auto,*,Auto" Padding="10">
+        <!-- Search Bar -->
+        <SearchBar x:Name="SearchBar"
+                   Placeholder="Search entities..."
+                   TextChanged="OnSearchTextChanged"
+                   Margin="0,10,0,10"/>
+
+        <!-- Entities List -->
+        <CollectionView x:Name="AvailableEntitiesCollection"
+                        Grid.Row="1"
+                        SelectionMode="Single"
+                        SelectionChanged="OnEntitySelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="15" Margin="5" HasShadow="True" CornerRadius="10">
+                        <Grid ColumnDefinitions="Auto,*,Auto">
+                            <Label Text="🏠" 
+                                   FontSize="24" 
+                                   VerticalOptions="Center"
+                                   Margin="0,0,10,0"/>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="{Binding FriendlyName}" 
+                                       FontAttributes="Bold" 
+                                       FontSize="16"/>
+                                <Label Text="{Binding EntityId}" 
+                                       FontSize="12" 
+                                       TextColor="Gray"/>
+                                <Label Text="{Binding State}" 
+                                       FontSize="12" 
+                                       TextColor="LightGray"/>
+                            </VerticalStackLayout>
+                            <Label Text=">" 
+                                   Grid.Column="2"
+                                   FontSize="24"
+                                   TextColor="Gray"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.EmptyView>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20">
+                    <Label Text="No entities found" 
+                           FontSize="18" 
+                           TextColor="Gray"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="Make sure QuIXI is connected" 
+                           FontSize="14"
+                           TextColor="LightGray"
+                           HorizontalTextAlignment="Center"
+                           Margin="0,10,0,0"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+
+        <!-- Load Entities Button -->
+        <Button x:Name="LoadButton"
+                Text="Load Entities from QuIXI" 
+                Grid.Row="2"
+                Clicked="OnLoadEntitiesClicked"
+                Margin="0,10,0,10"/>
+    </Grid>
+</ContentPage>

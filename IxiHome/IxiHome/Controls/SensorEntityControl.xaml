@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:IxiHome.Data"
+             x:Class="IxiHome.Controls.SensorEntityControl"
+             x:Name="this">
+    <Frame Padding="15" 
+           Margin="5" 
+           HasShadow="True" 
+           CornerRadius="15"
+           BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}">
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTapped"/>
+        </Frame.GestureRecognizers>
+        
+        <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="*,Auto">
+            <!-- Icon -->
+            <Label Text="{Binding Entity.Icon, Source={x:Reference this}}" 
+                   FontSize="40" 
+                   Grid.Row="0" 
+                   Grid.Column="0"
+                   VerticalOptions="Start"
+                   Margin="0,0,0,10"/>
+            
+            <!-- Availability Indicator -->
+            <BoxView Grid.Row="0" 
+                     Grid.Column="1"
+                     WidthRequest="10"
+                     HeightRequest="10"
+                     CornerRadius="5"
+                     VerticalOptions="Start"
+                     HorizontalOptions="End"
+                     Margin="0,5,0,0">
+                <BoxView.Triggers>
+                    <DataTrigger TargetType="BoxView" 
+                                 Binding="{Binding Entity.IsAvailable, Source={x:Reference this}}" 
+                                 Value="True">
+                        <Setter Property="Color" Value="{StaticResource Info}" />
+                    </DataTrigger>
+                    <DataTrigger TargetType="BoxView" 
+                                 Binding="{Binding Entity.IsAvailable, Source={x:Reference this}}" 
+                                 Value="False">
+                        <Setter Property="Color" Value="{StaticResource Danger}" />
+                    </DataTrigger>
+                </BoxView.Triggers>
+            </BoxView>
+            
+            <!-- Entity Name -->
+            <Label Text="{Binding Entity.Name, Source={x:Reference this}}" 
+                   FontAttributes="Bold" 
+                   FontSize="16"
+                   Grid.Row="1" 
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   VerticalOptions="Center"
+                   LineBreakMode="TailTruncation"
+                   MaxLines="2"/>
+            
+            <!-- Value Display -->
+            <HorizontalStackLayout Grid.Row="2" 
+                                   Grid.Column="0"
+                                   Grid.ColumnSpan="2"
+                                   Spacing="5"
+                                   VerticalOptions="End"
+                                   Margin="0,10,0,0">
+                <Label FontSize="24" 
+                       FontAttributes="Bold"
+                       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Entity.Value, Source={x:Reference this}, StringFormat='{0:F1}'}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="{Binding Entity.Unit, Source={x:Reference this}}" 
+                       FontSize="16" 
+                       TextColor="{StaticResource Gray500}"
+                       VerticalOptions="End"
+                       Margin="0,0,0,3"/>
+            </HorizontalStackLayout>
+            
+            <!-- Last Updated -->
+            <Label Grid.Row="2" 
+                   Grid.Column="1"
+                   FontSize="10" 
+                   TextColor="{StaticResource Gray400}"
+                   HorizontalOptions="End"
+                   VerticalOptions="End"
+                   Margin="0,10,0,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Updated: "/>
+                        <Span Text="{Binding Entity.LastUpdated, Source={x:Reference this}, StringFormat='{0:HH:mm}'}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+    </Frame>
+</ContentView>

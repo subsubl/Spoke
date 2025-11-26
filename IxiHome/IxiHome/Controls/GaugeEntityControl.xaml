@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:IxiHome.Data"
+             x:Class="IxiHome.Controls.GaugeEntityControl"
+             x:Name="this">
+    <Frame Padding="15" 
+           Margin="5" 
+           HasShadow="True" 
+           CornerRadius="15"
+           BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}">
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTapped"/>
+        </Frame.GestureRecognizers>
+        
+        <Grid RowDefinitions="Auto,*,Auto">
+            <!-- Header -->
+            <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,10">
+                <Label Text="{Binding Entity.Icon, Source={x:Reference this}}" 
+                       FontSize="32" 
+                       Grid.Column="0"
+                       VerticalOptions="Center"/>
+                
+                <Label Text="{Binding Entity.Name, Source={x:Reference this}}" 
+                       FontAttributes="Bold" 
+                       FontSize="16"
+                       Grid.Column="1"
+                       VerticalOptions="Center"
+                       Margin="10,0,10,0"
+                       LineBreakMode="TailTruncation"/>
+                
+                <BoxView Grid.Column="2"
+                         WidthRequest="10"
+                         HeightRequest="10"
+                         CornerRadius="5"
+                         VerticalOptions="Center"
+                         Color="{StaticResource Info}">
+                    <BoxView.Triggers>
+                        <DataTrigger TargetType="BoxView" 
+                                     Binding="{Binding Entity.IsAvailable, Source={x:Reference this}}" 
+                                     Value="False">
+                            <Setter Property="Color" Value="{StaticResource Danger}" />
+                        </DataTrigger>
+                    </BoxView.Triggers>
+                </BoxView>
+            </Grid>
+            
+            <!-- Circular Gauge -->
+            <Grid Grid.Row="1" 
+                  HeightRequest="120" 
+                  WidthRequest="120"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center">
+                <!-- Background Circle -->
+                <Ellipse Fill="Transparent"
+                         Stroke="{StaticResource Gray300}"
+                         StrokeThickness="8"
+                         HeightRequest="120"
+                         WidthRequest="120"/>
+                
+                <!-- Progress Arc (simplified - full implementation would use custom drawing) -->
+                <Ellipse x:Name="GaugeProgress"
+                         Fill="Transparent"
+                         Stroke="{StaticResource Primary}"
+                         StrokeThickness="8"
+                         HeightRequest="120"
+                         WidthRequest="120"
+                         Opacity="0.8"/>
+                
+                <!-- Center Value -->
+                <VerticalStackLayout HorizontalOptions="Center" 
+                                     VerticalOptions="Center">
+                    <Label x:Name="ValueLabel"
+                           FontSize="28" 
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding Entity.Unit, Source={x:Reference this}}" 
+                           FontSize="12" 
+                           TextColor="{StaticResource Gray500}"
+                           HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Grid>
+            
+            <!-- Footer -->
+            <Grid Grid.Row="2" ColumnDefinitions="*,*" Margin="0,10,0,0">
+                <Label Grid.Column="0"
+                       FontSize="12" 
+                       TextColor="{StaticResource Gray500}"
+                       HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Min: "/>
+                            <Span Text="{Binding Entity.MinValue, Source={x:Reference this}, StringFormat='{0:F0}'}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Column="1"
+                       FontSize="12" 
+                       TextColor="{StaticResource Gray500}"
+                       HorizontalOptions="End">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Max: "/>
+                            <Span Text="{Binding Entity.MaxValue, Source={x:Reference this}, StringFormat='{0:F0}'}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+        </Grid>
+    </Frame>
+</ContentView>

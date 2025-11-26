@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:IxiHome.Data"
+             xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="IxiHome.Controls.GraphEntityControl"
+             x:Name="this">
+    <Frame Padding="15" 
+           Margin="5" 
+           HasShadow="True" 
+           CornerRadius="15"
+           BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}">
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTapped"/>
+        </Frame.GestureRecognizers>
+        
+        <Grid RowDefinitions="Auto,*,Auto">
+            <!-- Header -->
+            <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,10">
+                <Label Text="{Binding Entity.Icon, Source={x:Reference this}}" 
+                       FontSize="32" 
+                       Grid.Column="0"
+                       VerticalOptions="Center"/>
+                
+                <VerticalStackLayout Grid.Column="1" 
+                                     VerticalOptions="Center"
+                                     Margin="10,0,10,0">
+                    <Label Text="{Binding Entity.Name, Source={x:Reference this}}" 
+                           FontAttributes="Bold" 
+                           FontSize="16"
+                           LineBreakMode="TailTruncation"/>
+                    <Label FontSize="12" 
+                           TextColor="{StaticResource Gray500}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding Entity.Value, Source={x:Reference this}, StringFormat='{0:F1}'}"/>
+                                <Span Text=" "/>
+                                <Span Text="{Binding Entity.Unit, Source={x:Reference this}}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </VerticalStackLayout>
+                
+                <BoxView Grid.Column="2"
+                         WidthRequest="10"
+                         HeightRequest="10"
+                         CornerRadius="5"
+                         VerticalOptions="Center"
+                         Color="{StaticResource Info}">
+                    <BoxView.Triggers>
+                        <DataTrigger TargetType="BoxView" 
+                                     Binding="{Binding Entity.IsAvailable, Source={x:Reference this}}" 
+                                     Value="False">
+                            <Setter Property="Color" Value="{StaticResource Danger}" />
+                        </DataTrigger>
+                    </BoxView.Triggers>
+                </BoxView>
+            </Grid>
+            
+            <!-- Chart -->
+            <microcharts:ChartView x:Name="ChartView"
+                                   Grid.Row="1"
+                                   HeightRequest="150"
+                                   Margin="0,10,0,10"/>
+            
+            <!-- Footer -->
+            <Grid Grid.Row="2" ColumnDefinitions="*,Auto">
+                <Label Grid.Column="0"
+                       FontSize="11" 
+                       TextColor="{StaticResource Gray500}"
+                       HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Last "/>
+                            <Span Text="{Binding Entity.HistoryHours, Source={x:Reference this}}"/>
+                            <Span Text=" hours"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Column="1"
+                       FontSize="11" 
+                       TextColor="{StaticResource Gray400}"
+                       HorizontalOptions="End">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Updated: "/>
+                            <Span Text="{Binding Entity.LastUpdated, Source={x:Reference this}, StringFormat='{0:HH:mm}'}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+        </Grid>
+    </Frame>
+</ContentView>
