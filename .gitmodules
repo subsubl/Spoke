@@ -1,0 +1,13 @@
+[submodule "Ixian-Core"]
+	path = Ixian-Core
+	url = https://github.com/ixian-platform/Ixian-Core.git
+	branch = development
+[submodule "Ixian-Docs"]
+	path = Ixian-Docs
+	url = https://github.com/ixian-platform/Ixian-Docs.git
+[submodule "QuIXI"]
+	path = QuIXI
+	url = https://github.com/ixian-platform/QuIXI.git
+[submodule "Spixi"]
+	path = Spixi
+	url = https://github.com/ixian-platform/Spixi.git
