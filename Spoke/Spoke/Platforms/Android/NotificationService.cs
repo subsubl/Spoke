@@ -12,7 +12,7 @@ namespace Spoke.Platforms.Android;
 public class NotificationService
 {
     private const string CHANNEL_ID = "ixihome_notifications";
-    private const string CHANNEL_NAME = "IxiHome";
+    private const string CHANNEL_NAME = "Spoke";
     private const string CHANNEL_DESCRIPTION = "Smart home notifications";
     private readonly Context _context;
     private readonly NotificationManager? _notificationManager;

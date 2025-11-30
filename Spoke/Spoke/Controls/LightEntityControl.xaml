@@ -1,7 +1,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:data="clr-namespace:IxiHome.Data"
-             x:Class="IxiHome.Controls.LightEntityControl"
+             xmlns:data="clr-namespace:Spoke.Data"
+             x:Class="Spoke.Controls.LightEntityControl"
              x:Name="LightControl">
     <ContentView.Content>
         <Border StrokeShape="RoundRectangle 8" StrokeThickness="1" Padding="12" BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">

@@ -1,5 +1,5 @@
-using IxiHome.Meta;
-using IxiHome.Network;
+using Spoke.Meta;
+using Spoke.Network;
 using System.Collections.ObjectModel;
 using System.IO;
 
@@ -34,7 +34,7 @@ public partial class OnboardingPage : ContentPage
         // Define onboarding steps
         Steps.Add(new OnboardingStep
         {
-            Title = "Welcome to IxiHome",
+            Title = "Welcome to Spoke",
             Description = "Your smart home control center powered by Ixian blockchain technology. Let's set up your secure identity and connect to your QuIXI instance.",
             Icon = "🏠"
         });
@@ -56,21 +56,21 @@ public partial class OnboardingPage : ContentPage
         Steps.Add(new OnboardingStep
         {
             Title = "Configure QuIXI Connection",
-            Description = "Enter your QuIXI connection details to link IxiHome with your smart home system via the Ixian network.",
+            Description = "Enter your QuIXI connection details to link Spoke with your smart home system via the Ixian network.",
             Icon = "⚙️"
         });
 
         Steps.Add(new OnboardingStep
         {
             Title = "Test Connection",
-            Description = "Let's verify that IxiHome can connect to your QuIXI instance.",
+            Description = "Let's verify that Spoke can connect to your QuIXI instance.",
             Icon = "🔗"
         });
 
         Steps.Add(new OnboardingStep
         {
             Title = "Setup Complete",
-            Description = "IxiHome is now connected to QuIXI! Your smart home is ready to control via blockchain technology.",
+            Description = "Spoke is now connected to QuIXI! Your smart home is ready to control via blockchain technology.",
             Icon = "✅",
             IsLastStep = true
         });
@@ -177,11 +177,11 @@ public partial class OnboardingPage : ContentPage
                 WalletPassword = Guid.NewGuid().ToString();
             }
 
-            // Use Spixi's Node.generateWallet method
-            if (IXICore.Meta.Node.generateWallet(WalletPassword))
+            // Generate wallet using Ixian Core wallet storage
+            if (Spoke.Meta.Node.generateWallet(WalletPassword))
             {
-                IXICore.Meta.Node.generatedNewWallet = true;
-                IXICore.Meta.Node.start();
+                Spoke.Meta.Node.generatedNewWallet = true;
+                Spoke.Meta.Node.start();
 
                 await DisplayAlert("Success", "Wallet created successfully!", "OK");
                 OnNextClicked(sender, e);

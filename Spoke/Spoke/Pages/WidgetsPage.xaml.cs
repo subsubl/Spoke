@@ -1,6 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-using IxiHome.Data;
-using IxiHome.Widgets;
+using Spoke.Data;
+using Spoke.Widgets;
 using IXICore.Meta;
 using System.IO;
 
@@ -10,20 +10,20 @@ public partial class WidgetsPage : ContentPage
 {
     public WidgetsPage()
     {
-           try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" WidgetsPage ctor BEFORE InitializeComponent\n"); } catch {}
+           try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" WidgetsPage ctor BEFORE InitializeComponent\n"); } catch {}
            Logging.info("WidgetsPage: constructor start");
            InitializeComponent();
-           try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" WidgetsPage ctor AFTER InitializeComponent\n"); } catch {}
+           try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" WidgetsPage ctor AFTER InitializeComponent\n"); } catch {}
            BindingContext = new WidgetsViewModel();
            Logging.info("WidgetsPage: constructor end");
-           try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" WidgetsPage ctor end\n"); } catch {}
+           try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" WidgetsPage ctor end\n"); } catch {}
     }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
         Logging.info("WidgetsPage: OnAppearing start");
-        try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" WidgetsPage OnAppearing start\n"); } catch {}
+        try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" WidgetsPage OnAppearing start\n"); } catch {}
         try
         {
             // Load data when the page appears to ensure managers are initialized
@@ -35,10 +35,10 @@ public partial class WidgetsPage : ContentPage
         catch (Exception ex)
         {
             Logging.error($"WidgetsPage: OnAppearing error: {ex}");
-            try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" WidgetsPage OnAppearing error: "+ex+"\n"); } catch {}
+            try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" WidgetsPage OnAppearing error: "+ex+"\n"); } catch {}
         }
         Logging.info("WidgetsPage: OnAppearing end");
-        try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" WidgetsPage OnAppearing end\n"); } catch {}
+        try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" WidgetsPage OnAppearing end\n"); } catch {}
     }
 
     private void OnCreateSensorWidgetClicked(object sender, EventArgs e)

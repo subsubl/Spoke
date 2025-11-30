@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IxiHome.Pages.Onboarding.OnboardingPage"
-             Title="Setup IxiHome"
+             x:Class="Spoke.Pages.Onboarding.OnboardingPage"
+             Title="Setup Spoke"
              BackgroundColor="{StaticResource PageBackgroundColor}">
 
     <Grid RowDefinitions="*,Auto">
@@ -62,7 +62,7 @@
                 </VerticalStackLayout>
 
                 <!-- Username & Avatar (Step 2) -->
-                <VerticalStackLayout IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringEqualsConverter}, ConverterParameter='Choose Username & Avatar'}"
+                <VerticalStackLayout IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringEqualsConverter}, ConverterParameter='Choose Username &amp; Avatar'}"
                                    Spacing="20">
                     <Entry Placeholder="Choose a username"
                            Text="{Binding Username}" />
@@ -105,7 +105,7 @@
             <Grid ColumnDefinitions="*,*" ColumnSpacing="10" Grid.Row="2">
                 <Button Text="Back"
                         Style="{StaticResource SecondaryButtonStyle}"
-                        IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringNotEqualsConverter}, ConverterParameter='Welcome to IxiHome'}"
+                        IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringNotEqualsConverter}, ConverterParameter='Welcome to Spoke'}"
                         Clicked="OnBackClicked" />
                 <Button Text="{Binding CurrentStep.IsLastStep, Converter={StaticResource BoolToStringConverter}, ConverterParameter='Finish|Next'}"
                         Style="{StaticResource PrimaryButtonStyle}"

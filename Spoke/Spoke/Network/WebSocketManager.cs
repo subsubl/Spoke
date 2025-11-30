@@ -5,8 +5,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using IXICore;
 using IXICore.Meta;
-using IxiHome.Meta;
-using IxiHome.Data;
+using Spoke.Meta;
+using Spoke.Data;
 using System.Text.Json;
 
 namespace Spoke.Network

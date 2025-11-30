@@ -41,7 +41,7 @@
     <Color x:Key="Blue200Accent">#72ACF1</Color>
     <Color x:Key="Blue300Accent">#A7CBF6</Color>
 
-    <!-- Custom colors for IxiHome -->
+    <!-- Custom colors for Spoke -->
     <Color x:Key="PageBackgroundColor">White</Color>
     <Color x:Key="PrimaryColor">#512BD4</Color>
     <Color x:Key="CardBackgroundColor">White</Color>

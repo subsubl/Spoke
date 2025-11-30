@@ -1,4 +1,4 @@
-using IxiHome.Meta;
+using Spoke.Meta;
 
 namespace Spoke.Pages;
 

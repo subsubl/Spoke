@@ -1,4 +1,4 @@
-using IxiHome.Meta;
+using Spoke.Meta;
 using IXICore;
 using IXICore.Meta;
 using Windows.Networking.Connectivity;

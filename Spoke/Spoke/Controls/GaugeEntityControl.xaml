@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:data="clr-namespace:IxiHome.Data"
-             x:Class="IxiHome.Controls.GaugeEntityControl"
+             xmlns:data="clr-namespace:Spoke.Data"
+             x:Class="Spoke.Controls.GaugeEntityControl"
              x:Name="this">
     <Frame Padding="15" 
            Margin="5" 
@@ -54,8 +54,7 @@
                 <!-- Custom Circular Progress (using GraphicsView) -->
                 <GraphicsView x:Name="GaugeGraphicsView"
                               HeightRequest="120"
-                              WidthRequest="120"
-                              Drawable="GaugeDrawable"/>
+                              WidthRequest="120"/>
                 
                 <!-- Center Value -->
                 <VerticalStackLayout HorizontalOptions="Center" 

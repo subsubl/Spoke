@@ -104,10 +104,6 @@
     <PackageReference Include="Open.NAT" Version="2.1.0" />
   </ItemGroup>
   
-  <ItemGroup>
-    <ProjectReference Include="..\..\Spixi\Spixi\Spixi.csproj" />
-  </ItemGroup>
-  
   <Import Project="..\..\Ixian-Core\IXICore.projitems" Label="Shared" />
   
 </Project>

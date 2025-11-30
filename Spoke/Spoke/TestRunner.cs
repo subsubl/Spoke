@@ -2,10 +2,10 @@ using System;
 using System.Threading.Tasks;
 using IXICore;
 using IXICore.Meta;
-using IxiHome.Meta;
-using IxiHome.Data;
-using IxiHome.Sensors;
-using IxiHome.Widgets;
+using Spoke.Meta;
+using Spoke.Data;
+using Spoke.Sensors;
+using Spoke.Widgets;
 
 namespace Spoke.TestRunner
 {
@@ -13,7 +13,7 @@ namespace Spoke.TestRunner
     {
         public static async Task Main(string[] args)
         {
-            Console.WriteLine("🧪 IxiHome Test Runner");
+            Console.WriteLine("🧪 Spoke Test Runner");
             Console.WriteLine("====================");
 
             try
@@ -21,17 +21,17 @@ namespace Spoke.TestRunner
                 // Test 1: Configuration loading
                 Console.WriteLine("\n1. Testing Configuration...");
                 Console.WriteLine($"   Version: {Config.version}");
-                Console.WriteLine($"   User Folder: {Config.ixiHomeUserFolder}");
+                Console.WriteLine($"   User Folder: {Config.spokeUserFolder}");
                 Console.WriteLine("   ✅ Configuration loaded successfully");
 
                 // Test 2: Logging initialization
                 Console.WriteLine("\n2. Testing Logging...");
-                if (!System.IO.Directory.Exists(Config.ixiHomeUserFolder))
+                if (!System.IO.Directory.Exists(Config.spokeUserFolder))
                 {
-                    System.IO.Directory.CreateDirectory(Config.ixiHomeUserFolder);
+                    System.IO.Directory.CreateDirectory(Config.spokeUserFolder);
                 }
 
-                if (Logging.start(Config.ixiHomeUserFolder, Config.logVerbosity))
+                if (Logging.start(Config.spokeUserFolder, Config.logVerbosity))
                 {
                     Logging.info("Test logging initialized");
                     Console.WriteLine("   ✅ Logging initialized successfully");
@@ -82,7 +82,7 @@ namespace Spoke.TestRunner
                 // We can't fully initialize the node without network, but we can test the components
                 Console.WriteLine("   ✅ Node components accessible");
 
-                Console.WriteLine("\n🎉 All tests passed! IxiHome core components are working correctly.");
+                Console.WriteLine("\n🎉 All tests passed! Spoke core components are working correctly.");
                 Console.WriteLine("\nNote: GUI components cannot be tested in headless environment,");
 
                 // Cleanup

@@ -1,6 +1,6 @@
-# Todo List: Features for IxiHome Inspired by Home Assistant App
+# Todo List: Features for Spoke Inspired by Home Assistant App
 
-Based on analysis of the Home Assistant Android app repository (https://github.com/home-assistant/android), here's a prioritized todo list of features to implement in IxiHome (a MAUI-based Windows app for smart home control on the Ixian network).
+Based on analysis of the Home Assistant Android app repository (https://github.com/home-assistant/android), here's a prioritized todo list of features to implement in Spoke (a MAUI-based Windows app for smart home control on the Ixian network).
 
 ## 1. Device Entity Controls (High Priority)
 - **Description**: Implement controls for various smart home entities like lights, switches, climate (thermostats), covers (blinds/curtains), fans, locks, media players, and vacuums. Allow users to toggle, adjust sliders, and send commands via the app UI.
@@ -93,8 +93,8 @@ Based on analysis of the Home Assistant Android app repository (https://github.c
 
 ## Notes
 - **Prioritization**: Focused on core smart home features first (controls, sensors, notifications). Lower-priority items can be added iteratively.
-- **Adaptation**: Since IxiHome is Windows/MAUI-based, adapt Android-specific features (e.g., Android permissions) to Windows APIs (e.g., location via `Windows.Devices.Geolocation`).
+- **Adaptation**: Since Spoke is Windows/MAUI-based, adapt Android-specific features (e.g., Android permissions) to Windows APIs (e.g., location via `Windows.Devices.Geolocation`).
 - **Dependencies**: Ensure compatibility with Ixian network APIs. May need to add packages like `System.Net.WebSockets` for websockets.
 - **Testing**: Each feature should include unit tests and UI validation.
 - **Security**: Handle authentication securely, avoiding plain-text storage.
-- **Architecture Note**: Home Assistant entities sync to MQTT, which pushes to QuIXI via MQTT. Authentication handled by QuIXI. IxiHome communicates via Ixian network to IxiHome, then MQTT to Home Assistant. Only initialization needed is adding QuIXI user to IxiHome.
+- **Architecture Note**: Home Assistant entities sync to MQTT, which pushes to QuIXI via MQTT. Authentication handled by QuIXI. Spoke communicates via Ixian network to Spoke, then MQTT to Home Assistant. Only initialization needed is adding QuIXI user to Spoke.

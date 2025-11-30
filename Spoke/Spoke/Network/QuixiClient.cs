@@ -1,6 +1,6 @@
 using IXICore;
 using IXICore.Meta;
-using IxiHome.Interfaces;
+using Spoke.Interfaces;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;

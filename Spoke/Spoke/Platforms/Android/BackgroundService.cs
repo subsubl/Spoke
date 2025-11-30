@@ -23,7 +23,7 @@ public class BackgroundService : Service
         Logging.info("BackgroundService started");
         
         var notification = new Notification.Builder(this, CHANNEL_ID)
-            .SetContentTitle("IxiHome")
+            .SetContentTitle("Spoke")
             .SetContentText("Monitoring your smart home")
             .SetSmallIcon(Resource.Drawable.dotnet_bot)
             .Build();

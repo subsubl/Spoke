@@ -1,5 +1,5 @@
-using IxiHome.Meta;
-using IxiHome.Network;
+using Spoke.Meta;
+using Spoke.Network;
 using System.Collections.ObjectModel;
 
 namespace Spoke.Pages.AddEntity;

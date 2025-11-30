@@ -1,5 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-using IxiHome.Data;
+using Spoke.Data;
 using IXICore.Meta;
 using System.IO;
 
@@ -9,20 +9,20 @@ public partial class AutomationsPage : ContentPage
 {
     public AutomationsPage()
     {
-        try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" AutomationsPage ctor BEFORE InitializeComponent\n"); } catch {}
+        try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" AutomationsPage ctor BEFORE InitializeComponent\n"); } catch {}
         Logging.info("AutomationsPage: constructor start");
         InitializeComponent();
-        try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" AutomationsPage ctor AFTER InitializeComponent\n"); } catch {}
+        try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" AutomationsPage ctor AFTER InitializeComponent\n"); } catch {}
         BindingContext = new AutomationsViewModel();
         Logging.info("AutomationsPage: constructor end");
-        try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" AutomationsPage ctor end\n"); } catch {}
+        try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" AutomationsPage ctor end\n"); } catch {}
     }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
         Logging.info("AutomationsPage: OnAppearing start");
-        try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" AutomationsPage OnAppearing start\n"); } catch {}
+        try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" AutomationsPage OnAppearing start\n"); } catch {}
         try
         {
             // Load automations when the page appears to ensure managers are initialized
@@ -34,10 +34,10 @@ public partial class AutomationsPage : ContentPage
         catch (Exception ex)
         {
             Logging.error($"AutomationsPage: OnAppearing error: {ex}");
-            try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" AutomationsPage OnAppearing error: "+ex+"\n"); } catch {}
+            try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" AutomationsPage OnAppearing error: "+ex+"\n"); } catch {}
         }
         Logging.info("AutomationsPage: OnAppearing end");
-        try { File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now+" AutomationsPage OnAppearing end\n"); } catch {}
+        try { File.AppendAllText("c:\\Users\\User\\Spoke\\Spoke\\nav_debug.log", DateTime.Now+" AutomationsPage OnAppearing end\n"); } catch {}
     }
 
     private async void OnAddAutomationClicked(object sender, EventArgs e)

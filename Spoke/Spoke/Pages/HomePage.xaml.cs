@@ -1,5 +1,5 @@
-using IxiHome.Data;
-using IxiHome.Sensors;
+using Spoke.Data;
+using Spoke.Sensors;
 using Windows.Devices.Power;
 using Windows.System.Power;
 

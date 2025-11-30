@@ -1,4 +1,4 @@
-using IxiHome.Data;
+using Spoke.Data;
 
 namespace Spoke.Utils;
 

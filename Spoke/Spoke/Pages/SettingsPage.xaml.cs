@@ -1,5 +1,5 @@
-using IxiHome.Meta;
-using IxiHome.Sensors;
+using Spoke.Meta;
+using Spoke.Sensors;
 using Microsoft.Maui.Storage;
 
 namespace Spoke.Pages;

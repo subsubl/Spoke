@@ -1,5 +1,5 @@
-using IxiHome.Data;
-using IxiHome.Meta;
+using Spoke.Data;
+using Spoke.Meta;
 
 namespace Spoke.Pages.EntityDetail;
 

@@ -1,0 +1,322 @@
+is_global = true
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property._MvvmToolkitIsUsingWindowsRuntimePack = true
+build_property.CsWinRTComponent = 
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotWarningLevel = 
+build_property.CsWinRTAotWarningLevel = 
+build_property.TargetFramework = net9.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Spoke
+build_property.ProjectDir = D:\Spoke\Spoke\Spoke\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTAotExportsEnabled = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
+build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
+build_property.CsWinRTMergeReferencedActivationFactories = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/Spoke/Spoke/Spoke/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/Spoke/Spoke/Spoke/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/Spoke/Spoke/Spoke/Controls/ClimateEntityControl.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Controls.ClimateEntityControl.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\ClimateEntityControl.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\ClimateEntityControl.xaml
+
+[D:/Spoke/Spoke/Spoke/Controls/GaugeEntityControl.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Controls.GaugeEntityControl.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\GaugeEntityControl.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\GaugeEntityControl.xaml
+
+[D:/Spoke/Spoke/Spoke/Controls/GraphEntityControl.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Controls.GraphEntityControl.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\GraphEntityControl.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\GraphEntityControl.xaml
+
+[D:/Spoke/Spoke/Spoke/Controls/LightEntityControl.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Controls.LightEntityControl.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\LightEntityControl.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\LightEntityControl.xaml
+
+[D:/Spoke/Spoke/Spoke/Controls/SensorEntityControl.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Controls.SensorEntityControl.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\SensorEntityControl.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\SensorEntityControl.xaml
+
+[D:/Spoke/Spoke/Spoke/Controls/ToggleEntityControl.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Controls.ToggleEntityControl.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\ToggleEntityControl.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\ToggleEntityControl.xaml
+
+[D:/Spoke/Spoke/Spoke/Pages/AboutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Pages.AboutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AboutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AboutPage.xaml
+
+[D:/Spoke/Spoke/Spoke/Pages/AddEntity/AddEntityPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Pages.AddEntity.AddEntityPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AddEntity\AddEntityPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AddEntity\AddEntityPage.xaml
+
+[D:/Spoke/Spoke/Spoke/Pages/AutomationsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Pages.AutomationsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AutomationsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AutomationsPage.xaml
+
+[D:/Spoke/Spoke/Spoke/Pages/EntityDetail/EntityDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Pages.EntityDetail.EntityDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\EntityDetail\EntityDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\EntityDetail\EntityDetailPage.xaml
+
+[D:/Spoke/Spoke/Spoke/Pages/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Pages.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\HomePage.xaml
+
+[D:/Spoke/Spoke/Spoke/Pages/Onboarding/OnboardingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Pages.Onboarding.OnboardingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Onboarding\OnboardingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Onboarding\OnboardingPage.xaml
+
+[D:/Spoke/Spoke/Spoke/Pages/ScenesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Pages.ScenesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ScenesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ScenesPage.xaml
+
+[D:/Spoke/Spoke/Spoke/Pages/SettingsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Pages.SettingsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\SettingsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\SettingsPage.xaml
+
+[D:/Spoke/Spoke/Spoke/Pages/WidgetsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Pages.WidgetsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\WidgetsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\WidgetsPage.xaml
+
+[D:/Spoke/Spoke/Spoke/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/Spoke/Spoke/Spoke/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[D:/Spoke/Spoke/Spoke/Widgets/EntityWidgetView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Widgets.EntityWidgetView.xaml
+build_metadata.AdditionalFiles.TargetPath = Widgets\EntityWidgetView.xaml
+build_metadata.AdditionalFiles.RelativePath = Widgets\EntityWidgetView.xaml
+
+[D:/Spoke/Spoke/Spoke/Widgets/SceneWidgetView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Widgets.SceneWidgetView.xaml
+build_metadata.AdditionalFiles.TargetPath = Widgets\SceneWidgetView.xaml
+build_metadata.AdditionalFiles.RelativePath = Widgets\SceneWidgetView.xaml
+
+[D:/Spoke/Spoke/Spoke/Widgets/SensorWidgetView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Widgets.SensorWidgetView.xaml
+build_metadata.AdditionalFiles.TargetPath = Widgets\SensorWidgetView.xaml
+build_metadata.AdditionalFiles.RelativePath = Widgets\SensorWidgetView.xaml
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/css/bootstrap.min.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.css.bootstrap.min.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\css\bootstrap.min.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\css\bootstrap.min.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/css/empty-spixiui-dark.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.css.empty-spixiui-dark.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\css\empty-spixiui-dark.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\css\empty-spixiui-dark.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/css/empty-spixiui-light.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.css.empty-spixiui-light.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\css\empty-spixiui-light.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\css\empty-spixiui-light.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/css/normalize.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.css.normalize.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\css\normalize.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\css\normalize.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/css/spixi-login.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.css.spixi-login.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\css\spixi-login.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\css\spixi-login.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/css/spixiui-dark.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.css.spixiui-dark.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\css\spixiui-dark.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\css\spixiui-dark.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/css/spixiui-intro.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.css.spixiui-intro.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\css\spixiui-intro.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\css\spixiui-intro.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/css/spixiui-light.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.css.spixiui-light.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\css\spixiui-light.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\css\spixiui-light.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/css/webflow.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.css.webflow.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\css\webflow.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\css\webflow.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/all.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.all.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\all.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\all.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/all.min.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.all.min.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\all.min.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\all.min.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/brands.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.brands.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\brands.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\brands.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/brands.min.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.brands.min.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\brands.min.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\brands.min.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/fontawesome.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.fontawesome.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\fontawesome.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\fontawesome.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/fontawesome.min.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.fontawesome.min.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\fontawesome.min.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\fontawesome.min.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/regular.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.regular.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\regular.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\regular.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/regular.min.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.regular.min.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\regular.min.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\regular.min.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/solid.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.solid.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\solid.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\solid.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/solid.min.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.solid.min.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\solid.min.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\solid.min.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/svg-with-js.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.svg-with-js.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\svg-with-js.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\svg-with-js.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/svg-with-js.min.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.svg-with-js.min.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\svg-with-js.min.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\svg-with-js.min.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/v4-font-face.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.v4-font-face.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\v4-font-face.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\v4-font-face.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/v4-font-face.min.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.v4-font-face.min.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\v4-font-face.min.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\v4-font-face.min.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/v4-shims.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.v4-shims.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\v4-shims.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\v4-shims.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/v4-shims.min.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.v4-shims.min.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\v4-shims.min.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\v4-shims.min.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/v5-font-face.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.v5-font-face.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\v5-font-face.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\v5-font-face.css
+
+[D:/Spoke/Spoke/Spoke/Resources/Raw/html/libs/fontawesome/css/v5-font-face.min.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = Spoke.Resources.Raw.html.libs.fontawesome.css.v5-font-face.min.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\html\libs\fontawesome\css\v5-font-face.min.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\html\libs\fontawesome\css\v5-font-face.min.css

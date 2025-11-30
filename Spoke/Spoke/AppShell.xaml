@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="IxiHome.AppShell"
+    x:Class="Spoke.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:IxiHome"
-    xmlns:pages="clr-namespace:IxiHome.Pages"
+    xmlns:local="clr-namespace:Spoke"
+    xmlns:pages="clr-namespace:Spoke.Pages"
     Shell.FlyoutBehavior="Flyout">
 
     <Shell.FlyoutHeader>
@@ -12,11 +12,11 @@
               HeightRequest="200" 
               Padding="20">
             <VerticalStackLayout VerticalOptions="Center">
-                <Image Source="ixihome_logo.png" 
+                <Image Source="Spoke_logo.png" 
                        HeightRequest="80" 
                        WidthRequest="80"
                        HorizontalOptions="Center"/>
-                <Label Text="IxiHome" 
+                <Label Text="Spoke" 
                        FontSize="24" 
                        FontAttributes="Bold" 
                        TextColor="White"

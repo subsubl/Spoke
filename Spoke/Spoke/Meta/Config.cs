@@ -7,8 +7,15 @@ public static class Config
 
     // User folder paths
     private static string appFolderPath = System.IO.Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.Personal), "IxiHome");
+        Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Spoke");
 
+    public static string spokeUserFolder
+    {
+        get => appFolderPath;
+        set => appFolderPath = value;
+    }
+
+    [Obsolete("Use spokeUserFolder instead")]
     public static string ixiHomeUserFolder
     {
         get => appFolderPath;
@@ -41,7 +48,7 @@ public static class Config
 
     // Entity storage
     public static string entitiesFileName = "entities.json";
-    public static string entitiesFilePath => System.IO.Path.Combine(ixiHomeUserFolder, entitiesFileName);
+    public static string entitiesFilePath => System.IO.Path.Combine(spokeUserFolder, entitiesFileName);
 
     /// <summary>
     /// Loads configuration from Preferences

@@ -1,7 +1,7 @@
 using IXICore;
 using IXICore.Meta;
-using IxiHome.Interfaces;
-using IxiHome.Network;
+using Spoke.Interfaces;
+using Spoke.Network;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 

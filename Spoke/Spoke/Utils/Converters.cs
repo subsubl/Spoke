@@ -115,7 +115,7 @@ public class StepIndicatorConverter : IValueConverter
         if (value is Pages.Onboarding.OnboardingPage.OnboardingStep step && parameter is string param)
         {
             int stepIndex = int.Parse(param);
-            var steps = new[] { "Welcome to IxiHome", "Choose Your Platform", "Configure Connection", "Test Connection", "Setup Complete!" };
+            var steps = new[] { "Welcome to Spoke", "Choose Your Platform", "Configure Connection", "Test Connection", "Setup Complete!" };
             int currentIndex = Array.IndexOf(steps, step.Title);
             return currentIndex >= stepIndex ? Colors.Blue : Colors.LightGray;
         }

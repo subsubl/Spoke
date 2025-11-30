@@ -1,5 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-using IxiHome.Sensors;
+using Spoke.Sensors;
 using System.Collections.ObjectModel;
 
 namespace Spoke.Widgets;

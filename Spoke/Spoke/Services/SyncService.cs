@@ -1,8 +1,8 @@
 using IXICore;
 using IXICore.Meta;
-using IxiHome.Data;
-using IxiHome.Network;
-using IxiHome.Interfaces;
+using Spoke.Data;
+using Spoke.Network;
+using Spoke.Interfaces;
 
 namespace Spoke.Services;
 
