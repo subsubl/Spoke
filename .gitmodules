@@ -11,3 +11,6 @@
 [submodule "Spixi"]
 	path = Spixi
 	url = https://github.com/ixian-platform/Spixi.git
+[submodule "home-assistant-android"]
+	path = Spoke/home-assistant-android
+	url = https://github.com/home-assistant/android
