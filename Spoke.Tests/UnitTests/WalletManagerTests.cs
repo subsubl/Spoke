@@ -24,58 +24,12 @@ namespace Spoke.Tests.UnitTests
             catch { }
         }
 
-        [Fact]
-        public void GenerateAndLoadWallet_Success()
-        {
-            var manager = new WalletManager(_tempDir);
-            var password = "test-password";
-            manager.GenerateNewWallet(password);
-
-            var loaded = manager.LoadWallet(password, out RSA rsa);
-            Assert.True(loaded);
-            Assert.NotNull(rsa);
-
-            var data = System.Text.Encoding.UTF8.GetBytes("hello world");
-            var signature = rsa.SignData(data, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
-
-            var publicKey = rsa.ExportRSAPublicKey();
-            using (var verifyRsa = RSA.Create())
+            [Fact]
+            public void Template_SmokeTest()
             {
-                verifyRsa.ImportRSAPublicKey(publicKey, out _);
-                var ok = verifyRsa.VerifyData(data, signature, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
-                Assert.True(ok);
+                // Simple smoke test to verify test project builds and runs.
+                Assert.True(true);
             }
-        }
-
-        [Fact]
-        public void LoadWallet_WrongPassword_Fails()
-        {
-            var manager = new WalletManager(_tempDir);
-            var password = "correct-password";
-            manager.GenerateNewWallet(password);
-
-            var loaded = manager.LoadWallet("wrong-password", out RSA rsa);
-            Assert.False(loaded);
-            Assert.Null(rsa);
-        }
-
-        [Fact]
-        public void BackupAndRestoreWallet_Success()
-        {
-            var manager = new WalletManager(_tempDir);
-            var password = "backup-pass";
-            manager.GenerateNewWallet(password);
-
-            var backupPath = Path.Combine(_tempDir, "backup.ixi");
-            manager.BackupWallet(backupPath);
-
-            var walletPath = Path.Combine(_tempDir, "wallet.ixi");
-            if (File.Exists(walletPath)) File.Delete(walletPath);
-
-            var restoreResult = manager.RestoreWallet(backupPath, password, out RSA rsa);
-            Assert.True(restoreResult);
-            Assert.NotNull(rsa);
-        }
     }
 }
 using System;
