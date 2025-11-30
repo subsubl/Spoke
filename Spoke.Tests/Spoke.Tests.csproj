@@ -7,9 +7,9 @@
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.5.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.3.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Spoke\Spoke.csproj" />
+    <ProjectReference Include="..\Spoke\Spoke\Spoke.csproj" />
   </ItemGroup>
 </Project>
