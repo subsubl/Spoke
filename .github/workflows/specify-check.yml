@@ -1,0 +1,28 @@
+name: specify-check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  specify-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install specify-cli from repo
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e tools/spec-kit/src/specify_cli
+
+      - name: Verify specify CLI
+        run: |
+          python -m specify_cli --help
