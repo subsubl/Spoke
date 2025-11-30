@@ -61,6 +61,7 @@ public class SyncService
         if (Meta.Node.Instance.quixiClient != null)
         {
             Meta.Node.Instance.quixiClient.EntityStateChanged -= OnEntityStateChanged;
+            await Meta.Node.Instance.quixiClient.DisconnectWebSocketAsync();
         }
         
         Logging.info("SyncService stopped");
@@ -77,6 +78,12 @@ public class SyncService
             try
             {
                 await Task.Delay(TimeSpan.FromSeconds(30), cancellationToken);
+                
+                // Skip polling if WebSocket is connected for real-time updates
+                if (Meta.Node.Instance.quixiClient?.IsWebSocketConnected == true)
+                {
+                    continue;
+                }
                 
                 if (Meta.Node.Instance.quixiClient == null)
                 {
@@ -109,7 +116,7 @@ public class SyncService
     /// <summary>
     /// Handle entity state change event from QuIXI
     /// </summary>
-    private async void OnEntityStateChanged(object? sender, EntityStateChangedEventArgs e)
+    private async void OnEntityStateChanged(object? sender, Interfaces.EntityStateChangedEventArgs e)
     {
         try
         {

@@ -41,4 +41,14 @@
     <Color x:Key="Blue200Accent">#72ACF1</Color>
     <Color x:Key="Blue300Accent">#A7CBF6</Color>
 
+    <!-- Custom colors for IxiHome -->
+    <Color x:Key="PageBackgroundColor">White</Color>
+    <Color x:Key="PrimaryColor">#512BD4</Color>
+    <Color x:Key="CardBackgroundColor">White</Color>
+    <Color x:Key="CardBorderColor">#C8C8C8</Color>
+    <Color x:Key="PrimaryTextColor">Black</Color>
+    <Color x:Key="SecondaryTextColor">#404040</Color>
+    <Color x:Key="AccentColor">#512BD4</Color>
+    <Color x:Key="SecondaryColor">#DFD8F7</Color>
+
 </ResourceDictionary>

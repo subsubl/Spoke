@@ -1,0 +1,54 @@
+26/11/2025 22:12:30 Navigated: //home
+26/11/2025 22:12:42 Navigating: //scenes
+26/11/2025 22:12:42 ScenesPage ctor BEFORE InitializeComponent
+26/11/2025 22:15:16 Navigated: //home
+26/11/2025 22:15:42 Navigating: addentity
+26/11/2025 22:15:42 Navigated: //home/addentity
+26/11/2025 22:15:44 Navigating: ..
+26/11/2025 22:15:44 Navigated: //home
+26/11/2025 22:15:47 Navigating: //settings
+26/11/2025 22:15:47 Navigated: //settings
+26/11/2025 22:15:50 Navigating: //home
+26/11/2025 22:15:50 Navigated: //home
+26/11/2025 22:25:00 Navigating: //scenes
+26/11/2025 22:25:00 ScenesPage ctor BEFORE InitializeComponent
+26/11/2025 22:25:00 ScenesPage ctor AFTER InitializeComponent
+26/11/2025 22:25:00 ScenesPage ctor end
+26/11/2025 22:25:00 ScenesPage OnAppearing start
+26/11/2025 22:25:00 ScenesPage OnAppearing end
+26/11/2025 22:25:01 Navigated: //scenes
+26/11/2025 22:35:58 Navigated: //home
+26/11/2025 22:37:05 Navigating: //automations
+26/11/2025 22:37:05 AutomationsPage ctor BEFORE InitializeComponent
+26/11/2025 22:37:05 AutomationsPage ctor AFTER InitializeComponent
+26/11/2025 22:37:05 AutomationsPage ctor end
+26/11/2025 22:37:05 AutomationsPage OnAppearing start
+26/11/2025 22:37:05 AutomationsPage OnAppearing end
+26/11/2025 22:37:05 Navigated: //automations
+26/11/2025 22:37:10 Navigating: //settings
+26/11/2025 22:37:11 Navigated: //settings
+26/11/2025 22:37:15 Navigating: //home
+26/11/2025 22:37:15 Navigated: //home
+26/11/2025 22:37:41 Navigating: //settings
+26/11/2025 22:37:41 Navigated: //settings
+26/11/2025 22:37:53 Navigating: //widgets
+26/11/2025 22:37:53 WidgetsPage ctor BEFORE InitializeComponent
+26/11/2025 22:37:53 WidgetsPage ctor AFTER InitializeComponent
+26/11/2025 22:37:53 WidgetsPage ctor end
+26/11/2025 22:37:53 WidgetsPage OnAppearing start
+26/11/2025 22:37:53 WidgetsPage OnAppearing end
+26/11/2025 22:37:53 Navigated: //widgets
+26/11/2025 22:37:57 Navigating: D_FAULT_SensorWidgetView20
+26/11/2025 22:37:57 Navigated: //widgets/D_FAULT_SensorWidgetView20
+26/11/2025 22:37:59 Navigating: ..
+26/11/2025 22:37:59 WidgetsPage OnAppearing start
+26/11/2025 22:37:59 WidgetsPage OnAppearing end
+26/11/2025 22:37:59 Navigated: //widgets
+26/11/2025 22:38:01 Navigating: D_FAULT_SceneWidgetView21
+26/11/2025 22:38:01 Navigated: //widgets/D_FAULT_SceneWidgetView21
+26/11/2025 22:38:03 Navigating: ..
+26/11/2025 22:38:03 WidgetsPage OnAppearing start
+26/11/2025 22:38:03 WidgetsPage OnAppearing end
+26/11/2025 22:38:03 Navigated: //widgets
+26/11/2025 22:38:16 Navigating: //home
+26/11/2025 22:38:16 Navigated: //home

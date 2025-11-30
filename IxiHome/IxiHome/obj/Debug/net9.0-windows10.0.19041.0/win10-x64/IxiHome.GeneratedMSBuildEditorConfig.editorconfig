@@ -107,6 +107,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = IxiHome.Pages.HomePage.xam
 build_metadata.AdditionalFiles.TargetPath = Pages\HomePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\HomePage.xaml
 
+[C:/Users/User/IxiHome/IxiHome/IxiHome/Pages/Onboarding/OnboardingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IxiHome.Pages.Onboarding.OnboardingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Onboarding\OnboardingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Onboarding\OnboardingPage.xaml
+
 [C:/Users/User/IxiHome/IxiHome/IxiHome/Pages/ScenesPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = IxiHome.Pages.ScenesPage.xaml

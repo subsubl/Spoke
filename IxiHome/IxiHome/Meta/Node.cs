@@ -21,6 +21,7 @@ public class Node
     }
 
     public QuixiClient? quixiClient { get; private set; }
+    public WebSocketManager? webSocketManager { get; private set; }
     
     private bool initialized = false;
 
@@ -61,6 +62,10 @@ public class Node
                 );
 
                 Logging.info($"QuIXI client initialized for {Config.quixiAddress}:{Config.quixiApiPort}");
+
+                // Initialize WebSocket manager for real-time updates
+                webSocketManager = WebSocketManager.Instance;
+                Logging.info("WebSocket manager initialized");
             }
             catch (Exception ex)
             {
@@ -79,7 +84,7 @@ public class Node
     /// <summary>
     /// Shutdown the node and cleanup resources
     /// </summary>
-    public void shutdown()
+    public async Task shutdownAsync()
     {
         if (!initialized)
         {
@@ -102,19 +107,57 @@ public class Node
             }
         }
 
+        // Disconnect WebSocket
+        if (webSocketManager != null)
+        {
+            try
+            {
+                await webSocketManager.DisconnectAsync();
+                Logging.info("WebSocket disconnected");
+            }
+            catch (Exception ex)
+            {
+                Logging.error($"Error disconnecting WebSocket: {ex.Message}");
+            }
+        }
+
         initialized = false;
         Logging.info("IxiHome Node shutdown complete");
     }
 
     /// <summary>
+    /// Start the WebSocket connection for real-time updates
+    /// </summary>
+    public async Task StartWebSocketAsync()
+    {
+        if (webSocketManager != null && !string.IsNullOrEmpty(Config.quixiAddress))
+        {
+            try
+            {
+                await webSocketManager.ConnectAsync();
+                Logging.info("WebSocket connection started");
+            }
+            catch (Exception ex)
+            {
+                Logging.error($"Failed to start WebSocket connection: {ex.Message}");
+            }
+        }
+    }
+
+    /// <summary>
     /// Reconnect to QuIXI with updated configuration
     /// </summary>
-    public void ReconnectQuixi()
+    public async Task ReconnectQuixiAsync()
     {
         if (quixiClient != null)
         {
             quixiClient.Disconnect();
             quixiClient = null;
+        }
+
+        if (webSocketManager != null)
+        {
+            await webSocketManager.DisconnectAsync();
         }
 
         if (!string.IsNullOrEmpty(Config.quixiAddress))
@@ -130,6 +173,13 @@ public class Node
                 );
 
                 Logging.info($"QuIXI client reconnected to {Config.quixiAddress}:{Config.quixiApiPort}");
+
+                // Reconnect WebSocket
+                if (webSocketManager != null)
+                {
+                    await webSocketManager.ReconnectAsync();
+                    Logging.info("WebSocket reconnected");
+                }
             }
             catch (Exception ex)
             {

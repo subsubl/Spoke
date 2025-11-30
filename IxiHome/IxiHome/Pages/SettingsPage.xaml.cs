@@ -113,8 +113,16 @@ public partial class SettingsPage : ContentPage
         // Persist to storage
         Config.Save();
 
-        // Reconnect QuIXI if settings changed
-        Node.Instance.ReconnectQuixi();
+        // Initialize node if not already done
+        if (!string.IsNullOrEmpty(Config.quixiAddress) && Node.Instance.quixiClient == null)
+        {
+            await App.InitializeNodeAsync();
+        }
+        else
+        {
+            // Reconnect QuIXI if settings changed
+            await Node.Instance.ReconnectQuixiAsync();
+        }
 
         await DisplayAlert("Settings Saved", "Your settings have been saved successfully.", "OK");
     }

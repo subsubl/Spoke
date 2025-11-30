@@ -1,6 +1,7 @@
 using IXICore;
 using IXICore.Meta;
 using IxiHome.Interfaces;
+using IxiHome.Network;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 
@@ -22,6 +23,10 @@ public class EntityManager // : IEntityManager
     private EntityManager()
     {
         _entitiesFilePath = Meta.Config.entitiesFilePath;
+        
+        // Subscribe to websocket events for real-time updates
+        WebSocketManager.Instance.EntityStateChanged += OnEntityStateChanged;
+        WebSocketManager.Instance.NotificationReceived += OnNotificationReceived;
     }
 
     /// <summary>
@@ -236,6 +241,24 @@ public class EntityManager // : IEntityManager
             Attributes = entity.Attributes,
             Config = entity.Config
         };
+    }
+
+    /// <summary>
+    /// Handle entity state changes from websocket
+    /// </summary>
+    private void OnEntityStateChanged(object? sender, Network.EntityStateChangedEventArgs e)
+    {
+        // Entity is already updated by WebSocketManager, just log the change
+        Logging.info($"Entity state updated via websocket: {e.Entity.Name} ({e.Entity.EntityId}) = {e.Entity.State}");
+    }
+
+    /// <summary>
+    /// Handle notifications from websocket
+    /// </summary>
+    private void OnNotificationReceived(object? sender, NotificationReceivedEventArgs e)
+    {
+        Logging.info($"Notification received: {e.Title} - {e.Body}");
+        Notifications.NotificationManager.Instance.ShowSystemNotification(e.Title, e.Body);
     }
 }
 

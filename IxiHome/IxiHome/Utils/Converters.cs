@@ -104,3 +104,99 @@ public class InvertedBoolConverter : IValueConverter
         return value;
     }
 }
+
+/// <summary>
+/// Converts step index to indicator color for onboarding
+/// </summary>
+public class StepIndicatorConverter : IValueConverter
+{
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is Pages.Onboarding.OnboardingPage.OnboardingStep step && parameter is string param)
+        {
+            int stepIndex = int.Parse(param);
+            var steps = new[] { "Welcome to IxiHome", "Choose Your Platform", "Configure Connection", "Test Connection", "Setup Complete!" };
+            int currentIndex = Array.IndexOf(steps, step.Title);
+            return currentIndex >= stepIndex ? Colors.Blue : Colors.LightGray;
+        }
+        return Colors.LightGray;
+    }
+
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+/// <summary>
+/// Checks if string equals parameter
+/// </summary>
+public class StringEqualsConverter : IValueConverter
+{
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        return value?.ToString() == parameter?.ToString();
+    }
+
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+/// <summary>
+/// Checks if string does not equal parameter
+/// </summary>
+public class StringNotEqualsConverter : IValueConverter
+{
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        return value?.ToString() != parameter?.ToString();
+    }
+
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+/// <summary>
+/// Converts boolean to string based on parameter (trueValue|falseValue)
+/// </summary>
+public class BoolToStringConverter : IValueConverter
+{
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is bool boolValue && parameter is string param)
+        {
+            var parts = param.Split('|');
+            return boolValue ? parts[0] : (parts.Length > 1 ? parts[1] : parts[0]);
+        }
+        return parameter;
+    }
+
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+/// <summary>
+/// Checks if DateTime is not the minimum value
+/// </summary>
+public class IsNotMinDateConverter : IValueConverter
+{
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is DateTime dateTime)
+        {
+            return dateTime != DateTime.MinValue;
+        }
+        return false;
+    }
+
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}

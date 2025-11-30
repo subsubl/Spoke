@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IxiHome.Pages.Onboarding.OnboardingPage"
+             Title="Setup IxiHome"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <Grid RowDefinitions="*,Auto">
+        <!-- Main Content -->
+        <Grid RowDefinitions="Auto,*,Auto" RowSpacing="20" Margin="20">
+
+            <!-- Step Indicator -->
+            <Grid ColumnDefinitions="*,*,*,*,*,*" HorizontalOptions="Center">
+                <BoxView Color="{Binding CurrentStep, Converter={StaticResource StepIndicatorConverter}, ConverterParameter=0}"
+                         HeightRequest="4" HorizontalOptions="Fill" />
+                <BoxView Color="{Binding CurrentStep, Converter={StaticResource StepIndicatorConverter}, ConverterParameter=1}"
+                         HeightRequest="4" HorizontalOptions="Fill" Grid.Column="1" />
+                <BoxView Color="{Binding CurrentStep, Converter={StaticResource StepIndicatorConverter}, ConverterParameter=2}"
+                         HeightRequest="4" HorizontalOptions="Fill" Grid.Column="2" />
+                <BoxView Color="{Binding CurrentStep, Converter={StaticResource StepIndicatorConverter}, ConverterParameter=3}"
+                         HeightRequest="4" HorizontalOptions="Fill" Grid.Column="3" />
+                <BoxView Color="{Binding CurrentStep, Converter={StaticResource StepIndicatorConverter}, ConverterParameter=4}"
+                         HeightRequest="4" HorizontalOptions="Fill" Grid.Column="4" />
+                <BoxView Color="{Binding CurrentStep, Converter={StaticResource StepIndicatorConverter}, ConverterParameter=5}"
+                         HeightRequest="4" HorizontalOptions="Fill" Grid.Column="5" />
+            </Grid>
+
+            <!-- Step Content -->
+            <VerticalStackLayout VerticalOptions="Center" Spacing="30" Grid.Row="1">
+
+                <!-- Icon -->
+                <Label Text="{Binding CurrentStep.Icon}"
+                       FontSize="72"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+
+                <!-- Title -->
+                <Label Text="{Binding CurrentStep.Title}"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center" />
+
+                <!-- Description -->
+                <Label Text="{Binding CurrentStep.Description}"
+                       FontSize="16"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       MaximumWidthRequest="300" />
+
+                <!-- Wallet Creation (Step 1) -->
+                <VerticalStackLayout IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringEqualsConverter}, ConverterParameter='Create Your Wallet'}"
+                                   Spacing="20">
+                    <Label Text="Your wallet is your secure identity on the Ixian network. It will be used to authenticate with QuIXI and secure your smart home communications."
+                           FontSize="14"
+                           HorizontalTextAlignment="Center"
+                           LineBreakMode="WordWrap" />
+                    <Button Text="Create Wallet"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Clicked="OnCreateWalletClicked" />
+                </VerticalStackLayout>
+
+                <!-- Username & Avatar (Step 2) -->
+                <VerticalStackLayout IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringEqualsConverter}, ConverterParameter='Choose Username & Avatar'}"
+                                   Spacing="20">
+                    <Entry Placeholder="Choose a username"
+                           Text="{Binding Username}" />
+                    <Button Text="Choose Profile Picture"
+                            Style="{StaticResource SecondaryButtonStyle}"
+                            Clicked="OnChooseAvatarClicked" />
+                    <Image Source="{Binding AvatarImageSource}"
+                           HeightRequest="80"
+                           WidthRequest="80"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFill" />
+                </VerticalStackLayout>
+
+                <!-- QuIXI Connection Configuration (Step 3) -->
+                <VerticalStackLayout IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringEqualsConverter}, ConverterParameter='Configure QuIXI Connection'}"
+                                   Spacing="15">
+                    <Entry Placeholder="QuIXI Host Address (e.g., 192.168.1.100)"
+                           Text="{Binding HostAddress}" />
+                    <Entry Placeholder="API Port (default: 8001)"
+                           Text="{Binding Port}"
+                           Keyboard="Numeric" />
+                    <Entry Placeholder="Username (optional)"
+                           Text="{Binding QuixiUsername}" />
+                    <Entry Placeholder="Password (optional)"
+                           Text="{Binding QuixiPassword}"
+                           IsPassword="True" />
+                </VerticalStackLayout>
+
+                <!-- Test Connection (Step 4) -->
+                <VerticalStackLayout IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringEqualsConverter}, ConverterParameter='Test Connection'}"
+                                   Spacing="20">
+                    <Button Text="Test QuIXI Connection"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Clicked="OnTestConnectionClicked" />
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+            <!-- Navigation Buttons -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10" Grid.Row="2">
+                <Button Text="Back"
+                        Style="{StaticResource SecondaryButtonStyle}"
+                        IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringNotEqualsConverter}, ConverterParameter='Welcome to IxiHome'}"
+                        Clicked="OnBackClicked" />
+                <Button Text="{Binding CurrentStep.IsLastStep, Converter={StaticResource BoolToStringConverter}, ConverterParameter='Finish|Next'}"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Grid.Column="1"
+                        Clicked="OnNextClicked" />
+            </Grid>
+
+        </Grid>
+
+        <!-- Footer -->
+        <Label Text="Powered by Ixian"
+               FontSize="12"
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               Margin="0,0,0,10"
+               Grid.Row="1" />
+
+    </Grid>
+
+</ContentPage>

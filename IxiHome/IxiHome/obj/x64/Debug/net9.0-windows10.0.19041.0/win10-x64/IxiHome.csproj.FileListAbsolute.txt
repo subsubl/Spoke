@@ -556,6 +556,8 @@ C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\w
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Essentials.dll
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Graphics.dll
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll
+C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Toolkit.Uwp.Notifications.dll
+C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Win32.SystemEvents.dll
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.InteractiveExperiences.Projection.dll
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.WinUI.dll
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.AppLifecycle.Projection.dll
@@ -578,6 +580,7 @@ C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\w
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\SkiaSharp.Views.Maui.Controls.dll
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\SkiaSharp.Views.Maui.Core.dll
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\SkiaSharp.Views.Windows.dll
+C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\System.Drawing.Common.dll
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\System.Speech.dll
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Graphics.Canvas.dll
 C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\WebView2Loader.dll
@@ -683,6 +686,3 @@ C:\Users\User\IxiHome\IxiHome\IxiHome\obj\x64\Debug\net9.0-windows10.0.19041.0\w
 C:\Users\User\IxiHome\IxiHome\IxiHome\obj\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 C:\Users\User\IxiHome\IxiHome\IxiHome\obj\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\User\IxiHome\IxiHome\IxiHome\obj\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
-C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Toolkit.Uwp.Notifications.dll
-C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Win32.SystemEvents.dll
-C:\Users\User\IxiHome\IxiHome\IxiHome\bin\x64\Debug\net9.0-windows10.0.19041.0\win10-x64\System.Drawing.Common.dll

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IxiHome", "IxiHome\IxiHome.
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "IXICore", "..\Ixian-Core\IXICore.shproj", "{80487C64-619A-4B60-97BD-ED7670BF45B3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spixi", "..\Spixi\Spixi\Spixi.csproj", "{8F5B3C9A-2E4D-4F6A-8B9C-1D2E3F4A5B6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,14 @@ Global
 		{73B997DA-ECD2-469F-8262-957A3A69649F}.Release|x64.ActiveCfg = Release|Any CPU
 		{73B997DA-ECD2-469F-8262-957A3A69649F}.Release|x64.Build.0 = Release|Any CPU
 		{73B997DA-ECD2-469F-8262-957A3A69649F}.Release|x64.Deploy.0 = Release|Any CPU
+		{8F5B3C9A-2E4D-4F6A-8B9C-1D2E3F4A5B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5B3C9A-2E4D-4F6A-8B9C-1D2E3F4A5B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5B3C9A-2E4D-4F6A-8B9C-1D2E3F4A5B6C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F5B3C9A-2E4D-4F6A-8B9C-1D2E3F4A5B6C}.Debug|x64.Build.0 = Debug|Any CPU
+		{8F5B3C9A-2E4D-4F6A-8B9C-1D2E3F4A5B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5B3C9A-2E4D-4F6A-8B9C-1D2E3F4A5B6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5B3C9A-2E4D-4F6A-8B9C-1D2E3F4A5B6C}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F5B3C9A-2E4D-4F6A-8B9C-1D2E3F4A5B6C}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

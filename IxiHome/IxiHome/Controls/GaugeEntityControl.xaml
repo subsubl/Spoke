@@ -51,21 +51,11 @@
                   WidthRequest="120"
                   HorizontalOptions="Center"
                   VerticalOptions="Center">
-                <!-- Background Circle -->
-                <Ellipse Fill="Transparent"
-                         Stroke="{StaticResource Gray300}"
-                         StrokeThickness="8"
-                         HeightRequest="120"
-                         WidthRequest="120"/>
-                
-                <!-- Progress Arc (simplified - full implementation would use custom drawing) -->
-                <Ellipse x:Name="GaugeProgress"
-                         Fill="Transparent"
-                         Stroke="{StaticResource Primary}"
-                         StrokeThickness="8"
-                         HeightRequest="120"
-                         WidthRequest="120"
-                         Opacity="0.8"/>
+                <!-- Custom Circular Progress (using GraphicsView) -->
+                <GraphicsView x:Name="GaugeGraphicsView"
+                              HeightRequest="120"
+                              WidthRequest="120"
+                              Drawable="GaugeDrawable"/>
                 
                 <!-- Center Value -->
                 <VerticalStackLayout HorizontalOptions="Center" 

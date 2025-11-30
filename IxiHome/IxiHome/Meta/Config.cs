@@ -20,23 +20,17 @@ public static class Config
     public static int maxLogCount = 5; // number of log files to keep
     public static int logVerbosity = 2; // 0 = minimal, 1 = normal, 2 = verbose, 3+ = trace
 
-    // QuIXI connection settings
+    // QuIXI connection settings (via Ixian core network)
     public static string quixiAddress = "";
     public static int quixiApiPort = 8001;
+    public static int quixiWebSocketPort = 8002; // WebSocket port for real-time updates
     public static bool quixiSecure = false;
     public static string quixiUsername = "";
     public static string quixiPassword = "";
 
-    // Home Assistant settings
+    // Home Assistant settings (handled by QuIXI script)
     public static string homeAssistantUrl = "";
     public static string homeAssistantToken = "";
-
-    // MQTT settings (if connecting directly)
-    public static string mqttBroker = "localhost";
-    public static int mqttPort = 1883;
-    public static string mqttUsername = "";
-    public static string mqttPassword = "";
-    public static string mqttTopicPrefix = "homeassistant";
 
     // App settings
     public static bool useDarkTheme = false;
@@ -56,15 +50,11 @@ public static class Config
     {
         quixiAddress = Preferences.Default.Get(nameof(quixiAddress), quixiAddress);
         quixiApiPort = Preferences.Default.Get(nameof(quixiApiPort), quixiApiPort);
+        quixiWebSocketPort = Preferences.Default.Get(nameof(quixiWebSocketPort), quixiWebSocketPort);
         quixiSecure = Preferences.Default.Get(nameof(quixiSecure), quixiSecure);
         quixiUsername = Preferences.Default.Get(nameof(quixiUsername), quixiUsername);
 
         homeAssistantUrl = Preferences.Default.Get(nameof(homeAssistantUrl), homeAssistantUrl);
-        
-        mqttBroker = Preferences.Default.Get(nameof(mqttBroker), mqttBroker);
-        mqttPort = Preferences.Default.Get(nameof(mqttPort), mqttPort);
-        mqttUsername = Preferences.Default.Get(nameof(mqttUsername), mqttUsername);
-        mqttTopicPrefix = Preferences.Default.Get(nameof(mqttTopicPrefix), mqttTopicPrefix);
 
         useDarkTheme = Preferences.Default.Get(nameof(useDarkTheme), useDarkTheme);
         enableNotifications = Preferences.Default.Get(nameof(enableNotifications), enableNotifications);
@@ -82,10 +72,6 @@ public static class Config
             var savedHAToken = SecureStorage.Default.GetAsync(nameof(homeAssistantToken)).Result;
             if (savedHAToken != null)
                 homeAssistantToken = savedHAToken;
-
-            var savedMqttPassword = SecureStorage.Default.GetAsync(nameof(mqttPassword)).Result;
-            if (savedMqttPassword != null)
-                mqttPassword = savedMqttPassword;
         }
         catch
         {
@@ -100,15 +86,11 @@ public static class Config
     {
         Preferences.Default.Set(nameof(quixiAddress), quixiAddress);
         Preferences.Default.Set(nameof(quixiApiPort), quixiApiPort);
+        Preferences.Default.Set(nameof(quixiWebSocketPort), quixiWebSocketPort);
         Preferences.Default.Set(nameof(quixiSecure), quixiSecure);
         Preferences.Default.Set(nameof(quixiUsername), quixiUsername);
 
         Preferences.Default.Set(nameof(homeAssistantUrl), homeAssistantUrl);
-        
-        Preferences.Default.Set(nameof(mqttBroker), mqttBroker);
-        Preferences.Default.Set(nameof(mqttPort), mqttPort);
-        Preferences.Default.Set(nameof(mqttUsername), mqttUsername);
-        Preferences.Default.Set(nameof(mqttTopicPrefix), mqttTopicPrefix);
 
         Preferences.Default.Set(nameof(useDarkTheme), useDarkTheme);
         Preferences.Default.Set(nameof(enableNotifications), enableNotifications);
@@ -124,9 +106,6 @@ public static class Config
 
             if (!string.IsNullOrEmpty(homeAssistantToken))
                 SecureStorage.Default.SetAsync(nameof(homeAssistantToken), homeAssistantToken);
-
-            if (!string.IsNullOrEmpty(mqttPassword))
-                SecureStorage.Default.SetAsync(nameof(mqttPassword), mqttPassword);
         }
         catch
         {

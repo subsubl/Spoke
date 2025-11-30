@@ -11,15 +11,43 @@
 - 🌐 **Decentralized** - No central servers, communicates via QuIXI bridge
 - 📱 **Cross-Platform** - Android, iOS, Windows, and macOS support
 - 🎨 **Customizable Widgets** - Choose from toggles, gauges, graphs, and sensors
-- 📊 **Real-Time Updates** - Live entity state synchronization with 30s polling
+- 📊 **Real-Time Updates** - Live WebSocket synchronization with QuIXI
 - 🔔 **Push Notifications** - Get notified on important entity state changes
 - 🌓 **Dark Mode** - Beautiful light and dark themes
 - 🔐 **Secure Storage** - Local entity configuration with optional authentication
 - ♻️ **Background Sync** - Automatic state synchronization in the background
+- 👤 **Spixi Integration** - Built-in wallet creation, username, and profile setup
+- 🏗️ **Blockchain Identity** - Your cryptographic address is your identity
 
 ---
 
-## 📋 Prerequisites
+## 🔐 Spixi Integration & Blockchain Identity
+
+IxiHome integrates with **Spixi** to provide secure blockchain-based identity management. Unlike traditional apps that use passwords and central servers, IxiHome uses cryptographic identities that you control.
+
+### Why Blockchain Identity?
+
+- **Self-Sovereign** - You own your identity, not a corporation
+- **Post-Quantum Secure** - Protected against future quantum computing threats
+- **Decentralized** - No central authority can revoke your access
+- **Privacy-First** - Your identity is just a cryptographic address
+
+### Onboarding Process
+
+The first-run setup creates:
+1. **Cryptographic Wallet** - Your private keys for signing and encryption
+2. **Username** - Human-readable identifier for your contacts
+3. **Profile Picture** - Avatar for visual identification
+4. **Ixian Address** - Your unique blockchain identity
+
+### Security Benefits
+
+- **End-to-End Encryption** - All communication is cryptographically secure
+- **No Passwords** - Authentication uses public-key cryptography
+- **Forward Secrecy** - Past communications remain secure even if keys are compromised
+- **Zero-Knowledge** - QuIXI cannot read your smart home data
+
+---
 
 - **.NET 9 SDK** or later
 - **Visual Studio 2022** (with .NET MAUI workload) or VS Code
@@ -104,17 +132,27 @@ dotnet build -c Release -f net9.0-android
 
 ### IxiHome Setup
 
-1. Launch IxiHome app
-2. Open **Settings** (hamburger menu → Settings)
-3. Configure QuIXI connection:
+1. **Launch IxiHome** for the first time
+2. **Welcome Screen** - Introduction to blockchain-based smart home control
+3. **Create Your Wallet** - Generate a secure cryptographic wallet for your Ixian identity
+4. **Choose Username & Avatar** - Set up your profile with username and profile picture
+5. **Configure QuIXI Connection** - Enter your QuIXI bridge details:
    - **QuIXI Address**: IP address of QuIXI bridge (e.g., `192.168.1.100`)
    - **Port**: `8001` (default)
    - **Username/Password**: (if configured in QuIXI)
-4. Configure Home Assistant:
+6. **Test Connection** - Verify connectivity to QuIXI bridge
+7. **Setup Complete** - Your secure smart home controller is ready!
+
+### Alternative Manual Setup
+
+If you need to reconfigure settings later:
+
+1. Open **Settings** (hamburger menu → Settings)
+2. Configure Home Assistant:
    - **Home Assistant URL**: Your HA instance URL
    - **Access Token**: Generate from HA (Profile → Long-Lived Access Tokens)
-5. Tap **Test Connection** to verify
-6. Tap **Save Settings**
+3. Tap **Test Connection** to verify
+4. Tap **Save Settings**
 
 ---
 

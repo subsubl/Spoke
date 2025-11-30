@@ -2,7 +2,6 @@ using IXICore;
 using IXICore.Meta;
 using IXICore.Network;
 using IxiHome.Meta;
-using IxiHome.TestRunner;
 using System;
 using System.Globalization;
 
@@ -79,6 +78,20 @@ public partial class App : Application
             Preferences.Default.Set("uid", Convert.ToBase64String(CoreConfig.device_id));
         }
 
+        // Load configuration
+        Config.Load();
+
+        // Auto-initialize if QuIXI is configured
+        if (!string.IsNullOrEmpty(Config.quixiAddress))
+        {
+            Logging.info("QuIXI address configured, auto-initializing node");
+            _ = Task.Run(async () => await InitializeNodeAsync());
+        }
+        else
+        {
+            Logging.info("QuIXI not configured yet, node initialization deferred until settings are saved");
+        }
+
         // Note: Node.init() will be called manually after QuIXI settings are configured in GUI
 #endif
     }
@@ -87,7 +100,14 @@ public partial class App : Application
     {
         if (MainPage == null)
         {
-            MainPage = new AppShell();
+            if (!Config.IsSetupComplete())
+            {
+                MainPage = new Pages.Onboarding.OnboardingPage();
+            }
+            else
+            {
+                MainPage = new AppShell();
+            }
         }
 
         var window = base.CreateWindow(activationState);
@@ -104,12 +124,15 @@ public partial class App : Application
     /// <summary>
     /// Initialize Node and connect to QuIXI. Should be called after settings are configured.
     /// </summary>
-    public static void InitializeNode()
+    public static async Task InitializeNodeAsync()
     {
         try
         {
             Logging.info("Initializing Node and QuIXI connection");
             Node.Instance.init();
+            
+            // Start WebSocket connection for real-time updates
+            await Node.Instance.StartWebSocketAsync();
             
             // Start sync service
             _ = Services.SyncService.Instance.StartAsync();
@@ -181,7 +204,7 @@ public partial class App : Application
         
         if (Node.Instance != null)
         {
-            Node.Instance.shutdown();
+            await Node.Instance.shutdownAsync();
         }
 
         await Task.Delay(500);

@@ -4,6 +4,7 @@ using IxiHome.Interfaces;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Net.WebSockets;
 
 namespace IxiHome.Network;
 
@@ -20,10 +21,17 @@ public class QuixiClient // : IQuixiClient
     private readonly string _password;
     private readonly HttpClient _httpClient;
     private string _baseUrl;
+    private string _webSocketUrl;
+
+    private ClientWebSocket? _webSocket;
+    private CancellationTokenSource? _webSocketCts;
+    private Task? _webSocketTask;
 
     public bool IsConnected { get; private set; }
 
-    public event EventHandler<EntityStateChangedEventArgs>? EntityStateChanged;
+    public bool IsWebSocketConnected => _webSocket?.State == WebSocketState.Open;
+
+    public event EventHandler<Interfaces.EntityStateChangedEventArgs>? EntityStateChanged;
     public event EventHandler<string>? ConnectionStatusChanged;
 
     public QuixiClient(string host, int port, bool secure = false, string username = "", string password = "")
@@ -36,6 +44,8 @@ public class QuixiClient // : IQuixiClient
 
         string protocol = _secure ? "https" : "http";
         _baseUrl = $"{protocol}://{_host}:{_port}";
+        string wsProtocol = _secure ? "wss" : "ws";
+        _webSocketUrl = $"{wsProtocol}://{_host}:{_port}/websocket";
 
         _httpClient = new HttpClient
         {
@@ -62,6 +72,12 @@ public class QuixiClient // : IQuixiClient
             var response = await _httpClient.GetAsync($"{_baseUrl}/status");
             IsConnected = response.IsSuccessStatusCode;
             
+            if (IsConnected)
+            {
+                // Try to connect WebSocket for real-time updates
+                await ConnectWebSocketAsync();
+            }
+            
             ConnectionStatusChanged?.Invoke(this, IsConnected ? "Connected" : "Failed");
             
             return IsConnected;
@@ -72,6 +88,126 @@ public class QuixiClient // : IQuixiClient
             IsConnected = false;
             ConnectionStatusChanged?.Invoke(this, $"Error: {ex.Message}");
             return false;
+        }
+    }
+
+    /// <summary>
+    /// Connect to WebSocket for real-time updates
+    /// </summary>
+    private async Task ConnectWebSocketAsync()
+    {
+        try
+        {
+            if (_webSocket != null && _webSocket.State == WebSocketState.Open)
+            {
+                return; // Already connected
+            }
+
+            _webSocket = new ClientWebSocket();
+            _webSocketCts = new CancellationTokenSource();
+
+            // Set up basic authentication if credentials provided
+            if (!string.IsNullOrEmpty(_username) && !string.IsNullOrEmpty(_password))
+            {
+                var authValue = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{_username}:{_password}"));
+                _webSocket.Options.SetRequestHeader("Authorization", $"Basic {authValue}");
+            }
+
+            await _webSocket.ConnectAsync(new Uri(_webSocketUrl), CancellationToken.None);
+            Logging.info("WebSocket connected to QuIXI");
+
+            // Start listening for messages
+            _webSocketTask = Task.Run(() => ReceiveMessagesAsync(_webSocketCts.Token));
+        }
+        catch (Exception ex)
+        {
+            Logging.error($"WebSocket connection failed: {ex.Message}");
+        }
+    }
+
+    /// <summary>
+    /// Disconnect WebSocket (internal)
+    /// </summary>
+    private async Task DisconnectWebSocketInternalAsync()
+    {
+        if (_webSocket != null)
+        {
+            _webSocketCts?.Cancel();
+            await _webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
+            _webSocket.Dispose();
+            _webSocket = null;
+            Logging.info("WebSocket disconnected");
+        }
+    }
+
+    /// <summary>
+    /// Public method to disconnect WebSocket
+    /// </summary>
+    public async Task DisconnectWebSocketAsync()
+    {
+        await DisconnectWebSocketInternalAsync();
+    }
+
+    /// <summary>
+    /// Receive WebSocket messages
+    /// </summary>
+    private async Task ReceiveMessagesAsync(CancellationToken cancellationToken)
+    {
+        var buffer = new byte[4096];
+        while (_webSocket != null && _webSocket.State == WebSocketState.Open && !cancellationToken.IsCancellationRequested)
+        {
+            try
+            {
+                var result = await _webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), cancellationToken);
+                if (result.MessageType == WebSocketMessageType.Text)
+                {
+                    var message = Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    await ProcessWebSocketMessageAsync(message);
+                }
+                else if (result.MessageType == WebSocketMessageType.Close)
+                {
+                    await DisconnectWebSocketInternalAsync();
+                    break;
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                break;
+            }
+            catch (Exception ex)
+            {
+                Logging.error($"WebSocket receive error: {ex.Message}");
+                await DisconnectWebSocketInternalAsync();
+                // Try to reconnect after delay
+                await Task.Delay(TimeSpan.FromSeconds(5));
+                await ConnectWebSocketAsync();
+                break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Process incoming WebSocket message
+    /// </summary>
+    private async Task ProcessWebSocketMessageAsync(string message)
+    {
+        try
+        {
+            // Assume message is JSON with entity state change
+            var update = JsonConvert.DeserializeObject<EntityStateUpdate>(message);
+            if (update != null)
+            {
+                EntityStateChanged?.Invoke(this, new Interfaces.EntityStateChangedEventArgs
+                {
+                    EntityId = update.EntityId,
+                    State = update.State,
+                    Attributes = update.Attributes
+                });
+            }
+        }
+        catch (Exception ex)
+        {
+            Logging.error($"Failed to process WebSocket message: {ex.Message}");
         }
     }
 
@@ -209,7 +345,7 @@ public class QuixiClient // : IQuixiClient
                     var state = await GetEntityStateAsync(entityId);
                     if (state != null)
                     {
-                        EntityStateChanged?.Invoke(this, new EntityStateChangedEventArgs
+                        EntityStateChanged?.Invoke(this, new Interfaces.EntityStateChangedEventArgs
                         {
                             EntityId = entityId,
                             State = state.State,
@@ -292,4 +428,19 @@ public class EntityState
 
     [JsonProperty("last_updated")]
     public DateTime LastUpdated { get; set; }
+}
+
+/// <summary>
+/// Entity state update from WebSocket
+/// </summary>
+public class EntityStateUpdate
+{
+    [JsonProperty("entity_id")]
+    public string EntityId { get; set; } = "";
+
+    [JsonProperty("state")]
+    public string State { get; set; } = "";
+
+    [JsonProperty("attributes")]
+    public Dictionary<string, object> Attributes { get; set; } = new();
 }

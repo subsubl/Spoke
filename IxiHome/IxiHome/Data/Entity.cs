@@ -56,6 +56,25 @@ public abstract partial class Entity : ObservableObject
     }
 
     /// <summary>
+    /// Update entity state from websocket JsonElement
+    /// </summary>
+    public virtual void UpdateState(System.Text.Json.JsonElement jsonState)
+    {
+        string state = jsonState.GetProperty("state").GetString() ?? "";
+        var attributes = new Dictionary<string, object>();
+
+        if (jsonState.TryGetProperty("attributes", out var attributesElement))
+        {
+            foreach (var property in attributesElement.EnumerateObject())
+            {
+                attributes[property.Name] = property.Value.ToString(); // Simple conversion for now
+            }
+        }
+
+        UpdateState(state, attributes);
+    }
+
+    /// <summary>
     /// Get display-friendly state string
     /// </summary>
     public virtual string GetDisplayState()

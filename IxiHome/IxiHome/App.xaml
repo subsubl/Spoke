@@ -2,9 +2,16 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:IxiHome"
+             xmlns:utils="clr-namespace:IxiHome.Utils"
              x:Class="IxiHome.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!-- Converters -->
+            <utils:IsNotMinDateConverter x:Key="IsNotMinDateConverter" />
+            <utils:StepIndicatorConverter x:Key="StepIndicatorConverter" />
+            <utils:StringEqualsConverter x:Key="StringEqualsConverter" />
+            <utils:StringNotEqualsConverter x:Key="StringNotEqualsConverter" />
+            <utils:BoolToStringConverter x:Key="BoolToStringConverter" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />

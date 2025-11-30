@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IxiHome")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.1.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0+a95888b2448e4966aba205ee7b4c6dff59605f31")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0+2d5a479840fe3316bc97ca2f03aecd7520a0266a")]
 [assembly: System.Reflection.AssemblyProductAttribute("IxiHome")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IxiHome")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.1.0.0")]
