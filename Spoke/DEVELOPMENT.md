@@ -7,11 +7,13 @@
 2. ✅ **Project Configuration** - Spoke.csproj with .NET 9 MAUI targets (Android, iOS, Windows, macOS)
 3. ✅ **Application Initialization** - MauiProgram.cs with lifecycle events
 4. ✅ **App Entry Point** - App.xaml.cs with Node initialization and shutdown logic
+   - NOTE: The app used to auto-initialize the Node from the constructor, which could race with window creation on Windows and cause an extra/stray window to appear. Node auto-init was moved to occur after the first window is created (inside CreateWindow) to prevent early activation artifacts.
 5. ✅ **Shell Navigation** - AppShell.xaml with FlyoutMenu and route registration
 
 ### Architecture Layer
 6. ✅ **Meta Layer** - Config.cs (secure storage), Node.cs (lifecycle management)
 7. ✅ **Network Layer** - QuixiClient.cs (HTTP client implementing IQuixiClient)
+   - NOTE: Quixi request signing now prefers Ixian-Core wallet APIs (via a new WalletAdapter shim) and falls back to the legacy `WalletManager` for compatibility. Move callers to the IxianHandler / WalletAdapter in future refactors.
 8. ✅ **Data Layer** - 6 entity types with ObservableObject
 9. ✅ **Entity Management** - EntityManager with CRUD and JSON persistence
 10. ✅ **Interfaces** - IQuixiClient, IEntityWidget, IEntityManager, INotificationService
@@ -43,6 +45,11 @@
 28. ✅ **Onboarding Wizard** - First-run experience for QuIXI setup (6-step process with wallet creation)
 29. ✅ **Spixi Wallet Integration** - Added wallet creation, username, and profile picture selection to onboarding
 30. ✅ **Enhanced Widgets** - Animations for graphs, full circular gauge implementation with Microsoft.Maui.Graphics
+
+### Migration notes: wallet/network → Ixian-Core
+ - Spoke now centralizes wallet access in `Spoke.Wallet.WalletAdapter` which prefers Ixian-Core (`IxianHandler.getWalletStorage()`)
+ - `QuixiClient` signing was migrated to use the adapter. The legacy `WalletManager` has been removed and all code now uses Ixian-Core via `IxianHandler` / `WalletAdapter`.
+ - Additional tests were added to verify request signature generation and verification (unit + e2e-style verification tests). Continue to replace any remaining legacy patterns with Ixian-Core workflows.
 
 ## 📂 File Structure
 

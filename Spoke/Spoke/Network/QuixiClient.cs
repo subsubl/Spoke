@@ -63,6 +63,25 @@ public class QuixiClient // : IQuixiClient
         Logging.info($"QuixiClient created for {_baseUrl}");
     }
 
+    // Internal ctor for tests - allows injecting a custom HttpClient
+    internal QuixiClient(string host, int port, HttpClient httpClient, bool secure = false, string username = "", string password = "")
+    {
+        _host = host;
+        _port = port;
+        _secure = secure;
+        _username = username;
+        _password = password;
+
+        string protocol = _secure ? "https" : "http";
+        _baseUrl = $"{protocol}://{_host}:{_port}";
+        string wsProtocol = _secure ? "wss" : "ws";
+        _webSocketUrl = $"{wsProtocol}://{_host}:{_port}/websocket";
+
+        _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+
+        Logging.info($"QuixiClient (test ctor) created for {_baseUrl}");
+    }
+
     /// <summary>
     /// Test connection to QuIXI
     /// </summary>
@@ -219,8 +238,8 @@ public class QuixiClient // : IQuixiClient
     {
         try
         {
-            // Retrieve the private key from WalletManager
-            var privateKey = WalletManager.Instance.GetPrivateKey();
+            // Prefer Ixian-Core primary wallet (via WalletAdapter). Legacy WalletManager has been removed.
+            var privateKey = Spoke.Wallet.WalletAdapter.GetPrimaryPrivateKey();
             if (privateKey == null)
             {
                 throw new InvalidOperationException("Private key not available.");
