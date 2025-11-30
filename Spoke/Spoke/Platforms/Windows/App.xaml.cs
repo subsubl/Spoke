@@ -3,6 +3,7 @@ using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.Windows.AppLifecycle;
 using System.Diagnostics;
+using System.IO;
 using Windows.Graphics;
 
 namespace Spoke.WinUI;
@@ -16,7 +17,20 @@ public partial class App : Microsoft.Maui.MauiWinUIApplication
 
     public App()
     {
-        this.InitializeComponent();
+        try
+        {
+            this.InitializeComponent();
+        }
+        catch (Exception ex)
+        {
+            try
+            {
+                var diagPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "spoke_win_diag.txt");
+                File.AppendAllText(diagPath, $"Windows App InitializeComponent failed: {ex}{Environment.NewLine}");
+            }
+            catch { }
+            throw;
+        }
 
         // Configure window properties
         Microsoft.Maui.Handlers.WindowHandler.Mapper.AppendToMapping(nameof(IWindow), (handler, view) =>

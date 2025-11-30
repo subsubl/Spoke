@@ -21,7 +21,24 @@
 
 ---
 
-## 🔐 Spixi Integration & Blockchain Identity
+## 🆕 Recent Updates (v0.1.1 - November 2025)
+
+### .NET 10 Migration Complete ✅
+- **Migrated from .NET 9 to .NET 10** - Latest .NET framework with improved performance and security
+- **Cross-platform compatibility** - Successfully builds on Windows, iOS, macOS, and Android
+- **Updated dependencies** - All NuGet packages upgraded to .NET 10 compatible versions
+- **Conditional compilation** - Platform-specific code properly isolated with `#if WINDOWS` directives
+
+### Enhanced Security & Performance
+- **Post-quantum encryption** - ML-KEM integration for quantum-resistant security
+- **Improved build system** - Optimized for .NET 10 MAUI workloads
+- **Better error handling** - Enhanced exception management across platforms
+
+### Localization Support
+- **Multi-language files** - Language files copied from Spixi (English, German, etc.)
+- **Extensible translation system** - Ready for UI string adaptation and localization
+
+---
 
 Spoke integrates with **Spixi** to provide secure blockchain-based identity management. Unlike traditional apps that use passwords and central servers, Spoke uses cryptographic identities that you control.
 
@@ -47,9 +64,9 @@ The first-run setup creates:
 - **Forward Secrecy** - Past communications remain secure even if keys are compromised
 - **Zero-Knowledge** - QuIXI cannot read your smart home data
 
----
+## 📋 Prerequisites
 
-- **.NET 9 SDK** or later
+- **.NET 10 SDK** or later
 - **Visual Studio 2022** (with .NET MAUI workload) or VS Code
 - **QuIXI Bridge** running and accessible
 - **Home Assistant** instance (connected to QuIXI via MQTT)
@@ -87,23 +104,23 @@ dotnet restore Spoke.sln
 
 ```bash
 # For Android
-dotnet build -t:Run -f net9.0-android
+dotnet build -t:Run -f net10.0-android
 
 # For iOS (requires Mac)
-dotnet build -t:Run -f net9.0-ios
+dotnet build -t:Run -f net10.0-ios
 
 # For Windows
-dotnet build -t:Run -f net9.0-windows10.0.19041.0 -p:Platform=x64
+dotnet build -t:Run -f net10.0-windows10.0.19041.0 -p:Platform=x64
 
 # For macOS
-dotnet build -t:Run -f net9.0-maccatalyst
+dotnet build -t:Run -f net10.0-maccatalyst
 ```
 
 ### 4. Release Build
 
 ```bash
-dotnet build -c Release -f net9.0-android
-# Output: Spoke/bin/Release/net9.0-android/io.ixian.Spoke-Signed.apk
+dotnet build -c Release -f net10.0-android
+# Output: Spoke/bin/Release/net10.0-android/io.ixian.Spoke-Signed.apk
 ```
 
 ---
@@ -281,7 +298,7 @@ Spoke/
 
 ## 🚧 Roadmap
 
-### Phase 1 (Current - v0.1.0)
+### Phase 1 (Current - v0.1.1) ✅ COMPLETE
 - ✅ Basic entity management (add, edit, delete)
 - ✅ 4 widget types (Toggle, Sensor, Gauge, Graph)
 - ✅ QuIXI HTTP client integration
@@ -290,13 +307,17 @@ Spoke/
 - ✅ Background sync service with 30s polling
 - ✅ Platform-specific notification services
 - ✅ Interfaces for testability (IQuixiClient, IEntityManager, INotificationService)
+- ✅ **.NET 10 migration and optimization**
+- ✅ **Multi-language support foundation**
+- ✅ **Post-quantum encryption integration**
 
-### Phase 2 (v0.2.0)
+### Phase 2 (v0.2.0) - Next Priority
 - ⬜ Gauge widgets (circular/linear)
 - ⬜ Graph widgets with historical data
 - ⬜ Light brightness and color control
 - ⬜ Drag-and-drop entity reordering
 - ⬜ Entity grouping/folders
+- ⬜ UI localization implementation
 
 ### Phase 3 (v0.3.0)
 - ⬜ WebSocket/MQTT real-time updates

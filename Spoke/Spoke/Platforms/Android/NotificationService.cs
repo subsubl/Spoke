@@ -11,8 +11,8 @@ namespace Spoke.Platforms.Android;
 /// </summary>
 public class NotificationService
 {
-    private const string CHANNEL_ID = "ixihome_notifications";
-    private const string CHANNEL_NAME = "Spoke";
+    private const string CHANNEL_ID = "spoke_notifications";
+    private const string CHANNEL_NAME = "Spixi";
     private const string CHANNEL_DESCRIPTION = "Smart home notifications";
     private readonly Context _context;
     private readonly NotificationManager? _notificationManager;
@@ -44,7 +44,7 @@ public class NotificationService
             var pendingIntent = PendingIntent.GetActivity(_context, 0, intent, PendingIntentFlags.Immutable);
             
             var builder = new NotificationCompat.Builder(_context, CHANNEL_ID)
-                .SetSmallIcon(Resource.Drawable.dotnet_bot)
+                .SetSmallIcon(Resource.Drawable.statusicon)
                 .SetContentTitle(title)
                 .SetContentText(message)
                 .SetPriority(NotificationCompat.PriorityDefault)

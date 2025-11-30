@@ -1,3 +1,4 @@
+#if WINDOWS
 using Spoke.Meta;
 using IXICore;
 using IXICore.Meta;
@@ -162,4 +163,5 @@ public class BatterySensorManager
         }
     }
 }
+#endif
 

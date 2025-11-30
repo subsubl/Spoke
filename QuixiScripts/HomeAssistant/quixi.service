@@ -18,5 +18,4 @@ Environment=DOTNET_ROOT=/home/pi/.dotnet
 Environment=PATH=/home/pi/.dotnet:/home/pi/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 [Install]
-WantedBy=multi-user.target</content>
-<parameter name="filePath">c:\Users\User\IxiHome\QuIXI\Examples\HomeAssistant\quixi.service
+WantedBy=multi-user.target

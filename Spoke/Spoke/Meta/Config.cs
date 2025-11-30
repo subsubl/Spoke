@@ -15,13 +15,6 @@ public static class Config
         set => appFolderPath = value;
     }
 
-    [Obsolete("Use spokeUserFolder instead")]
-    public static string ixiHomeUserFolder
-    {
-        get => appFolderPath;
-        set => appFolderPath = value;
-    }
-
     // Logging settings
     public static int maxLogSize = 50; // MB
     public static int maxLogCount = 5; // number of log files to keep

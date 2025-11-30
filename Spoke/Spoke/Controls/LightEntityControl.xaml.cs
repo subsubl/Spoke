@@ -62,11 +62,11 @@ public partial class LightEntityControl : ContentView
             {
                 Logging.error($"Failed to send command {command} for entity {Entity.Name}");
 
-                if (Application.Current?.MainPage != null)
+                if (App.appWindow?.Page != null)
                 {
-                    await Application.Current.MainPage.DisplayAlert(
-                        "Error",
-                        $"Failed to control {Entity.Name}",
+                    await App.appWindow.Page.DisplayAlert(
+                        "Error", 
+                        $"Failed to set brightness for {Entity.Name}", 
                         "OK");
                 }
             }
@@ -75,11 +75,11 @@ public partial class LightEntityControl : ContentView
         {
             Logging.error($"Exception sending command {command} for entity {Entity.Name}: {ex.Message}");
 
-            if (Application.Current?.MainPage != null)
+            if (App.appWindow?.Page != null)
             {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    $"Error: {ex.Message}",
+                await App.appWindow.Page.DisplayAlert(
+                    "Error", 
+                    $"Error: {ex.Message}", 
                     "OK");
             }
         }

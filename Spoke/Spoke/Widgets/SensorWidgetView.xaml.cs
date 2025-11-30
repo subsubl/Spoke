@@ -33,6 +33,7 @@ public class SensorWidgetViewModel : ObservableObject
         // Load sensor data from individual sensor managers
         if (SensorManager.Instance != null)
         {
+#if WINDOWS
             // Battery sensor
             var batterySensor = SensorManager.Instance.BatterySensor;
             if (batterySensor.IsEnabled && batterySensor.LastBatteryInfo != null)
@@ -72,6 +73,7 @@ public class SensorWidgetViewModel : ObservableObject
                     Value = $"{locationSensor.LastLocation.Coordinate.Latitude:F2}, {locationSensor.LastLocation.Coordinate.Longitude:F2}"
                 });
             }
+#endif
         }
     }
 }

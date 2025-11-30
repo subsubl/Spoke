@@ -68,9 +68,9 @@ public partial class ToggleEntityControl : ContentView
                 Logging.error($"Failed to toggle entity {Entity.Name}");
                 
                 // Show error to user
-                if (Application.Current?.MainPage != null)
+                if (App.appWindow?.Page != null)
                 {
-                    await Application.Current.MainPage.DisplayAlert(
+                    await App.appWindow.Page.DisplayAlert(
                         "Error", 
                         $"Failed to toggle {Entity.Name}", 
                         "OK");
@@ -81,9 +81,9 @@ public partial class ToggleEntityControl : ContentView
         {
             Logging.error($"Exception toggling entity {Entity.Name}: {ex.Message}");
             
-            if (Application.Current?.MainPage != null)
+            if (App.appWindow?.Page != null)
             {
-                await Application.Current.MainPage.DisplayAlert(
+                await App.appWindow.Page.DisplayAlert(
                     "Error", 
                     $"Error: {ex.Message}", 
                     "OK");

@@ -101,6 +101,7 @@ public partial class SensorWidget : Widget
         // Update sensor data from managers
         SensorData.Clear();
 
+#if WINDOWS
         // Add battery data
         var batteryManager = Sensors.SensorManager.Instance.BatterySensor;
         if (batteryManager.IsEnabled && batteryManager.LastBatteryInfo != null)
@@ -131,6 +132,7 @@ public partial class SensorWidget : Widget
                 Icon = "network_icon.png"
             });
         }
+#endif
     }
 
     public override ContentPage GetView()

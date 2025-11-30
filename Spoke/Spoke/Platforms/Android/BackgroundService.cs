@@ -11,7 +11,7 @@ namespace Spoke.Platforms.Android;
 public class BackgroundService : Service
 {
     private const int SERVICE_NOTIFICATION_ID = 9999;
-    private const string CHANNEL_ID = "ixihome_background";
+    private const string CHANNEL_ID = "spoke_background";
     
     public override IBinder? OnBind(Intent? intent)
     {
@@ -23,9 +23,9 @@ public class BackgroundService : Service
         Logging.info("BackgroundService started");
         
         var notification = new Notification.Builder(this, CHANNEL_ID)
-            .SetContentTitle("Spoke")
+            .SetContentTitle("Spixi")
             .SetContentText("Monitoring your smart home")
-            .SetSmallIcon(Resource.Drawable.dotnet_bot)
+            .SetSmallIcon(Resource.Drawable.statusicon)
             .Build();
         
         StartForeground(SERVICE_NOTIFICATION_ID, notification);

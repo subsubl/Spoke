@@ -1,6 +1,7 @@
 using IXICore;
 using IXICore.Meta;
 using Spoke.Interfaces;
+using Spoke;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
@@ -212,14 +213,58 @@ public class QuixiClient // : IQuixiClient
     }
 
     /// <summary>
+    /// Add signing logic to HTTP requests
+    /// </summary>
+    private string SignRequest(string payload)
+    {
+        try
+        {
+            // Retrieve the private key from WalletManager
+            var privateKey = WalletManager.Instance.GetPrivateKey();
+            if (privateKey == null)
+            {
+                throw new InvalidOperationException("Private key not available.");
+            }
+
+            // Sign the payload
+            var signatureBytes = IXICore.CryptoManager.lib.getSignature(Encoding.UTF8.GetBytes(payload), privateKey);
+            var signature = Convert.ToBase64String(signatureBytes);
+            return signature;
+        }
+        catch (Exception ex)
+        {
+            Logging.error($"Error signing request: {ex.Message}");
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Modify HTTP methods to include signed headers
+    /// </summary>
+    private HttpRequestMessage CreateSignedRequest(HttpMethod method, string url, string? payload = null)
+    {
+        var request = new HttpRequestMessage(method, url);
+
+        if (!string.IsNullOrEmpty(payload))
+        {
+            request.Content = new StringContent(payload, Encoding.UTF8, "application/json");
+            var signature = SignRequest(payload);
+            request.Headers.Add("X-Signature", signature);
+        }
+
+        return request;
+    }
+
+    /// <summary>
     /// Get all available Home Assistant entities via QuIXI
     /// </summary>
     public async Task<List<HomeAssistantEntity>> GetEntitiesAsync()
     {
         try
         {
-            var response = await _httpClient.GetAsync($"{_baseUrl}/homeassistant/entities");
-            
+            var request = CreateSignedRequest(HttpMethod.Get, $"{_baseUrl}/homeassistant/entities");
+            var response = await _httpClient.SendAsync(request);
+
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
@@ -246,8 +291,9 @@ public class QuixiClient // : IQuixiClient
     {
         try
         {
-            var response = await _httpClient.GetAsync($"{_baseUrl}/homeassistant/state/{entityId}");
-            
+            var request = CreateSignedRequest(HttpMethod.Get, $"{_baseUrl}/homeassistant/state/{entityId}");
+            var response = await _httpClient.SendAsync(request);
+
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
@@ -281,10 +327,9 @@ public class QuixiClient // : IQuixiClient
             };
 
             var json = JsonConvert.SerializeObject(payload);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var request = CreateSignedRequest(HttpMethod.Post, $"{_baseUrl}/homeassistant/command", json);
+            var response = await _httpClient.SendAsync(request);
 
-            var response = await _httpClient.PostAsync($"{_baseUrl}/homeassistant/command", content);
-            
             if (response.IsSuccessStatusCode)
             {
                 Logging.info($"Command '{command}' sent successfully to {entityId}");

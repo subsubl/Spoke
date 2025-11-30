@@ -85,5 +85,4 @@ echo "Stop with: kill $QUIXI_PID $HASS_PID $HANDLER_PID $ACCEPT_PID"
 # Wait for interrupt
 trap 'echo "Stopping..."; kill $HASS_PID $HANDLER_PID $ACCEPT_PID 2>/dev/null; exit 0' INT TERM
 
-wait</content>
-<parameter name="filePath">c:\Users\User\IxiHome\QuIXI\Examples\HomeAssistant\start.sh
+wait

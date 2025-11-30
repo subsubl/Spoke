@@ -140,5 +140,4 @@ contacts() {
                 ;;
         esac
     fi
-}</content>
-<parameter name="filePath">c:\Users\User\IxiHome\QuIXI\Examples\HomeAssistant\helpers.sh
+}

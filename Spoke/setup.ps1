@@ -1,7 +1,7 @@
-# IxiHome Build Setup Script
-# This script helps set up the build environment for IxiHome
+# Spoke Build Setup Script
+# This script helps set up the build environment for Spoke
 
-Write-Host "=== IxiHome Build Setup ===" -ForegroundColor Cyan
+Write-Host "=== Spoke Build Setup ===" -ForegroundColor Cyan
 Write-Host ""
 
 # Check .NET SDK version
@@ -31,7 +31,7 @@ if (-not $hasNet9) {
     elseif ($choice -eq "2") {
         Write-Host "Downgrading project to .NET 8..." -ForegroundColor Yellow
         
-        $csprojPath = "IxiHome\IxiHome.csproj"
+        $csprojPath = "Spoke\Spoke.csproj"
         if (Test-Path $csprojPath) {
             $content = Get-Content $csprojPath -Raw
             $content = $content -replace 'net9\.0-', 'net8.0-'
@@ -79,7 +79,7 @@ else {
 
 Write-Host ""
 Write-Host "Restoring NuGet packages..." -ForegroundColor Yellow
-dotnet restore IXIHOME.sln
+dotnet restore SPOKE.sln
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "✓ Packages restored successfully!" -ForegroundColor Green
@@ -93,12 +93,12 @@ Write-Host ""
 Write-Host "=== Setup Complete ===" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Yellow
-Write-Host "1. Open IXIHOME.sln in Visual Studio 2022" -ForegroundColor White
+Write-Host "1. Open SPOKE.sln in Visual Studio 2022" -ForegroundColor White
 Write-Host "2. Select your target platform (Android/iOS/Windows)" -ForegroundColor White
 Write-Host "3. Build and run the project" -ForegroundColor White
 Write-Host ""
 Write-Host "Or build from command line:" -ForegroundColor Yellow
-Write-Host "  dotnet build IXIHOME.sln -f net9.0-android" -ForegroundColor Cyan
-Write-Host "  dotnet build IXIHOME.sln -f net9.0-windows10.0.19041.0" -ForegroundColor Cyan
+Write-Host "  dotnet build SPOKE.sln -f net9.0-android" -ForegroundColor Cyan
+Write-Host "  dotnet build SPOKE.sln -f net9.0-windows10.0.19041.0" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "See DEVELOPMENT.md for detailed instructions." -ForegroundColor Green

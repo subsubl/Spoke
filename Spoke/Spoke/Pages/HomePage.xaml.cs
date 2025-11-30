@@ -1,7 +1,9 @@
 using Spoke.Data;
 using Spoke.Sensors;
+#if WINDOWS
 using Windows.Devices.Power;
 using Windows.System.Power;
+#endif
 
 namespace Spoke.Pages;
 
@@ -39,6 +41,7 @@ public partial class HomePage : ContentPage
 
     private void UpdateSensorLabels()
     {
+#if WINDOWS
         // Update location sensor
         if (SensorManager.Instance.LocationSensor.IsEnabled && SensorManager.Instance.LocationSensor.LastLocation != null)
         {
@@ -93,6 +96,7 @@ public partial class HomePage : ContentPage
         {
             NetworkSensorLabel.Text = "Disabled";
         }
+#endif
     }
 
     private async void OnAddEntityClicked(object sender, EventArgs e)

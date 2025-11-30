@@ -142,7 +142,7 @@ public partial class OnboardingPage : ContentPage
             Config.Save();
 
             // Navigate to main app
-            Application.Current!.MainPage = new AppShell();
+            App.appWindow!.Page = new AppShell();
         }
     }
 

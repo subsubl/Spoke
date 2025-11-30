@@ -15,5 +15,4 @@
     "sensor.date_time",
     "sensor.time"
   ]
-}</content>
-<parameter name="filePath">c:\Users\User\IxiHome\QuIXI\Examples\HomeAssistant\hass_config.json
+}

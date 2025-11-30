@@ -4,6 +4,8 @@ using IXICore.Network;
 using Spoke.Meta;
 using System;
 using System.Globalization;
+using System.Runtime.ExceptionServices;
+using System.IO;
 
 namespace Spoke;
 
@@ -30,26 +32,73 @@ public partial class App : Application
         Program.Main(Array.Empty<string>()).Wait();
         Environment.Exit(0);
 #else
-        InitializeComponent();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception ex)
+        {
+            try
+            {
+                File.AppendAllText(Path.Combine(Path.GetTempPath(), "spoke_xaml_diag.txt"), $"InitializeComponent failed: {ex.Message}\n{ex.StackTrace}\n");
+            }
+            catch { }
+            throw;
+        }
 
         // Prepare the personal folder
-        if (!Directory.Exists(Config.ixiHomeUserFolder))
+        try
         {
-            Directory.CreateDirectory(Config.ixiHomeUserFolder);
+            var tempDiag = Path.Combine(Path.GetTempPath(), "spoke_temp_diag.txt");
+            File.AppendAllText(tempDiag, $"App constructor start: {DateTime.UtcNow:O}{Environment.NewLine}");
+            File.AppendAllText(tempDiag, $"spokeUserFolder: {Config.spokeUserFolder}{Environment.NewLine}");
+        }
+        catch { }
+        if (!Directory.Exists(Config.spokeUserFolder))
+        {
+            Directory.CreateDirectory(Config.spokeUserFolder);
         }
 
-        // Init logging
-        Logging.setOptions(Config.maxLogSize, Config.maxLogCount, false);
-        if (!Logging.start(Config.ixiHomeUserFolder, Config.logVerbosity))
+        // Write a small diagnostic file to verify we can write into the user folder
+        try
         {
-            Environment.Exit(1);
-            return;
+            var diagPath = Path.Combine(Config.spokeUserFolder, "startup_diag.txt");
+            File.AppendAllText(diagPath, $"Startup attempt: {DateTime.UtcNow:O}{Environment.NewLine}");
         }
-        Logging.info("Starting IxiHome {0} ({1})", Config.version, CoreConfig.version);
+        catch (Exception writeEx)
+        {
+            try
+            {
+                var tmp = Path.Combine(Path.GetTempPath(), "spoke_startup_diag.txt");
+                File.AppendAllText(tmp, $"Diag write failed: {writeEx}{Environment.NewLine}");
+            }
+            catch { }
+        }
+
+        // Init logging (wrapped to capture failures to disk instead of exiting immediately)
+        Logging.setOptions(Config.maxLogSize, Config.maxLogCount, false);
+        bool loggingStarted = true;
+        try
+        {
+            loggingStarted = Logging.start(Config.spokeUserFolder, Config.logVerbosity);
+        }
+        catch (Exception ex)
+        {
+            loggingStarted = false;
+            try { File.AppendAllText(Path.Combine(Config.spokeUserFolder, "startup_diag.txt"), $"Logging.start threw: {ex}{Environment.NewLine}"); } catch { }
+        }
+
+        if (!loggingStarted)
+        {
+            try { File.AppendAllText(Path.Combine(Config.spokeUserFolder, "startup_diag.txt"), "Logging.start returned false\n"); } catch { }
+            // Do not exit immediately — keep going so we can capture more diagnostics during startup.
+        }
+        Logging.info("Starting Spoke {0} ({1})", Config.version, CoreConfig.version);
         Logging.info("Operating System is {0}", IXICore.Platform.getOSNameAndVersion());
 
         // Init fatal exception handlers
         AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
+        AppDomain.CurrentDomain.FirstChanceException += CurrentDomainOnFirstChanceException;
         TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
 
         // Generate or load a device ID
@@ -94,31 +143,42 @@ public partial class App : Application
 
         // Note: Node.init() will be called manually after QuIXI settings are configured in GUI
 #endif
+
+        // Temporary workaround for .NET 9: set MainPage even though obsolete
+        if (!Config.IsSetupComplete())
+        {
+            MainPage = new Pages.Onboarding.OnboardingPage();
+        }
+        else
+        {
+            MainPage = new AppShell();
+        }
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        if (MainPage == null)
+        try
         {
-            if (!Config.IsSetupComplete())
+            var window = base.CreateWindow(activationState);
+
+            window.Title = "Spoke";
+
+            if (appWindow == null)
             {
-                MainPage = new Pages.Onboarding.OnboardingPage();
+                appWindow = window;
             }
-            else
-            {
-                MainPage = new AppShell();
-            }
+
+            return window;
         }
-
-        var window = base.CreateWindow(activationState);
-        window.Title = "IxiHome";
-
-        if (appWindow == null)
+        catch (Exception ex)
         {
-            appWindow = window;
+            try
+            {
+                File.AppendAllText(Path.Combine(Config.spokeUserFolder, "startup_diag.txt"), $"CreateWindow failed: {ex.Message}\n{ex.StackTrace}\n");
+            }
+            catch { }
+            throw;
         }
-
-        return window;
     }
     
     /// <summary>
@@ -138,7 +198,9 @@ public partial class App : Application
             _ = Services.SyncService.Instance.StartAsync();
 
             // Initialize notifications
+#if WINDOWS
             Notifications.NotificationManager.Instance.NotificationsEnabled = Config.enableNotifications;
+#endif
 
             // Start sensor collection
             Sensors.SensorManager.Instance.StartAllSensors();
@@ -170,6 +232,11 @@ public partial class App : Application
         Logging.error($"CurrentDomain Unhandled Exception: {exception}");
     }
 
+    private static void CurrentDomainOnFirstChanceException(object? sender, FirstChanceExceptionEventArgs e)
+    {
+        Logging.warn($"FirstChanceException: {e.Exception?.GetType()}: {e.Exception?.Message}");
+    }
+
     public static void EnsureNodeRunning()
     {
         try
@@ -197,7 +264,7 @@ public partial class App : Application
 
     public static async Task Shutdown()
     {
-        Logging.info("IxiHome shutting down...");
+        Logging.info("Spoke shutting down...");
         
         // Stop sync service
         await Services.SyncService.Instance.StopAsync();
@@ -208,7 +275,7 @@ public partial class App : Application
         }
 
         await Task.Delay(500);
-        Logging.info("IxiHome shutdown complete");
+        Logging.info("Spoke shutdown complete");
         Logging.flush();
         Logging.stop();
     }

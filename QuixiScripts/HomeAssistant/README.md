@@ -1,11 +1,11 @@
 # Home Assistant Integration (QuIXI)
 
-This example shows how to create a **QuIXI script that connects to Home Assistant** and syncs smart home device states with IxiHome via the Ixian blockchain network.
+This example shows how to create a **QuIXI script that connects to Home Assistant** and syncs smart home device states with Spoke via the Ixian blockchain network.
 
 The script:
 - Connects to Home Assistant via WebSocket API
-- Syncs device states between Home Assistant and IxiHome
-- Responds to control commands from IxiHome
+- Syncs device states between Home Assistant and Spoke
+- Responds to control commands from Spoke
 - Provides real-time state updates
 
 ---
@@ -51,7 +51,7 @@ dotnet build -c Release
 /HomeAssistant
  ├── start.sh                    # Launches QuIXI and Home Assistant sync script
  ├── ixiAutoAccept.sh           # Automatically accepts incoming contacts
- ├── ixiMessageHandler.sh       # Handles IxiHome control commands
+ ├── ixiMessageHandler.sh       # Handles Spoke control commands
  ├── hass_sync.py              # Home Assistant WebSocket sync script
  ├── hass_config.json          # Home Assistant connection config
  ├── helpers.sh                # Utility functions
@@ -98,9 +98,9 @@ dotnet build -c Release
 
 1. **QuIXI Connection**: The script connects to QuIXI via Ixian network
 2. **Home Assistant Sync**: Maintains WebSocket connection to Home Assistant
-3. **State Synchronization**: Bidirectional sync between IxiHome and Home Assistant
-4. **Command Processing**: Processes control commands from IxiHome users
-5. **Real-time Updates**: Pushes state changes to IxiHome immediately
+3. **State Synchronization**: Bidirectional sync between Spoke and Home Assistant
+4. **Command Processing**: Processes control commands from Spoke users
+5. **Real-time Updates**: Pushes state changes to Spoke immediately
 
 ---
 
@@ -140,5 +140,4 @@ dotnet build -c Release
 **Command Issues**:
 - Use `devices` command to list available entities
 - Check entity states in Home Assistant UI
-- Verify command format</content>
-<parameter name="filePath">c:\Users\User\IxiHome\QuIXI\Examples\HomeAssistant\README.md
+- Verify command format

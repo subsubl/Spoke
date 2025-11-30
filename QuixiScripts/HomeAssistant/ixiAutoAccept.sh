@@ -22,5 +22,4 @@ while true; do
 
     # Wait before checking again
     sleep 30
-done</content>
-<parameter name="filePath">c:\Users\User\IxiHome\QuIXI\Examples\HomeAssistant\ixiAutoAccept.sh
+done

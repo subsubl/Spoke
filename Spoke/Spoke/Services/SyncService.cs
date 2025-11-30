@@ -170,8 +170,10 @@ public class SyncService
             await AutomationManager.Instance.TriggerAutomationsAsync(triggerEvent);
             
             // Show notification for state changes
+#if WINDOWS
             Notifications.NotificationManager.Instance.ShowEntityStateChangedNotification(
                 entity.Id, e.State, entity.Name);
+#endif
         }
         catch (Exception ex)
         {

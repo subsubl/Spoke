@@ -17,12 +17,12 @@ public partial class AppShell : Shell
 
     private void AppShell_Navigating(object? sender, ShellNavigatingEventArgs e)
     {
-        try { System.IO.File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now + " Navigating: " + e.Target?.Location + "\n"); } catch {}
+
     }
 
     private void AppShell_Navigated(object? sender, ShellNavigatedEventArgs e)
     {
-        try { System.IO.File.AppendAllText("c:\\Users\\User\\IxiHome\\IxiHome\\nav_debug.log", DateTime.Now + " Navigated: " + e.Current?.Location + "\n"); } catch {}
+
     }
 }
 

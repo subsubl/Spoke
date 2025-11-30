@@ -1,6 +1,6 @@
 using Microsoft.Maui.Storage;
 
-Console.WriteLine("Resetting IxiHome setup preferences...");
+Console.WriteLine("Resetting Spoke setup preferences...");
 
 // Reset setup complete flag
 Preferences.Default.Set("setup_complete", false);

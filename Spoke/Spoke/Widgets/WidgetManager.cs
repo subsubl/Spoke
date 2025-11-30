@@ -92,9 +92,9 @@ public class WidgetManager
                 if (_widgetPages.TryGetValue(widgetId, out var page))
                 {
                     // Navigate back if this page is currently displayed
-                    if (Application.Current?.MainPage?.Navigation?.NavigationStack?.LastOrDefault() == page)
+                    if (App.appWindow?.Page?.Navigation?.NavigationStack?.LastOrDefault() == page)
                     {
-                        Application.Current.MainPage.Navigation.PopAsync();
+                        App.appWindow?.Page?.Navigation?.PopAsync();
                     }
                     _widgetPages.Remove(widgetId);
                 }
@@ -141,13 +141,13 @@ public class WidgetManager
         _widgetPages[widget.Id] = page;
 
         // Navigate to the widget page modally
-        if (Application.Current?.MainPage is NavigationPage navPage)
+        if (App.appWindow?.Page is NavigationPage navPage)
         {
             await navPage.PushAsync(page);
         }
-        else if (Application.Current?.MainPage != null)
+        else if (App.appWindow?.Page != null)
         {
-            await Application.Current.MainPage.Navigation.PushAsync(page);
+            await App.appWindow?.Page?.Navigation?.PushAsync(page);
         }
         else
         {

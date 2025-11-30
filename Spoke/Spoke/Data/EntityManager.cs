@@ -258,7 +258,9 @@ public class EntityManager // : IEntityManager
     private void OnNotificationReceived(object? sender, NotificationReceivedEventArgs e)
     {
         Logging.info($"Notification received: {e.Title} - {e.Body}");
+#if WINDOWS
         Notifications.NotificationManager.Instance.ShowSystemNotification(e.Title, e.Body);
+#endif
     }
 }
 

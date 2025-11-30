@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Home Assistant Sync Script for QuIXI
-Syncs device states between Home Assistant and IxiHome via Ixian network
+Syncs device states between Home Assistant and Spoke via Ixian network
 """
 
 import asyncio
@@ -108,7 +108,7 @@ async def control_hass_entity(entity_id, service, **kwargs):
         return False
 
 async def handle_quixi_command(sender, command, args):
-    """Handle commands from QuIXI/IxiHome"""
+    """Handle commands from QuIXI/Spoke"""
     logger.info(f"Processing command from {sender}: {command} {args}")
 
     if command == 'status':
@@ -223,7 +223,7 @@ async def hass_websocket_handler():
                             device_states[entity_id] = new_state
                             logger.info(f"State changed: {entity_id} = {new_state}")
 
-                            # Notify IxiHome via QuIXI (broadcast to all contacts)
+                            # Notify Spoke via QuIXI (broadcast to all contacts)
                             # In a real implementation, you'd want to notify specific users
                             # For now, we'll log the change
 
@@ -299,4 +299,4 @@ if __name__ == "__main__":
 
     # Run main loop
     asyncio.run(main())</content>
-<parameter name="filePath">c:\Users\User\IxiHome\QuIXI\Examples\HomeAssistant\hass_sync.py
+<parameter name="filePath">c:\Users\User\Spoke\QuIXI\Examples\HomeAssistant\hass_sync.py

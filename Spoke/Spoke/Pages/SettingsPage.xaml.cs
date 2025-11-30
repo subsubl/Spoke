@@ -69,25 +69,33 @@ public partial class SettingsPage : ContentPage
 
     private void OnLocationSensorToggled(object sender, ToggledEventArgs e)
     {
+#if WINDOWS
         SensorManager.Instance.LocationSensor.IsEnabled = e.Value;
         SensorManager.Instance.SaveSensorSettings();
+#endif
     }
 
     private void OnBatterySensorToggled(object sender, ToggledEventArgs e)
     {
+#if WINDOWS
         SensorManager.Instance.BatterySensor.IsEnabled = e.Value;
         SensorManager.Instance.SaveSensorSettings();
+#endif
     }
 
     private void OnNetworkSensorToggled(object sender, ToggledEventArgs e)
     {
+#if WINDOWS
         SensorManager.Instance.NetworkSensor.IsEnabled = e.Value;
         SensorManager.Instance.SaveSensorSettings();
+#endif
     }
 
     private void OnNotificationsToggled(object sender, ToggledEventArgs e)
     {
+#if WINDOWS
         Notifications.NotificationManager.Instance.NotificationsEnabled = e.Value;
+#endif
     }
 
     private async void OnSaveClicked(object sender, EventArgs e)

@@ -51,10 +51,10 @@ Create a **decentralized AI chatbot** using **LM Studio**:
 
 ### 4. Home Assistant Integration
 
-Create a **smart home bridge** between **Home Assistant** and **IxiHome** via **Ixian blockchain**:
+Create a **smart home bridge** between **Home Assistant** and **Spoke** via **Ixian blockchain**:
 
 * Connects to Home Assistant via WebSocket API
-* Syncs device states bidirectionally with IxiHome
+* Syncs device states bidirectionally with Spoke
 * Controls lights, switches, climate, covers, and sensors
 * Provides secure blockchain-based smart home control
 

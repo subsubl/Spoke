@@ -44,8 +44,12 @@ namespace Spoke.TestRunner
 
                 // Test 3: Sensor Manager
                 Console.WriteLine("\n3. Testing Sensor Manager...");
+#if WINDOWS
                 SensorManager.Instance.StartAllSensors();
                 Console.WriteLine("   ✅ Sensor Manager started");
+#else
+                Console.WriteLine("   ⏭️ Sensor Manager skipped (Windows-only)");
+#endif
 
                 // Test 4: Entity Manager
                 Console.WriteLine("\n4. Testing Entity Manager...");
@@ -87,7 +91,9 @@ namespace Spoke.TestRunner
 
                 // Cleanup
                 widgetManager.Stop();
+#if WINDOWS
                 SensorManager.Instance.StopAllSensors();
+#endif
                 Logging.stop();
 
             }

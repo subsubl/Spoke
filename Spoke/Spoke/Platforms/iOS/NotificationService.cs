@@ -1,5 +1,5 @@
 using UserNotifications;
-using IXICore;
+using IXICore.Meta;
 
 namespace Spoke.Platforms.iOS;
 

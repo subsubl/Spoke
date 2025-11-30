@@ -53,5 +53,4 @@ control cover.garage_door open"
             send_message "$sender" "Unknown command, use help for Home Assistant commands."
             ;;
     esac
-done</content>
-<parameter name="filePath">c:\Users\User\IxiHome\QuIXI\Examples\HomeAssistant\ixiMessageHandler.sh
+done
