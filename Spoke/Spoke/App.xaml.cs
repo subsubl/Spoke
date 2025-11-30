@@ -24,6 +24,9 @@ public partial class App : Application
 
     public static bool isInForeground { get; set; } = false;
     public static Window? appWindow { get; private set; } = null;
+    // Guard is managed by Spoke.Core.StartupGuard so it can be tested without compiling XAML
+    // Keep a bridge property for backwards compatibility and for any code referencing this value
+    internal static bool NodeAutoInitStarted => global::Spoke.Core.StartupGuard.AutoInitStarted;
 
     public App()
     {
@@ -130,13 +133,10 @@ public partial class App : Application
         // Load configuration
         Config.Load();
 
-        // Auto-initialize if QuIXI is configured
-        if (!string.IsNullOrEmpty(Config.quixiAddress))
-        {
-            Logging.info("QuIXI address configured, auto-initializing node");
-            _ = Task.Run(async () => await InitializeNodeAsync());
-        }
-        else
+        // NOTE: Do not auto-initialize the node here - CreateWindow runs later and is a safer place to
+        // start background services that may interact with UI or cause early activation artifacts on
+        // some Windows configurations. Initialization is now performed inside CreateWindow.
+        if (string.IsNullOrEmpty(Config.quixiAddress))
         {
             Logging.info("QuIXI not configured yet, node initialization deferred until settings are saved");
         }
@@ -163,9 +163,26 @@ public partial class App : Application
 
             window.Title = "Spoke";
 
+
             if (appWindow == null)
             {
                 appWindow = window;
+
+                // If QuIXI is already configured in the saved config, start node initialization now
+                // (safer to do it after a window exists to avoid platform activation/creation race issues)
+                try
+                {
+                    if (!string.IsNullOrEmpty(Config.quixiAddress))
+                    {
+                        Logging.info("QuIXI address configured, attempting guarded auto-initialization after window created");
+                        // delegate the single-run semantics and execution to StartupGuard
+                        global::Spoke.Core.StartupGuard.TryStartAutoInit(async () => await InitializeNodeAsync());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logging.warn($"Auto-init after CreateWindow failed: {ex.Message}");
+                }
             }
 
             return window;
@@ -189,6 +206,11 @@ public partial class App : Application
         try
         {
             Logging.info("Initializing Node and QuIXI connection");
+            try
+            {
+                File.AppendAllText(Path.Combine(Config.spokeUserFolder, "startup_diag.txt"), $"Node init started: {DateTime.UtcNow:O}{Environment.NewLine}");
+            }
+            catch { }
             Node.Instance.init();
             
             // Start WebSocket connection for real-time updates
@@ -316,5 +338,3 @@ public partial class App : Application
         }
     }
 }
-
-
