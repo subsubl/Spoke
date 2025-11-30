@@ -3,4 +3,8 @@
   <rect width="256" height="256" rx="40" fill="#144576"/>
   <circle cx="128" cy="96" r="48" fill="#ffffff" fill-opacity="0.95"/>
   <rect x="56" y="170" width="144" height="20" rx="10" fill="#ffffff" fill-opacity="0.95"/>
+<<<<<<< HEAD
 </svg>
+=======
+</svg>
+>>>>>>> feat/remove-legacy-walletmanager

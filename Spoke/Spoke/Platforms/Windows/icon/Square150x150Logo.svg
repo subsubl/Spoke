@@ -5,4 +5,8 @@
     <circle cx="72" cy="56" r="36" fill="#ffffff"/>
     <rect x="0" y="138" width="144" height="20" rx="10" fill="#ffffff"/>
   </g>
+<<<<<<< HEAD
 </svg>
+=======
+</svg>
+>>>>>>> feat/remove-legacy-walletmanager
