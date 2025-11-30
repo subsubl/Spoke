@@ -1,0 +1,19 @@
+{
+  "url": "ws://homeassistant.local:8123/api/websocket",
+  "token": "your_long_lived_access_token_here",
+  "sync_interval": 30,
+  "allowed_entities": [
+    "light.*",
+    "switch.*",
+    "climate.*",
+    "sensor.*",
+    "binary_sensor.*",
+    "cover.*",
+    "lock.*"
+  ],
+  "blocked_entities": [
+    "sensor.date_time",
+    "sensor.time"
+  ]
+}</content>
+<parameter name="filePath">c:\Users\User\IxiHome\QuIXI\Examples\HomeAssistant\hass_config.json

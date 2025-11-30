@@ -1,0 +1,22 @@
+[Unit]
+Description=Home Assistant Integration for QuIXI
+After=network.target mosquitto.service
+Wants=mosquitto.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/QuIXI/Examples/HomeAssistant
+ExecStart=/home/pi/QuIXI/Examples/HomeAssistant/start.sh
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Environment variables
+Environment=DOTNET_ROOT=/home/pi/.dotnet
+Environment=PATH=/home/pi/.dotnet:/home/pi/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+[Install]
+WantedBy=multi-user.target</content>
+<parameter name="filePath">c:\Users\User\IxiHome\QuIXI\Examples\HomeAssistant\quixi.service
