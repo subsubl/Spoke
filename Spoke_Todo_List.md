@@ -98,3 +98,9 @@ Based on analysis of the Home Assistant Android app repository (https://github.c
 - **Testing**: Each feature should include unit tests and UI validation.
 - **Security**: Handle authentication securely, avoiding plain-text storage.
 - **Architecture Note**: Home Assistant entities sync to MQTT, which pushes to QuIXI via MQTT. Authentication handled by QuIXI. Spoke communicates via Ixian network to Spoke, then MQTT to Home Assistant. Only initialization needed is adding QuIXI user to Spoke.
+
+## Current Polish Backlog
+
+- **Onboarding polish**: Add a skip path once the wallet exists and the username is chosen so power users can jump straight into AppShell while still allowing QuIXI settings to be filled later.
+- **Connection messaging**: Surface the same “Connecting to Ixian network…”/“Connected to Ixian network” phrasing from Spixi inside the settings/test flow so the Windows UX matches the established terminology.
+- **Post-setup validation**: Double-check wallet storage, secure preferences, and node initialization happen reliably after onboarding so we can remove early run blockers and focus on UX improvements.

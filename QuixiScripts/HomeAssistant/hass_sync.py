@@ -14,6 +14,8 @@ from datetime import datetime
 import websockets
 import aiohttp
 import requests
+import base64
+from BridgeConnection import BridgeConnection
 
 # Configuration
 HASS_CONFIG_FILE = 'hass_config.json'
@@ -26,6 +28,7 @@ hass_websocket = None
 quixi_session = None
 device_states = {}
 running = True
+bridge_connection = None
 
 # Setup logging
 logging.basicConfig(
@@ -50,15 +53,30 @@ def load_config():
         logger.error(f"Invalid JSON in config file: {e}")
         sys.exit(1)
 
+# Initialize BridgeConnection
+async def initialize_bridge_connection():
+    global bridge_connection
+    config = load_config()
+    bridge_connection = BridgeConnection(
+        bridgeAddress=config['quixi_bridge_address'],
+        ourAddress=config['our_wallet_address'],
+        ourPublicKey=base64.b64decode(config['our_public_key'])
+    )
+
 async def send_quixi_message(address, message):
-    """Send message via QuIXI API"""
+    """Send message via QuIXI API with signed authentication"""
     try:
+        if not bridge_connection:
+            await initialize_bridge_connection()
+
+        signature = bridge_connection.SignData(message, bridge_connection.ourPrivateKey)
         async with quixi_session.post(
             f"{QUIXI_API_URL}/sendChatMessage",
             data={
                 'channel': '0',
                 'message': message,
-                'address': address
+                'address': address,
+                'signature': signature
             }
         ) as response:
             return response.status == 200
@@ -67,26 +85,29 @@ async def send_quixi_message(address, message):
         return False
 
 async def get_hass_states():
-    """Get all states from Home Assistant"""
-    try:
-        config = load_config()
-        headers = {
-            'Authorization': f'Bearer {config["token"]}',
-            'Content-Type': 'application/json'
-        }
+    """Get all states from Home Assistant with retries"""
+    retries = 3
+    for attempt in range(retries):
+        try:
+            config = load_config()
+            headers = {
+                'Authorization': f'Bearer {config["token"]}',
+                'Content-Type': 'application/json'
+            }
 
-        async with quixi_session.get(
-            config['url'].replace('ws://', 'http://').replace('wss://', 'https://') + '/api/states',
-            headers=headers
-        ) as response:
-            if response.status == 200:
-                return await response.json()
-            else:
-                logger.error(f"Failed to get HA states: {response.status}")
-                return []
-    except Exception as e:
-        logger.error(f"Error getting HA states: {e}")
-        return []
+            async with quixi_session.get(
+                config['url'].replace('ws://', 'http://').replace('wss://', 'https://') + '/api/states',
+                headers=headers
+            ) as response:
+                if response.status == 200:
+                    return await response.json()
+                else:
+                    logger.error(f"Failed to get HA states: {response.status}")
+        except Exception as e:
+            logger.error(f"Error getting HA states (attempt {attempt + 1}): {e}")
+            if attempt < retries - 1:
+                await asyncio.sleep(2 ** attempt)  # Exponential backoff
+    return []
 
 async def control_hass_entity(entity_id, service, **kwargs):
     """Control Home Assistant entity"""
@@ -236,16 +257,18 @@ async def hass_websocket_handler():
 
 async def mqtt_listener():
     """Listen for MQTT messages from QuIXI"""
-    # This would integrate with MQTT for real-time command processing
-    # For now, we'll use a simple polling approach
-    while running:
-        try:
-            # In a real implementation, you'd use aiomqtt or similar
-            # For this example, we'll poll the QuIXI API for new messages
-            await asyncio.sleep(5)  # Poll every 5 seconds
-        except Exception as e:
-            logger.error(f"MQTT listener error: {e}")
-            await asyncio.sleep(10)
+    import aiomqtt
+    try:
+        async with aiomqtt.Client(hostname=MQTT_BROKER, port=MQTT_PORT) as client:
+            async with client.messages() as messages:
+                await client.subscribe("quixi/commands")
+                async for message in messages:
+                    payload = message.payload.decode()
+                    logger.info(f"Received MQTT message: {payload}")
+                    # Process MQTT message (e.g., forward to Home Assistant)
+    except Exception as e:
+        logger.error(f"MQTT listener error: {e}")
+        await asyncio.sleep(10)
 
 async def main():
     """Main application loop"""
@@ -298,5 +321,4 @@ if __name__ == "__main__":
         f.write(str(os.getpid()))
 
     # Run main loop
-    asyncio.run(main())</content>
-<parameter name="filePath">c:\Users\User\Spoke\QuIXI\Examples\HomeAssistant\hass_sync.py
+    asyncio.run(main())

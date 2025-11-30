@@ -2,6 +2,7 @@ using Spoke.Meta;
 using Spoke.Network;
 using System.Collections.ObjectModel;
 using System.IO;
+using Microsoft.Maui.Storage;
 
 namespace Spoke.Pages.Onboarding;
 
@@ -26,6 +27,8 @@ public partial class OnboardingPage : ContentPage
     public ImageSource AvatarImageSource { get; set; }
 
     private int currentStepIndex = 0;
+    private bool walletReady = false;
+    public bool CanSkipOnboarding => walletReady && !string.IsNullOrWhiteSpace(Username);
 
     public OnboardingPage()
     {
@@ -107,42 +110,7 @@ public partial class OnboardingPage : ContentPage
         }
         else
         {
-            // Finish onboarding
-            Config.quixiAddress = HostAddress;
-            Config.quixiApiPort = int.TryParse(Port, out int port) ? port : 8001;
-            Config.quixiUsername = QuixiUsername;
-            
-            // Set up wallet and profile info
-            if (!string.IsNullOrEmpty(Username))
-            {
-                // Save username to preferences (you might want to integrate with Spixi's storage)
-                Preferences.Default.Set("user_nickname", Username);
-            }
-            
-            // Save wallet password securely
-            if (!string.IsNullOrEmpty(WalletPassword))
-            {
-                SecureStorage.Default.SetAsync("wallet_password", WalletPassword).Wait();
-            }
-            
-            // Save QuIXI password
-            if (!string.IsNullOrEmpty(QuixiPassword))
-            {
-                try
-                {
-                    SecureStorage.Default.SetAsync(nameof(Config.quixiPassword), QuixiPassword).Wait();
-                }
-                catch
-                {
-                    // SecureStorage might not be available
-                }
-            }
-
-            Config.SetSetupComplete(true);
-            Config.Save();
-
-            // Navigate to main app
-            App.appWindow!.Page = new AppShell();
+            CompleteSetupAndNavigate();
         }
     }
 
@@ -184,6 +152,8 @@ public partial class OnboardingPage : ContentPage
                 Spoke.Meta.Node.start();
 
                 await DisplayAlert("Success", "Wallet created successfully!", "OK");
+                walletReady = true;
+                OnPropertyChanged(nameof(CanSkipOnboarding));
                 OnNextClicked(sender, e);
             }
             else
@@ -248,6 +218,66 @@ public partial class OnboardingPage : ContentPage
         else
         {
             await DisplayAlert("Failed", "Connection test failed. Please check your settings.", "OK");
+        }
+    }
+
+    private void OnSkipOnboardingClicked(object sender, EventArgs e)
+    {
+        CompleteSetupAndNavigate();
+    }
+
+    private void OnUsernameTextChanged(object sender, TextChangedEventArgs e)
+    {
+        Username = e.NewTextValue ?? string.Empty;
+        OnPropertyChanged(nameof(CanSkipOnboarding));
+    }
+
+    private void CompleteSetupAndNavigate()
+    {
+        PersistSetupData();
+        Config.SetSetupComplete(true);
+        Config.Save();
+        App.appWindow!.Page = new AppShell();
+    }
+
+    private void PersistSetupData()
+    {
+        if (!string.IsNullOrWhiteSpace(HostAddress))
+        {
+            Config.quixiAddress = HostAddress.Trim();
+        }
+
+        if (int.TryParse(Port, out int port))
+        {
+            Config.quixiApiPort = port;
+        }
+
+        if (!string.IsNullOrWhiteSpace(QuixiUsername))
+        {
+            Config.quixiUsername = QuixiUsername.Trim();
+        }
+
+        if (!string.IsNullOrWhiteSpace(Username))
+        {
+            Preferences.Default.Set("user_nickname", Username.Trim());
+        }
+
+        if (!string.IsNullOrWhiteSpace(WalletPassword))
+        {
+            SecureStorage.Default.SetAsync("wallet_password", WalletPassword).Wait();
+        }
+
+        if (!string.IsNullOrWhiteSpace(QuixiPassword))
+        {
+            Config.quixiPassword = QuixiPassword;
+            try
+            {
+                SecureStorage.Default.SetAsync(nameof(Config.quixiPassword), QuixiPassword).Wait();
+            }
+            catch
+            {
+                // SecureStorage might not be available
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 using Spoke.Meta;
+using Spoke.Network;
 using Spoke.Sensors;
 using Microsoft.Maui.Storage;
 
@@ -30,7 +31,7 @@ public partial class SettingsPage : ContentPage
 
     private async void OnTestConnectionClicked(object sender, EventArgs e)
     {
-        ConnectionStatusLabel.Text = "Testing connection...";
+        ConnectionStatusLabel.Text = ConnectionStatusMessages.ConnectingToIxianNetwork;
         ConnectionStatusLabel.TextColor = Colors.Gray;
 
         try
@@ -46,7 +47,7 @@ public partial class SettingsPage : ContentPage
             
             if (success)
             {
-                ConnectionStatusLabel.Text = "✓ Connection successful";
+                ConnectionStatusLabel.Text = ConnectionStatusMessages.ConnectedToIxianNetwork;
                 ConnectionStatusLabel.TextColor = Colors.Green;
             }
             else

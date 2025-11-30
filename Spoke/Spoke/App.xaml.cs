@@ -11,6 +11,19 @@ namespace Spoke;
 
 public partial class App : Application
 {
+    private static readonly string TraceLogPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "spoke_app_trace.log");
+    private static void Trace(string message)
+    {
+        try
+        {
+            File.AppendAllText(TraceLogPath, $"[{DateTime.UtcNow:O}] {message}{Environment.NewLine}");
+        }
+        catch
+        {
+            // ignore trace failures
+        }
+    }
+
     private static App? _singletonInstance;
 
     public static App Instance()
@@ -30,6 +43,7 @@ public partial class App : Application
 
     public App()
     {
+        Trace("App constructor start");
 #if RUN_TESTS
         // Run tests instead of GUI app
         Program.Main(Array.Empty<string>()).Wait();
@@ -38,6 +52,7 @@ public partial class App : Application
         try
         {
             InitializeComponent();
+            Trace("InitializeComponent succeeded");
         }
         catch (Exception ex)
         {
@@ -144,19 +159,23 @@ public partial class App : Application
         // Note: Node.init() will be called manually after QuIXI settings are configured in GUI
 #endif
 
+        Trace("Finished platform init");
         // Temporary workaround for .NET 9: set MainPage even though obsolete
         if (!Config.IsSetupComplete())
         {
+            Trace("Setting MainPage to Onboarding");
             MainPage = new Pages.Onboarding.OnboardingPage();
         }
         else
         {
+            Trace("Setting MainPage to AppShell");
             MainPage = new AppShell();
         }
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
+        Trace("CreateWindow invoked");
         try
         {
             var window = base.CreateWindow(activationState);
@@ -167,6 +186,7 @@ public partial class App : Application
             if (appWindow == null)
             {
                 appWindow = window;
+                Trace("appWindow set in CreateWindow");
 
                 // If QuIXI is already configured in the saved config, start node initialization now
                 // (safer to do it after a window exists to avoid platform activation/creation race issues)
@@ -245,6 +265,7 @@ public partial class App : Application
     private static void TaskSchedulerOnUnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs e)
     {
         Logging.error($"TaskScheduler Unobserved Task Exception: {e.Exception}");
+        Trace($"TaskScheduler unobserved exception: {e.Exception}\n{e.Exception.StackTrace}");
         e.SetObserved();
     }
 
@@ -252,11 +273,13 @@ public partial class App : Application
     {
         var exception = e.ExceptionObject as Exception;
         Logging.error($"CurrentDomain Unhandled Exception: {exception}");
+        Trace($"CurrentDomain unhandled exception: {exception}\n{exception?.StackTrace}");
     }
 
     private static void CurrentDomainOnFirstChanceException(object? sender, FirstChanceExceptionEventArgs e)
     {
         Logging.warn($"FirstChanceException: {e.Exception?.GetType()}: {e.Exception?.Message}");
+        Trace($"FirstChance exception: {e.Exception}\n{e.Exception?.StackTrace}");
     }
 
     public static void EnsureNodeRunning()

@@ -7,7 +7,7 @@
 
     <Grid RowDefinitions="*,Auto">
         <!-- Main Content -->
-        <Grid RowDefinitions="Auto,*,Auto" RowSpacing="20" Margin="20">
+       <Grid RowDefinitions="Auto,*,Auto,Auto" RowSpacing="20" Margin="20">
 
             <!-- Step Indicator -->
             <Grid ColumnDefinitions="*,*,*,*,*,*" HorizontalOptions="Center">
@@ -65,7 +65,8 @@
                 <VerticalStackLayout IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringEqualsConverter}, ConverterParameter='Choose Username &amp; Avatar'}"
                                    Spacing="20">
                     <Entry Placeholder="Choose a username"
-                           Text="{Binding Username}" />
+                           Text="{Binding Username}"
+                           TextChanged="OnUsernameTextChanged" />
                     <Button Text="Choose Profile Picture"
                             Style="{StaticResource SecondaryButtonStyle}"
                             Clicked="OnChooseAvatarClicked" />
@@ -101,8 +102,8 @@
 
             </VerticalStackLayout>
 
-            <!-- Navigation Buttons -->
-            <Grid ColumnDefinitions="*,*" ColumnSpacing="10" Grid.Row="2">
+           <!-- Navigation Buttons -->
+           <Grid ColumnDefinitions="*,*" ColumnSpacing="10" Grid.Row="2">
                 <Button Text="Back"
                         Style="{StaticResource SecondaryButtonStyle}"
                         IsVisible="{Binding CurrentStep.Title, Converter={StaticResource StringNotEqualsConverter}, ConverterParameter='Welcome to Spoke'}"
@@ -112,6 +113,13 @@
                         Grid.Column="1"
                         Clicked="OnNextClicked" />
             </Grid>
+
+           <Button Grid.Row="3"
+                  Text="Skip setup"
+                  Style="{StaticResource SecondaryButtonStyle}"
+                  HorizontalOptions="Center"
+                  IsVisible="{Binding CanSkipOnboarding}"
+                  Clicked="OnSkipOnboardingClicked" />
 
         </Grid>
 
