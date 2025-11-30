@@ -10,6 +10,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Spoke\Spoke\Spoke.csproj" />
+    <!-- Include only the small, testable BridgeConnection source file directly to avoid referencing MAUI app projects -->
+    <Compile Include="..\Spoke\BridgeConnection.cs" />
   </ItemGroup>
 </Project>
