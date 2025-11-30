@@ -1,0 +1,113 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);__MOBILE__</DefineConstants>
+    <DefineConstants Condition="'$(RunTests)' == 'true'">$(DefineConstants);RUN_TESTS</DefineConstants>
+    <TargetFrameworks>net9.0-android</TargetFrameworks>
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Spoke</RootNamespace>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NoWarn>CS8600;CS8601;CS8602;CS8603;CS8604;CS8618;CS8625;CS0162;CS0169;CS0414;SYSLIB0023;SYSLIB0021;SYSLIB0003</NoWarn>
+    
+    <!-- Display name -->
+    <ApplicationTitle>Spoke</ApplicationTitle>
+    
+    <!-- App Identifier -->
+    <ApplicationId>io.ixian.spoke</ApplicationId>
+    
+    <!-- Versions -->
+    <ApplicationDisplayVersion>0.1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+    <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+    
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <Platforms>AnyCPU;x64;arm64</Platforms>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="$(TargetFramework.Contains('-ios'))">
+    <ProvisioningType>manual</ProvisioningType>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <UseInterpreter>true</UseInterpreter>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="$(TargetFramework.Contains('-android'))">
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <RuntimeIdentifiers>android-arm64;android-arm</RuntimeIdentifiers>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <TargetSdkVersion>35</TargetSdkVersion>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
+    <SatelliteResourceLanguages>en-US;en</SatelliteResourceLanguages>
+    <AppxPackage>false</AppxPackage>
+    <PublishAppxPackage>false</PublishAppxPackage>
+    <WindowsAppSdkDeploymentManagerInitialize>false</WindowsAppSdkDeploymentManagerInitialize>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows10.0.19041.0|x64'">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net9.0-ios' and '$(IsPublish)' == 'true'">
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|AnyCPU'">
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+  </PropertyGroup>
+  
+  <!-- strip exited with code 139 workaround -->
+  <PropertyGroup>
+    <MtouchNoSymbolStrip Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">True</MtouchNoSymbolStrip>
+    <WindowsPackageType>None</WindowsPackageType>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <!-- App Icon -->
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#144576" />
+    
+    <!-- Splash Screen -->
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#144576" BaseSize="128,128" />
+    
+    <!-- Images -->
+    <MauiImage Include="Resources\Images\*" />
+    
+    <!-- Custom Fonts -->
+    <MauiFont Include="Resources\Fonts\*" />
+    
+    <!-- Raw Assets -->
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Maui" Version="12.2.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.90" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.90" />
+    <PackageReference Include="Microcharts.Maui" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
+    <PackageReference Include="Open.NAT" Version="2.1.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\Spixi\Spixi\Spixi.csproj" />
+  </ItemGroup>
+  
+  <Import Project="..\..\Ixian-Core\IXICore.projitems" Label="Shared" />
+  
+</Project>

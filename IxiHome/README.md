@@ -1,6 +1,6 @@
-# IxiHome
+# Spoke
 
-**IxiHome** is a decentralized, cross-platform smart home controller built on the [Ixian Platform](https://www.ixian.io). It provides secure, privacy-first control of your Home Assistant devices through QuIXI bridge integration, with post-quantum encryption and no central servers.
+**Spoke** is a decentralized, cross-platform smart home controller built on the [Ixian Platform](https://www.ixian.io). It provides secure, privacy-first control of your Home Assistant devices through QuIXI bridge integration, with post-quantum encryption and no central servers.
 
 ---
 
@@ -23,7 +23,7 @@
 
 ## 🔐 Spixi Integration & Blockchain Identity
 
-IxiHome integrates with **Spixi** to provide secure blockchain-based identity management. Unlike traditional apps that use passwords and central servers, IxiHome uses cryptographic identities that you control.
+Spoke integrates with **Spixi** to provide secure blockchain-based identity management. Unlike traditional apps that use passwords and central servers, Spoke uses cryptographic identities that you control.
 
 ### Why Blockchain Identity?
 
@@ -65,21 +65,21 @@ The first-run setup creates:
 # Clone Ixian-Core (required dependency)
 git clone -b development https://github.com/ixian-platform/Ixian-Core.git
 
-# Clone IxiHome
-git clone https://github.com/ixian-platform/IxiHome.git
-cd IxiHome
+# Clone Spoke
+git clone https://github.com/ixian-platform/Spoke.git
+cd Spoke
 ```
 
 ### 2. Restore Dependencies
 
 ```bash
-dotnet restore IXIHOME.sln
+dotnet restore Spoke.sln
 ```
 
 ### 3. Build the Project
 
 #### Using Visual Studio
-1. Open `IXIHOME.sln` in Visual Studio 2022
+1. Open `Spoke.sln` in Visual Studio 2022
 2. Select your target platform (Android, iOS, Windows, macOS)
 3. Press `F5` to build and run
 
@@ -103,7 +103,7 @@ dotnet build -t:Run -f net9.0-maccatalyst
 
 ```bash
 dotnet build -c Release -f net9.0-android
-# Output: IxiHome/bin/Release/net9.0-android/io.ixian.ixihome-Signed.apk
+# Output: Spoke/bin/Release/net9.0-android/io.ixian.Spoke-Signed.apk
 ```
 
 ---
@@ -130,9 +130,9 @@ dotnet build -c Release -f net9.0-android
    - In Home Assistant, go to Settings → Integrations → MQTT
    - Configure broker address (same as QuIXI `mqHost`)
 
-### IxiHome Setup
+### Spoke Setup
 
-1. **Launch IxiHome** for the first time
+1. **Launch Spoke** for the first time
 2. **Welcome Screen** - Introduction to blockchain-based smart home control
 3. **Create Your Wallet** - Generate a secure cryptographic wallet for your Ixian identity
 4. **Choose Username & Avatar** - Set up your profile with username and profile picture
@@ -192,10 +192,10 @@ If you need to reconfigure settings later:
 ### Project Structure
 
 ```
-IxiHome/
-├── IXIHOME.sln              # Solution file
-├── IxiHome/
-│   ├── IxiHome.csproj       # Project file
+Spoke/
+├── Spoke.sln              # Solution file
+├── Spoke/
+│   ├── Spoke.csproj       # Project file
 │   ├── App.xaml             # Application entry
 │   ├── AppShell.xaml        # Shell navigation
 │   ├── MauiProgram.cs       # MAUI initialization
@@ -223,7 +223,7 @@ IxiHome/
 
 ```
 ┌─────────────────┐
-│   IxiHome App   │
+│   Spoke App   │
 │   (MAUI UI)     │
 └────────┬────────┘
          │
@@ -348,7 +348,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 💬 Support
 
-- **Issues**: [GitHub Issues](https://github.com/ixian-platform/IxiHome/issues)
+- **Issues**: [GitHub Issues](https://github.com/ixian-platform/Spoke/issues)
 - **Discord**: [Ixian Community](https://discord.gg/ixian)
 - **Email**: support@ixian.io
 
@@ -364,3 +364,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Made with ❤️ by the Ixian Platform community**
+
