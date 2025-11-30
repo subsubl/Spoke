@@ -130,6 +130,12 @@ Spoke/
 - Entities: `EntityTypeEntity.cs` (ToggleEntity, SensorEntity, etc.)
 - Interfaces: `IInterfaceName.cs`
 
+### Naming Conventions
+- ViewModels: `PageNameViewModel.cs`
+- Services: `ServiceName.cs` (static Instance property)
+- Entities: `EntityTypeEntity.cs` (ToggleEntity, SensorEntity, etc.)
+- Interfaces: `IInterfaceName.cs`
+
 ### Dependencies
 - `CommunityToolkit.Maui` - UI toolkit
 - `CommunityToolkit.Mvvm` - MVVM framework  
