@@ -1,10 +1,11 @@
 # <!--
 # Sync Impact Report
-# Version change: 0.1.0 -> 0.1.1
+# Version change: 0.1.1 -> 0.2.0
 # Modified principles:
 # - none (core principles unchanged; clarifications applied in additional sections)
 # Added sections:
-# - none
+# - Styleguide and SDK Compliance
+# - Home Assistant OS API Integration
 # Removed sections:
 # - none
 # Templates requiring updates:
@@ -60,6 +61,18 @@ testing strategy. Each public surface MUST have clear ownership and tests.
 Keeping the exposed surface area small preserves clarity for reviewers and
 limits the code that needs to be audited or stress-tested in release gating.
 
+### Styleguide and SDK Compliance
+All code MUST follow the established patterns, coding standards, and
+architectural decisions from Ixian-Core (blockchain core), Ixian-Docs
+(documentation framework), QuIXI (bridge communication), and Home-assistant-android
+(mobile app development). This ensures consistency, security, and maintainability
+across the ecosystem.
+
+### Home Assistant OS API Integration
+Integration with Home Assistant OS API MUST use secure, standards-compliant
+methods via QuixiScript. All API calls MUST be authenticated, rate-limited,
+and handle errors gracefully to prevent disruption of smart home operations.
+
 ## Additional Constraints
 Security, correctness, and reproducibility take precedence over convenience.
 All releases that include cryptographic code or network protocol changes MUST
@@ -112,5 +125,5 @@ security, consensus, or network behavior MUST include a compliance checklist
 that maps to the Core Principles above. The checklist MUST be included in the
 PR description and verified by reviewers before merge.
 
-**Version**: 0.1.1 | **Ratified**: TODO(RATIFICATION_DATE): provide original adoption date | **Last Amended**: 2025-12-01
+**Version**: 0.2.0 | **Ratified**: TODO(RATIFICATION_DATE): provide original adoption date | **Last Amended**: 2025-12-01
 <!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->

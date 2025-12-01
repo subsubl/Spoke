@@ -419,7 +419,7 @@ public class Node : IxianNode
         return false;
     }
 
-    public override Wallet getWallet(Address id)
+    public override IXICore.Wallet getWallet(Address id)
     {
         // Spoke doesn't maintain wallet balances - QuIXI handles this
         return null;

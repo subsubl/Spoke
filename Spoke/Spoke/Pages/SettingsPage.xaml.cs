@@ -1,6 +1,7 @@
 using Spoke.Meta;
 using Spoke.Network;
 using Spoke.Sensors;
+//using Spoke.Platforms;
 using Microsoft.Maui.Storage;
 
 namespace Spoke.Pages;
@@ -149,14 +150,14 @@ public partial class SettingsPage : ContentPage
             }
 
             // Attempt to share/save the exported file
-            bool shared = await Spoke.Platforms.SFileOperations.share(exportedPath, "Export Viewing Wallet");
-            if (shared)
-            {
-                await DisplayAlert("Exported", $"Viewing wallet exported to:\n{exportedPath}", "OK");
-            }
-            else
+            //bool shared = await Spoke.Platforms.SFileOperations.share(exportedPath, "Export Viewing Wallet");
+            //if (shared)
             {
                 await DisplayAlert("Export Saved", $"Viewing wallet saved to:\n{exportedPath}", "OK");
+            }
+            //else
+            {
+            //    await DisplayAlert("Export Saved", $"Viewing wallet saved to:\n{exportedPath}", "OK");
             }
         }
         catch (Exception ex)

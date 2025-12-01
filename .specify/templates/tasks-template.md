@@ -70,6 +70,10 @@ stories proceed:
 - Development Workflow: Add a task that captures issue/spec linkage, PR
   compliance checklists, and migration plan sign-offs for governance-affecting
   work.
+- Styleguide and SDK Compliance: Add a task to review and align code with
+  patterns from Ixian-Core, Ixian-Docs, QuIXI, and Home-assistant-android.
+- Home Assistant OS API Integration: If applicable, add a task to ensure API
+  interactions are secure and compliant via QuixiScript.
 
 These items are blocking: user story work SHOULD NOT begin until they are
 addressed and marked done.
