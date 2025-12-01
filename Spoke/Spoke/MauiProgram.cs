@@ -2,8 +2,10 @@ using CommunityToolkit.Maui;
 using IXICore;
 using IXICore.Meta;
 using IXICore.Network;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
 using Microsoft.Maui.LifecycleEvents;
+using Spoke.Services;
 
 namespace Spoke;
 
@@ -128,6 +130,19 @@ public static class MauiProgram
                 });
 #endif
             });
+
+        // Register services for dependency injection
+        builder.Services.AddSingleton<SecureStorageService>(sp =>
+        {
+            // TODO: Generate or retrieve a secure encryption key
+            // For now, using a development key - in production this should be derived from user credentials
+            var encryptionKey = "development-encryption-key-32-chars"; // 32 characters for AES-256
+            return new SecureStorageService(encryptionKey);
+        });
+
+        builder.Services.AddSingleton<ErrorHandler>();
+        builder.Services.AddSingleton<WalletService>();
+        builder.Services.AddTransient<WalletViewModel>();
 
         return builder.Build();
     }

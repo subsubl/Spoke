@@ -43,6 +43,10 @@ the following check items and their status (PASS/FAIL/NA):
 - Development Workflow: how the story is tracked, reviewed, and deployed in
   alignment with the constitution's issue/PR governance and migration
   expectations.
+- Styleguide and SDK Compliance: how the implementation follows patterns from
+  Ixian-Core, Ixian-Docs, QuIXI, and Home-assistant-android.
+- Home Assistant OS API Integration: if applicable, how API interactions are
+  secure and compliant via QuixiScript.
 If any gate is not PASS, the plan MUST include a justification and an
 actionable remediation path. Unresolved security or protocol gates MUST block
 Phase 0 → Phase 1 progression.

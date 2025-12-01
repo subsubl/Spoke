@@ -1,0 +1,190 @@
+openapi: 3.0.3
+info:
+  title: QuIXI Bridge API
+  description: REST API for QuIXI bridge communication with Home Assistant integration
+  version: 1.0.0
+  contact:
+    name: Ixian Platform
+    url: https://www.ixian.io
+
+servers:
+  - url: http://localhost:8001
+    description: Local QuIXI bridge instance
+
+security:
+  - basicAuth: []
+
+paths:
+  /addContact:
+    post:
+      summary: Add a contact (Ixian address) for communication
+      parameters:
+        - name: address
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Ixian blockchain address to add as contact
+      responses:
+        '200':
+          description: Contact added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+        '400':
+          description: Invalid address format
+
+  /sendMessage:
+    post:
+      summary: Send a message to a contact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - to
+                - message
+              properties:
+                to:
+                  type: string
+                  description: Recipient Ixian address
+                message:
+                  type: string
+                  description: Message content
+      responses:
+        '200':
+          description: Message sent successfully
+        '404':
+          description: Contact not found
+
+  /getMessages:
+    get:
+      summary: Retrieve messages from contacts
+      responses:
+        '200':
+          description: List of received messages
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    from:
+                      type: string
+                      description: Sender address
+                    message:
+                      type: string
+                      description: Message content
+                    timestamp:
+                      type: string
+                      format: date-time
+
+  /homeassistant/entities:
+    get:
+      summary: Get list of Home Assistant entities
+      responses:
+        '200':
+          description: List of available entities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Entity'
+        '503':
+          description: Home Assistant not connected
+
+  /homeassistant/entity/{entity_id}:
+    get:
+      summary: Get specific entity state
+      parameters:
+        - name: entity_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Entity state information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+        '404':
+          description: Entity not found
+
+    post:
+      summary: Control entity state
+      parameters:
+        - name: entity_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - service
+              properties:
+                service:
+                  type: string
+                  enum: [turn_on, turn_off, toggle, set_temperature, open_cover, close_cover]
+                  description: Service to call
+                data:
+                  type: object
+                  description: Service-specific parameters
+                  example:
+                    brightness: 255
+                    temperature: 22
+      responses:
+        '200':
+          description: Command executed successfully
+        '400':
+          description: Invalid service or parameters
+
+components:
+  schemas:
+    Entity:
+      type: object
+      required:
+        - entity_id
+        - state
+        - attributes
+      properties:
+        entity_id:
+          type: string
+          example: "light.living_room"
+        state:
+          type: string
+          example: "on"
+        attributes:
+          type: object
+          properties:
+            friendly_name:
+              type: string
+              example: "Living Room Light"
+            brightness:
+              type: integer
+              minimum: 0
+              maximum: 255
+        last_updated:
+          type: string
+          format: date-time
+
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication for bridge access (optional)

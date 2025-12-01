@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spoke.Pages.CreateWalletPage"
+             Title="Create Wallet"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+
+            <!-- Header -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="🔐"
+                       FontSize="48"
+                       HorizontalOptions="Center" />
+
+                <Label Text="Create Your Secure Wallet"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center" />
+
+                <Label Text="Your wallet is your secure identity on the Ixian blockchain network. It will be used to authenticate with QuIXI and secure all your smart home communications."
+                       FontSize="14"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       TextColor="{StaticResource SecondaryTextColor}" />
+            </VerticalStackLayout>
+
+            <!-- Password Input Section -->
+            <Frame Style="{StaticResource CardFrameStyle}" Padding="20">
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="Wallet Password"
+                           FontSize="16"
+                           FontAttributes="Bold" />
+
+                    <Entry Placeholder="Enter a strong password (min. 8 characters)"
+                           Text="{Binding Password}"
+                           IsPassword="True"
+                           Style="{StaticResource FormEntryStyle}" />
+
+                    <Entry Placeholder="Confirm password"
+                           Text="{Binding ConfirmPassword}"
+                           IsPassword="True"
+                           Style="{StaticResource FormEntryStyle}" />
+
+                    <!-- Password Strength Indicator -->
+                    <VerticalStackLayout Spacing="5" IsVisible="{Binding ShowPasswordStrength}">
+                        <Label Text="Password Strength:"
+                               FontSize="12"
+                               TextColor="{StaticResource SecondaryTextColor}" />
+
+                        <ProgressBar Progress="{Binding PasswordStrength}"
+                                   ProgressColor="{Binding PasswordStrengthColor}"
+                                   HeightRequest="4" />
+
+                        <Label Text="{Binding PasswordStrengthText}"
+                               FontSize="12"
+                               TextColor="{Binding PasswordStrengthColor}" />
+                    </VerticalStackLayout>
+
+                    <!-- Password Requirements -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Password Requirements:"
+                               FontSize="12"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource SecondaryTextColor}" />
+
+                        <Label Text="• At least 8 characters long"
+                               FontSize="12"
+                               TextColor="{Binding PasswordLengthValid, Converter={StaticResource BoolToColorConverter}}" />
+
+                        <Label Text="• Contains uppercase and lowercase letters"
+                               FontSize="12"
+                               TextColor="{Binding PasswordCaseValid, Converter={StaticResource BoolToColorConverter}}" />
+
+                        <Label Text="• Contains at least one number"
+                               FontSize="12"
+                               TextColor="{Binding PasswordNumberValid, Converter={StaticResource BoolToColorConverter}}" />
+
+                        <Label Text="• Contains at least one special character"
+                               FontSize="12"
+                               TextColor="{Binding PasswordSpecialValid, Converter={StaticResource BoolToColorConverter}}" />
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Security Information -->
+            <Frame Style="{StaticResource InfoFrameStyle}" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="🛡️ Security Information"
+                           FontSize="16"
+                           FontAttributes="Bold" />
+
+                    <Label Text="• Your password encrypts your private keys locally on your device"
+                           FontSize="12"
+                           LineBreakMode="WordWrap" />
+
+                    <Label Text="• Never share your password or wallet file with anyone"
+                           FontSize="12"
+                           LineBreakMode="WordWrap" />
+
+                    <Label Text="• Keep your password safe - there's no way to recover it if lost"
+                           FontSize="12"
+                           LineBreakMode="WordWrap" />
+
+                    <Label Text="• The wallet generates cryptographic keys using Ixian-Core technology"
+                           FontSize="12"
+                           LineBreakMode="WordWrap" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Action Buttons -->
+            <VerticalStackLayout Spacing="10">
+
+                <Button Text="Create Wallet"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Command="{Binding CreateWalletCommand}"
+                        IsEnabled="{Binding CanCreateWallet}" />
+
+                <Button Text="Cancel"
+                        Style="{StaticResource SecondaryButtonStyle}"
+                        Command="{Binding CancelCommand}" />
+
+            </VerticalStackLayout>
+
+            <!-- Loading Indicator -->
+            <ActivityIndicator IsRunning="{Binding IsCreatingWallet}"
+                             IsVisible="{Binding IsCreatingWallet}"
+                             HorizontalOptions="Center" />
+
+            <Label Text="{Binding StatusMessage}"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   TextColor="{Binding StatusMessageColor}"
+                   IsVisible="{Binding ShowStatusMessage}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

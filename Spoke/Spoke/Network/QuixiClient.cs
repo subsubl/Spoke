@@ -12,8 +12,7 @@ namespace Spoke.Network;
 /// <summary>
 /// Client for communicating with QuIXI bridge
 /// </summary>
-// TODO: Fully implement IQuixiClient interface (signature mismatches to resolve)
-public class QuixiClient // : IQuixiClient
+public class QuixiClient : IQuixiClient
 {
     private readonly string _host;
     private readonly int _port;
@@ -277,7 +276,7 @@ public class QuixiClient // : IQuixiClient
     /// <summary>
     /// Get all available Home Assistant entities via QuIXI
     /// </summary>
-    public async Task<List<HomeAssistantEntity>> GetEntitiesAsync()
+    public async Task<List<Spoke.Data.Models.Entity>> GetEntitiesAsync()
     {
         try
         {
@@ -287,19 +286,31 @@ public class QuixiClient // : IQuixiClient
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                var entities = JsonConvert.DeserializeObject<List<HomeAssistantEntity>>(content);
-                return entities ?? new List<HomeAssistantEntity>();
+                var haEntities = JsonConvert.DeserializeObject<List<HomeAssistantEntity>>(content);
+                
+                // Convert HomeAssistantEntity to Entity
+                var entities = haEntities?.Select(ha => new Spoke.Data.Models.Entity
+                {
+                    Id = ha.EntityId,
+                    Name = ha.FriendlyName,
+                    Type = ha.Domain,
+                    State = ha.State,
+                    Attributes = ha.Attributes,
+                    LastUpdated = DateTime.UtcNow
+                }).ToList() ?? new List<Spoke.Data.Models.Entity>();
+                
+                return entities;
             }
             else
             {
                 Logging.error($"Failed to get entities: {response.StatusCode}");
-                return new List<HomeAssistantEntity>();
+                return new List<Spoke.Data.Models.Entity>();
             }
         }
         catch (Exception ex)
         {
             Logging.error($"Error getting entities: {ex.Message}");
-            return new List<HomeAssistantEntity>();
+            return new List<Spoke.Data.Models.Entity>();
         }
     }
 
@@ -384,11 +395,27 @@ public class QuixiClient // : IQuixiClient
     }
 
     /// <summary>
-    /// Toggle an entity state
+    /// Set brightness for a light entity
     /// </summary>
-    public Task<bool> ToggleAsync(string entityId)
+    public Task<bool> SetBrightnessAsync(string entityId, int brightness)
     {
-        return SendCommandAsync(entityId, "toggle");
+        var parameters = new Dictionary<string, object>
+        {
+            ["brightness"] = brightness
+        };
+        return SendCommandAsync(entityId, "turn_on", parameters);
+    }
+
+    /// <summary>
+    /// Set color for a light entity
+    /// </summary>
+    public Task<bool> SetColorAsync(string entityId, int red, int green, int blue)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            ["rgb_color"] = new[] { red, green, blue }
+        };
+        return SendCommandAsync(entityId, "turn_on", parameters);
     }
 
     /// <summary>

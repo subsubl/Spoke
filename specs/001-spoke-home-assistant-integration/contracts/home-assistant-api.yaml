@@ -1,0 +1,205 @@
+openapi: 3.0.3
+info:
+  title: Home Assistant WebSocket API
+  description: WebSocket API for real-time communication with Home Assistant
+  version: 1.0.0
+  contact:
+    name: Home Assistant
+    url: https://www.home-assistant.io
+
+servers:
+  - url: ws://homeassistant.local:8123/api/websocket
+    description: Local Home Assistant instance
+
+security:
+  - bearerAuth: []
+
+paths:
+  /api/websocket:
+    get:
+      summary: Establish WebSocket connection
+      description: |
+        Initial handshake establishes authenticated connection.
+        All subsequent communication uses JSON-RPC 2.0 over WebSocket.
+      responses:
+        '101':
+          description: WebSocket connection established
+
+components:
+  schemas:
+    Message:
+      type: object
+      required:
+        - type
+        - id
+      properties:
+        type:
+          type: string
+          description: Message type identifier
+        id:
+          type: integer
+          description: Request/response ID for correlation
+
+    AuthMessage:
+      allOf:
+        - $ref: '#/components/schemas/Message'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [auth]
+            access_token:
+              type: string
+              description: Long-lived access token
+
+    AuthResponse:
+      allOf:
+        - $ref: '#/components/schemas/Message'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [auth_ok, auth_invalid]
+            ha_version:
+              type: string
+              description: Home Assistant version (auth_ok only)
+
+    SubscribeEventsMessage:
+      allOf:
+        - $ref: '#/components/schemas/Message'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [subscribe_events]
+            event_type:
+              type: string
+              enum: [state_changed]
+              description: Event type to subscribe to
+
+    GetStatesMessage:
+      allOf:
+        - $ref: '#/components/schemas/Message'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [get_states]
+
+    CallServiceMessage:
+      allOf:
+        - $ref: '#/components/schemas/Message'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [call_service]
+            domain:
+              type: string
+              example: "light"
+            service:
+              type: string
+              example: "turn_on"
+            service_data:
+              type: object
+              description: Service parameters
+              example:
+                entity_id: "light.living_room"
+                brightness: 255
+            target:
+              type: object
+              properties:
+                entity_id:
+                  type: string
+                  example: "light.living_room"
+
+    ResultMessage:
+      allOf:
+        - $ref: '#/components/schemas/Message'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [result]
+            success:
+              type: boolean
+            result:
+              type: object
+              description: Response data
+            error:
+              type: object
+              properties:
+                code:
+                  type: string
+                message:
+                  type: string
+              description: Error details (when success=false)
+
+    EventMessage:
+      allOf:
+        - $ref: '#/components/schemas/Message'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [event]
+            event:
+              type: object
+              properties:
+                event_type:
+                  type: string
+                  example: "state_changed"
+                data:
+                  type: object
+                  properties:
+                    entity_id:
+                      type: string
+                      example: "light.living_room"
+                    old_state:
+                      $ref: '#/components/schemas/EntityState'
+                    new_state:
+                      $ref: '#/components/schemas/EntityState'
+
+    EntityState:
+      type: object
+      required:
+        - entity_id
+        - state
+        - attributes
+        - last_changed
+        - last_updated
+      properties:
+        entity_id:
+          type: string
+          example: "light.living_room"
+        state:
+          type: string
+          example: "on"
+        attributes:
+          type: object
+          additionalProperties: true
+          example:
+            friendly_name: "Living Room Light"
+            brightness: 255
+            supported_features: 41
+        last_changed:
+          type: string
+          format: date-time
+        last_updated:
+          type: string
+          format: date-time
+        context:
+          type: object
+          properties:
+            id:
+              type: string
+            parent_id:
+              type: string
+            user_id:
+              type: string
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Long-lived access token from Home Assistant profile

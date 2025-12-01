@@ -12,6 +12,9 @@
             <utils:StringEqualsConverter x:Key="StringEqualsConverter" />
             <utils:StringNotEqualsConverter x:Key="StringNotEqualsConverter" />
             <utils:BoolToStringConverter x:Key="BoolToStringConverter" />
+            <utils:BoolToColorConverter x:Key="BoolToColorConverter"
+                                       TrueColor="Green"
+                                       FalseColor="Red" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
