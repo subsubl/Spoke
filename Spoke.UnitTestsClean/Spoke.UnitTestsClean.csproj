@@ -10,5 +10,6 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="../Spoke/Spoke.Core/Spoke.Core.csproj" />
   </ItemGroup>
 </Project>

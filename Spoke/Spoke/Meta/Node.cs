@@ -199,6 +199,8 @@ public class Node : IxianNode
                 {
                     // Save the wallet password to preferences
                     Preferences.Default.Set("walletpass", pass);
+
+                    ws.backup();
                     
                     Logging.info("Wallet generated and saved successfully to {0}", walletPath);
                     return true;

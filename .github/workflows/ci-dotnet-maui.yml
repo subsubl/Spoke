@@ -34,6 +34,10 @@ jobs:
       - name: Build solution
         run: dotnet build ./Spoke/SPOKE.sln -c Release --no-restore
 
-      - name: Run tests
+      - name: Run solution tests
         run: |
-          dotnet test ./Spoke/SPOKE.sln -c Release --no-build --verbosity minimal || true
+          dotnet test ./Spoke/SPOKE.sln -c Release --no-build --verbosity minimal
+
+      - name: Run Spoke.Tests only
+        run: |
+          dotnet test ./Spoke/Spoke.Tests/Spoke.Tests.csproj -c Release --no-build --verbosity minimal

@@ -8,9 +8,16 @@
     <PackageReference Include="xunit" Version="2.5.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
+    <PackageReference Include="Open.NAT" Version="2.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Spoke\Spoke.Core\Spoke.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <!-- Include only the small, testable BridgeConnection source file directly to avoid referencing MAUI app projects -->
     <Compile Include="..\Spoke\BridgeConnection.cs" />
   </ItemGroup>
+
+  <Import Project="..\Ixian-Core\IXICore.projitems" Label="Shared" />
 </Project>
