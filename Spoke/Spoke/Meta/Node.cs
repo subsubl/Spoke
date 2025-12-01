@@ -3,6 +3,7 @@ using IXICore.Meta;
 using IXICore.Network;
 using IXICore.RegNames;
 using Spoke.Network;
+using System.IO;
 
 namespace Spoke.Meta;
 
@@ -89,6 +90,48 @@ public class Node : IxianNode
 
         initialized = true;
         Logging.info("Spoke Node initialization complete");
+    }
+
+    /// <summary>
+    /// Export a view-only (viewing) wallet file for the currently loaded wallet
+    /// If destPath is null, writes to `Config.spokeUserFolder` as `wallet.view.ixi` and returns the written path.
+    /// Returns null on failure.
+    /// </summary>
+    public static string? ExportViewingWallet(string? destPath = null)
+    {
+        try
+        {
+            var ws = IxianHandler.getWalletStorage();
+            if (ws == null)
+            {
+                Logging.error("No wallet storage available to export viewing wallet.");
+                return null;
+            }
+
+            byte[] viewingBytes = ws.getRawViewingWallet();
+            if (viewingBytes == null)
+            {
+                Logging.error("Failed to get viewing wallet bytes.");
+                return null;
+            }
+
+            string outPath = destPath ?? Path.Combine(Config.spokeUserFolder, Path.GetFileNameWithoutExtension(walletFile) + ".view.ixi");
+            string? directory = Path.GetDirectoryName(outPath);
+            if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            File.WriteAllBytes(outPath, viewingBytes);
+
+            Logging.info("Exported viewing wallet to {0}", outPath);
+            return outPath;
+        }
+        catch (Exception ex)
+        {
+            Logging.error("Exception exporting viewing wallet: {0}", ex.ToString());
+            return null;
+        }
     }
 
     /// <summary>
