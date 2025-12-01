@@ -7,8 +7,11 @@ obj/
 *.suo
 *.cache
 
-# IDE files
 .vscode/
+# Allow tracking a specific VS Code workspace file(s) used for sharing MCP server configuration
+!.vscode/mcp.json
+!.vscode/extensions.json
+!.vscode/README.md
 .idea/
 
 # OS files
@@ -24,12 +27,12 @@ Thumbs.db
 .fake
 
 # .NET SDK
-
+.vscode/*
 # Node / JavaScript
 node_modules/
-dist/
-build/
-
+!.vscode/mcp.json
+!.vscode/extensions.json
+!.vscode/README.md
 # Environment files
 .env
 .env.*
