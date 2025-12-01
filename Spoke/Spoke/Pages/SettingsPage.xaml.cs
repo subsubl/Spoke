@@ -135,6 +135,35 @@ public partial class SettingsPage : ContentPage
 
         await DisplayAlert("Settings Saved", "Your settings have been saved successfully.", "OK");
     }
+
+    private async void OnExportViewingWalletClicked(object sender, EventArgs e)
+    {
+        try
+        {
+            // Export view-only wallet via adapter
+            string? exportedPath = Spoke.Wallet.WalletAdapter.ExportViewingWallet();
+            if (string.IsNullOrEmpty(exportedPath))
+            {
+                await DisplayAlert("Export Failed", "Unable to export viewing wallet.", "OK");
+                return;
+            }
+
+            // Attempt to share/save the exported file
+            bool shared = await Spoke.Platforms.SFileOperations.share(exportedPath, "Export Viewing Wallet");
+            if (shared)
+            {
+                await DisplayAlert("Exported", $"Viewing wallet exported to:\n{exportedPath}", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Export Saved", $"Viewing wallet saved to:\n{exportedPath}", "OK");
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Exception exporting viewing wallet: {ex.Message}", "OK");
+        }
+    }
 }
 
 
