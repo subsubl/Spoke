@@ -34,3 +34,24 @@ Notes
 - CI: the repository workflow `/.github/workflows/ci-dotnet-maui.yml` runs workload restore, restore, build and tests on push and PR to `main`.
 
 If you need help installing platform-specific toolchains, see `specs/main/research.md` for recommendations and verification commands.
+
+Exporting a View-Only Wallet
+
+To create a view-only (viewing) wallet file that can be shared safely (does not contain private key material), Spoke provides an export helper that writes a view-only wallet file to disk.
+
+Default location:
+- `~\Spoke\wallet.view.ixi` (on Windows this is under `%USERPROFILE%\Spoke` — controlled by `Config.spokeUserFolder`).
+
+Commands (developer)
+
+```powershell
+# Export to default location (programmatic call via Node.ExportViewingWallet())
+# In the running app, invoke the export via the settings UI or programmatically:
+# Spoke.Wallet.WalletAdapter.ExportViewingWallet()
+
+# If you need to export to a specific path, call the helper with a destination path.
+```
+
+Notes
+- The exported viewing wallet is intended for read-only use and should not include private keys. Treat exported files as sensitive in transport and storage.
+- User-facing export is available in the Settings → Backup screen when the export action is triggered.

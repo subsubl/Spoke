@@ -42,5 +42,21 @@ namespace Spoke.Wallet
             }
             return null;
         }
+
+            /// <summary>
+            /// Export a view-only wallet using the Node helper.
+            /// Returns the exported file path on success, null on failure.
+            /// </summary>
+            public static string? ExportViewingWallet(string? destPath = null)
+            {
+                try
+                {
+                    return Spoke.Meta.Node.ExportViewingWallet(destPath);
+                }
+                catch
+                {
+                    return null;
+                }
+            }
     }
 }
