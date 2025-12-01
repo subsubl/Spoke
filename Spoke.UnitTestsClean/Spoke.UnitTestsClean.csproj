@@ -10,7 +10,5 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Spoke\WalletManager.cs" Link="WalletManager.cs" />
-    <Compile Include="..\Spoke\BridgeConnection.cs" Link="BridgeConnection.cs" />
   </ItemGroup>
 </Project>
