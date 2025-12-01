@@ -19,5 +19,4 @@
     <Compile Include="..\Spoke\BridgeConnection.cs" />
   </ItemGroup>
 
-  <Import Project="..\Ixian-Core\IXICore.projitems" Label="Shared" />
 </Project>
