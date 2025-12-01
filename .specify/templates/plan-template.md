@@ -31,7 +31,19 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Gates are derived from `.specify/memory/constitution.md`. Every plan MUST
+include a `Constitution Compliance` subsection that documents, at minimum,
+the following check items and their status (PASS/FAIL/NA):
+
+- Security: brief threat model, secrets handling approach, dependency scan
+  strategy.
+- Tests: planned unit/integration/contract tests and CI gate requirements.
+- Observability: planned logs/metrics/tracing and how they will be exposed.
+- Versioning: whether public APIs or protocols are affected and migration plan.
+
+If any gate is not PASS, the plan MUST include a justification and an
+actionable remediation path. Unresolved security or protocol gates MUST block
+Phase 0 → Phase 1 progression.
 
 ## Project Structure
 

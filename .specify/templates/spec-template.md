@@ -77,6 +77,21 @@
 
 ## Requirements *(mandatory)*
 
+## Constitution Compliance (mandatory)
+
+All specifications MUST include a short, mandatory `Constitution Compliance`
+section that demonstrates how the proposed feature satisfies the non-
+negotiable principles in `.specify/memory/constitution.md`. At minimum,
+address:
+
+- Security requirements and threat modelling notes.
+- Required automated tests (unit/integration/contract) and CI expectations.
+- Observability requirements (logs/metrics/traces) and where they will be
+  emitted.
+- API/versioning impact and migration plan if applicable.
+
+Omitted or incomplete Compliance sections MUST be returned for revision.
+
 <!--
   ACTION REQUIRED: The content in this section represents placeholders.
   Fill them out with the right functional requirements.

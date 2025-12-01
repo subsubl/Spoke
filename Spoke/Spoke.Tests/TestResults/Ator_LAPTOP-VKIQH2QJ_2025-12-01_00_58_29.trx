@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="00f4cdf8-35d5-48af-aeec-c9a8bc7552d2" name="Ator@LAPTOP-VKIQH2QJ 2025-12-01 00:58:29" runUser="LAPTOP-VKIQH2QJ\Ator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-12-01T00:58:29.7291147+01:00" queuing="2025-12-01T00:58:29.7291151+01:00" start="2025-12-01T00:58:23.0504182+01:00" finish="2025-12-01T00:58:31.4001312+01:00" />
+  <TestSettings name="default" id="62f8deac-b21e-4665-a1a5-1a02f9078ea4">
+    <Deployment runDeploymentRoot="Ator_LAPTOP-VKIQH2QJ_2025-12-01_00_58_29" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="592f36a1-7d7a-4090-ae56-d25f6fbe7e26" testId="163786a1-3e10-f546-8899-46a6f64b5fdd" testName="Spoke.Tests.QuixiClientSigningTests.WalletAdapter_ReturnsPrimaryPrivateKey_WhenIxianWalletPresent" computerName="LAPTOP-VKIQH2QJ" duration="00:00:00.8344558" startTime="2025-12-01T00:58:30.0119221+01:00" endTime="2025-12-01T00:58:30.0119224+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="592f36a1-7d7a-4090-ae56-d25f6fbe7e26" />
+    <UnitTestResult executionId="16947cf9-7e08-40ff-b91c-cafb914a2268" testId="0604f932-b1d4-8e0c-2b48-e90cd71ce0ea" testName="Spoke.Tests.QuixiClientSigningTests.SendCommand_ServerVerifiesSignature_AcceptsOrRejects" computerName="LAPTOP-VKIQH2QJ" duration="00:00:00.7443874" startTime="2025-12-01T00:58:30.7564311+01:00" endTime="2025-12-01T00:58:30.7564319+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="16947cf9-7e08-40ff-b91c-cafb914a2268" />
+    <UnitTestResult executionId="9a82f5f3-47f3-451b-894a-4371da56296b" testId="d262dda2-c274-76ee-6ffe-3becb943930d" testName="Spoke.Tests.AppInitializationTests.AppConstructor_DoesNotStartNodeAutoInit_WhenQuixiConfigured" computerName="LAPTOP-VKIQH2QJ" duration="00:00:00.6187612" startTime="2025-12-01T00:58:28.3281637+01:00" endTime="2025-12-01T00:58:28.3282199+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9a82f5f3-47f3-451b-894a-4371da56296b" />
+    <UnitTestResult executionId="0ade7344-861b-41d1-b36b-9e30a05b8c9c" testId="bc73bec8-0690-dbb2-23eb-7adf08b95ed6" testName="Spoke.Tests.QuixiClientSigningTests.SendCommand_IncludesSignatureHeader_WhenIxianWalletPresent" computerName="LAPTOP-VKIQH2QJ" duration="00:00:00.5835896" startTime="2025-12-01T00:58:31.3402186+01:00" endTime="2025-12-01T00:58:31.3402189+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0ade7344-861b-41d1-b36b-9e30a05b8c9c" />
+    <UnitTestResult executionId="da92beb3-a3cb-407f-a70c-3b5748681548" testId="d468b03e-a43c-9621-6a58-dbb702d6a690" testName="Spoke.Tests.QuixiClientSigningTests.SendCommand_SignatureIsVerifiable_ByCryptoManager" computerName="LAPTOP-VKIQH2QJ" duration="00:00:01.4716146" startTime="2025-12-01T00:58:29.1773546+01:00" endTime="2025-12-01T00:58:29.1773548+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da92beb3-a3cb-407f-a70c-3b5748681548" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Spoke.Tests.AppInitializationTests.AppConstructor_DoesNotStartNodeAutoInit_WhenQuixiConfigured" storage="d:\spoke\spoke\spoke.tests\bin\debug\net10.0\spoke.tests.dll" id="d262dda2-c274-76ee-6ffe-3becb943930d">
+      <Execution id="9a82f5f3-47f3-451b-894a-4371da56296b" />
+      <TestMethod codeBase="D:\Spoke\Spoke\Spoke.Tests\bin\Debug\net10.0\Spoke.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Spoke.Tests.AppInitializationTests" name="AppConstructor_DoesNotStartNodeAutoInit_WhenQuixiConfigured" />
+    </UnitTest>
+    <UnitTest name="Spoke.Tests.QuixiClientSigningTests.SendCommand_SignatureIsVerifiable_ByCryptoManager" storage="d:\spoke\spoke\spoke.tests\bin\debug\net10.0\spoke.tests.dll" id="d468b03e-a43c-9621-6a58-dbb702d6a690">
+      <Execution id="da92beb3-a3cb-407f-a70c-3b5748681548" />
+      <TestMethod codeBase="D:\Spoke\Spoke\Spoke.Tests\bin\Debug\net10.0\Spoke.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Spoke.Tests.QuixiClientSigningTests" name="SendCommand_SignatureIsVerifiable_ByCryptoManager" />
+    </UnitTest>
+    <UnitTest name="Spoke.Tests.QuixiClientSigningTests.WalletAdapter_ReturnsPrimaryPrivateKey_WhenIxianWalletPresent" storage="d:\spoke\spoke\spoke.tests\bin\debug\net10.0\spoke.tests.dll" id="163786a1-3e10-f546-8899-46a6f64b5fdd">
+      <Execution id="592f36a1-7d7a-4090-ae56-d25f6fbe7e26" />
+      <TestMethod codeBase="D:\Spoke\Spoke\Spoke.Tests\bin\Debug\net10.0\Spoke.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Spoke.Tests.QuixiClientSigningTests" name="WalletAdapter_ReturnsPrimaryPrivateKey_WhenIxianWalletPresent" />
+    </UnitTest>
+    <UnitTest name="Spoke.Tests.QuixiClientSigningTests.SendCommand_ServerVerifiesSignature_AcceptsOrRejects" storage="d:\spoke\spoke\spoke.tests\bin\debug\net10.0\spoke.tests.dll" id="0604f932-b1d4-8e0c-2b48-e90cd71ce0ea">
+      <Execution id="16947cf9-7e08-40ff-b91c-cafb914a2268" />
+      <TestMethod codeBase="D:\Spoke\Spoke\Spoke.Tests\bin\Debug\net10.0\Spoke.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Spoke.Tests.QuixiClientSigningTests" name="SendCommand_ServerVerifiesSignature_AcceptsOrRejects" />
+    </UnitTest>
+    <UnitTest name="Spoke.Tests.QuixiClientSigningTests.SendCommand_IncludesSignatureHeader_WhenIxianWalletPresent" storage="d:\spoke\spoke\spoke.tests\bin\debug\net10.0\spoke.tests.dll" id="bc73bec8-0690-dbb2-23eb-7adf08b95ed6">
+      <Execution id="0ade7344-861b-41d1-b36b-9e30a05b8c9c" />
+      <TestMethod codeBase="D:\Spoke\Spoke\Spoke.Tests\bin\Debug\net10.0\Spoke.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Spoke.Tests.QuixiClientSigningTests" name="SendCommand_IncludesSignatureHeader_WhenIxianWalletPresent" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="163786a1-3e10-f546-8899-46a6f64b5fdd" executionId="592f36a1-7d7a-4090-ae56-d25f6fbe7e26" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0604f932-b1d4-8e0c-2b48-e90cd71ce0ea" executionId="16947cf9-7e08-40ff-b91c-cafb914a2268" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d262dda2-c274-76ee-6ffe-3becb943930d" executionId="9a82f5f3-47f3-451b-894a-4371da56296b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bc73bec8-0690-dbb2-23eb-7adf08b95ed6" executionId="0ade7344-861b-41d1-b36b-9e30a05b8c9c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d468b03e-a43c-9621-6a58-dbb702d6a690" executionId="da92beb3-a3cb-407f-a70c-3b5748681548" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="5" executed="5" passed="5" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.1.1+5fe7eebc65 (64-bit .NET 10.0.0)&#xD;
+[xUnit.net 00:00:00.76]   Discovering: Spoke.Tests&#xD;
+[xUnit.net 00:00:00.95]   Discovered:  Spoke.Tests&#xD;
+[xUnit.net 00:00:00.96]   Starting:    Spoke.Tests&#xD;
+!!! 12-01 00:58:29.1298|info|15: Testing generated keys.&#xD;
+!!! 12-01 00:58:29.9830|info|15: Testing generated keys.&#xD;
+!!! 12-01 00:58:30.7119|info|15: Testing generated keys.&#xD;
+!!! 12-01 00:58:31.2995|info|15: Testing generated keys.&#xD;
+[xUnit.net 00:00:04.67]   Finished:    Spoke.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

@@ -52,6 +52,22 @@ description: "Task list template for feature implementation"
 - [ ] T002 Initialize [language] project with [framework] dependencies
 - [ ] T003 [P] Configure linting and formatting tools
 
+## Constitution Compliance (FOUNDATIONAL TASKS)
+
+The Foundational phase MUST include top-level tasks that map to the
+Constitution's non-negotiable items. Ensure the following tasks (or
+equivalents) exist in Phase 1 or Phase 2 and are completed before user
+stories proceed:
+
+- Security: Add a task to run dependency vulnerability scans and configure
+  secret management.
+- Tests: Add a task to configure CI to run unit/integration/contract tests.
+- Observability: Add a task to set up structured logging and basic metrics.
+- Versioning: Add a task to document public API/versioning policy and tooling.
+
+These items are blocking: user story work SHOULD NOT begin until they are
+addressed and marked done.
+
 ---
 
 ## Phase 2: Foundational (Blocking Prerequisites)

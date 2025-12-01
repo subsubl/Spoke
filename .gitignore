@@ -24,4 +24,22 @@ Thumbs.db
 .fake
 
 # .NET SDK
+
+# Node / JavaScript
+node_modules/
+dist/
+build/
+
+# Environment files
+.env
+.env.*
+
+# Python virtual envs
+.venv/
+venv/
+
+# Package manager lockfiles (for tools like Prettier/CI)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 .dotnet/
