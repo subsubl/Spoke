@@ -1,22 +1,17 @@
 # <!--
 # Sync Impact Report
-# Version change: (none / template) -> 0.1.0
+# Version change: 0.1.0 -> 0.1.1
 # Modified principles:
-# - [PRINCIPLE_1_NAME] -> Safety & Security
-# - [PRINCIPLE_2_NAME] -> Test-First
-# - [PRINCIPLE_3_NAME] -> Observability & Debuggability
-# - [PRINCIPLE_4_NAME] -> API Stability & Versioning
-# - [PRINCIPLE_5_NAME] -> Simplicity & Minimal Surface Area
+# - none (core principles unchanged; clarifications applied in additional sections)
 # Added sections:
-# - Additional Constraints
-# - Development Workflow
+# - none
 # Removed sections:
 # - none
 # Templates requiring updates:
-# - d:\\Spoke\\.specify\\templates\\plan-template.md ✅ updated
-# - d:\\Spoke\\.specify\\templates\\spec-template.md ✅ updated
-# - d:\\Spoke\\.specify\\templates\\tasks-template.md ✅ updated
-# - d:\\Spoke\\.specify\\templates\\commands\\* ⚠ pending (directory missing)
+# - .specify/templates/plan-template.md ✅ updated
+# - .specify/templates/spec-template.md ✅ updated
+# - .specify/templates/tasks-template.md ✅ updated
+# - tools/spec-kit/templates/commands/*.md ✅ reviewed (no edits needed)
 # Follow-up TODOs:
 # - TODO(RATIFICATION_DATE): Provide the original adoption/ratification date.
 # -->
@@ -48,6 +43,8 @@ All services and libraries MUST expose structured logs, metrics, and where
 applicable traces. Logs MUST include contextual identifiers (request IDs,
 peer IDs) to make distributed debugging feasible. Design plans MUST include an
 observability section describing how behavior will be measured and diagnosed.
+This visibility ensures we can diagnose degrading behavior before it impacts
+network integrity or important user journeys.
 
 ### API Stability & Versioning
 Public APIs and on-wire protocols MUST follow semantic versioning. Any
@@ -60,6 +57,8 @@ are for documentation, typo fixes, and non-semantic clarifications.
 Designs SHOULD prefer minimal, well-documented interfaces. Avoid premature
 generalization: add complexity only when there is a demonstrated need and a
 testing strategy. Each public surface MUST have clear ownership and tests.
+Keeping the exposed surface area small preserves clarity for reviewers and
+limits the code that needs to be audited or stress-tested in release gating.
 
 ## Additional Constraints
 Security, correctness, and reproducibility take precedence over convenience.
@@ -67,7 +66,8 @@ All releases that include cryptographic code or network protocol changes MUST
 include a review checklist and signed release artifacts. Contributors MUST
 follow the repository's CI/CD gating policies and publishing rules. Avoid
 committing environment-specific configuration; use documented environment
-variables and secrets management instead.
+variables and secrets management instead. These constraints keep each release
+auditable, reproducible, and aligned with the project's risk profile.
 
 ## Development Workflow
 All work MUST be tracked in an issue or spec that describes the user-facing
@@ -80,6 +80,9 @@ At least one approver other than the author MUST review and approve changes
 for non-trivial areas (cryptography, consensus, networking). Merge of
 governance-affecting changes (e.g., protocol rules) MUST be accompanied by a
 migration plan and explicit maintainer sign-off.
+
+This workflow creates an auditable trail linking implementation, verification,
+and approvals so reviewers can enforce constitution compliance.
 
 ## Governance
 <!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
@@ -109,5 +112,5 @@ security, consensus, or network behavior MUST include a compliance checklist
 that maps to the Core Principles above. The checklist MUST be included in the
 PR description and verified by reviewers before merge.
 
-**Version**: 0.1.0 | **Ratified**: TODO(RATIFICATION_DATE): provide original adoption date | **Last Amended**: 2025-12-01
+**Version**: 0.1.1 | **Ratified**: TODO(RATIFICATION_DATE): provide original adoption date | **Last Amended**: 2025-12-01
 <!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->

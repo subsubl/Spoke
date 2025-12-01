@@ -89,6 +89,10 @@ address:
 - Observability requirements (logs/metrics/traces) and where they will be
   emitted.
 - API/versioning impact and migration plan if applicable.
+- Additional Constraints: evidence that reproducibility, release artifacts,
+  and environment/config gating expectations are captured in the design.
+- Development Workflow: how the feature work, approvals, and migration
+  commitment aligns with the constitution's issue/PR governance.
 
 Omitted or incomplete Compliance sections MUST be returned for revision.
 

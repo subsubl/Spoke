@@ -64,6 +64,12 @@ stories proceed:
 - Tests: Add a task to configure CI to run unit/integration/contract tests.
 - Observability: Add a task to set up structured logging and basic metrics.
 - Versioning: Add a task to document public API/versioning policy and tooling.
+- Additional Constraints: Add a task that documents release checklists,
+  artifact signing, and environment/configuration hygiene requirements for
+  cryptographic or protocol-impacting changes.
+- Development Workflow: Add a task that captures issue/spec linkage, PR
+  compliance checklists, and migration plan sign-offs for governance-affecting
+  work.
 
 These items are blocking: user story work SHOULD NOT begin until they are
 addressed and marked done.
