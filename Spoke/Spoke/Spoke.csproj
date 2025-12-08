@@ -11,7 +11,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <NoWarn>CS8600;CS8601;CS8602;CS8603;CS8604;CS8618;CS8625;CS0162;CS0169;CS0414;SYSLIB0023;SYSLIB0021;SYSLIB0003</NoWarn>
-    <MauiEnableXamlC>false</MauiEnableXamlC>
+
     
     <!-- Display name -->
     <ApplicationTitle>Spoke</ApplicationTitle>
@@ -99,6 +99,7 @@
     <PackageReference Include="CommunityToolkit.Maui" Version="13.0.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.10" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.10" />
 
 
 
