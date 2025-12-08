@@ -37,13 +37,16 @@ public partial class App : Application
 #else
         try
         {
+            try { File.AppendAllText(Path.Combine(Path.GetTempPath(), "spoke_app_init.txt"), $"Shared App constructor - before InitializeComponent: {DateTime.UtcNow:O}\n"); } catch {}
             InitializeComponent();
+            try { File.AppendAllText(Path.Combine(Path.GetTempPath(), "spoke_app_init.txt"), "Shared App constructor - after InitializeComponent\n"); } catch {}
         }
         catch (Exception ex)
         {
             try
             {
                 File.AppendAllText(Path.Combine(Path.GetTempPath(), "spoke_xaml_diag.txt"), $"InitializeComponent failed: {ex.Message}\n{ex.StackTrace}\n");
+                File.AppendAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "spoke_startup_log.txt"), $"SHARED APP INIT FAILED: {ex.Message}\n");
             }
             catch { }
             throw;

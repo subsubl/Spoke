@@ -18,7 +18,6 @@ public partial class App : MauiWinUIApplication
 
     public App()
     {
-        // Ensure single-instance behavior for desktop app
         var singleInstance = AppInstance.FindOrRegisterForKey("SpokeDesktopApp");
         if (!singleInstance.IsCurrent)
         {
@@ -30,7 +29,7 @@ public partial class App : MauiWinUIApplication
             return;
         }
 
-
+        // Note: singleInstance.Activated event removed - OnAppInstanceActivated extension doesn't exist in .NET 10
 
         InitializeComponent();
 

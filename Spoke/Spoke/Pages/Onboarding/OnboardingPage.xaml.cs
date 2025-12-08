@@ -13,6 +13,7 @@ public partial class OnboardingPage : ContentPage
         public string Description { get; set; } = "";
         public string Icon { get; set; } = "";
         public bool IsLastStep { get; set; } = false;
+        public int Index { get; set; }
     }
 
     public ObservableCollection<OnboardingStep> Steps { get; set; } = new();
@@ -36,35 +37,40 @@ public partial class OnboardingPage : ContentPage
         {
             Title = "Welcome to Spoke",
             Description = "Your smart home control center powered by Ixian blockchain technology. Let's set up your secure identity and connect to your QuIXI instance.",
-            Icon = "🏠"
+            Icon = "🏠",
+            Index = 0
         });
 
         Steps.Add(new OnboardingStep
         {
             Title = "Create Your Wallet",
             Description = "Create a secure cryptographic wallet for your Ixian identity. This wallet will authenticate you with QuIXI and secure all your smart home communications.",
-            Icon = "🔐"
+            Icon = "🔐",
+            Index = 1
         });
 
         Steps.Add(new OnboardingStep
         {
             Title = "Choose Username & Avatar",
             Description = "Set up your profile with a username and profile picture. This will be your identity across the Ixian network.",
-            Icon = "👤"
+            Icon = "👤",
+            Index = 2
         });
 
         Steps.Add(new OnboardingStep
         {
             Title = "Configure QuIXI Connection",
             Description = "Enter your QuIXI connection details to link Spoke with your smart home system via the Ixian network.",
-            Icon = "⚙️"
+            Icon = "⚙️",
+            Index = 3
         });
 
         Steps.Add(new OnboardingStep
         {
             Title = "Test Connection",
             Description = "Let's verify that Spoke can connect to your QuIXI instance.",
-            Icon = "🔗"
+            Icon = "🔗",
+            Index = 4
         });
 
         Steps.Add(new OnboardingStep
@@ -72,7 +78,8 @@ public partial class OnboardingPage : ContentPage
             Title = "Setup Complete",
             Description = "Spoke is now connected to QuIXI! Your smart home is ready to control via blockchain technology.",
             Icon = "✅",
-            IsLastStep = true
+            IsLastStep = true,
+            Index = 5
         });
 
         BindingContext = this;

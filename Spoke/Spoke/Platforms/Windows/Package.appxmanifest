@@ -27,7 +27,7 @@
       <uap:VisualElements
         DisplayName="Spoke"
         Square44x44Logo="Platforms\Windows\icon\appicon.svg"
-        BackgroundColor="transparent" Description="$placeholder$" Square150x150Logo="Platforms\Windows\icon\appicon.svg">
+        BackgroundColor="transparent" Description="Spoke Application" Square150x150Logo="Platforms\Windows\icon\appicon.svg">
           <uap:DefaultTile ShortName="Spoke" Square71x71Logo="Platforms\Windows\icon\appicon.svg" Wide310x150Logo="Platforms\Windows\icon\appicon.svg" Square310x310Logo="Platforms\Windows\icon\appicon.svg">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square310x310Logo"/>
