@@ -148,13 +148,21 @@ public partial class App : Application
 #endif
 
         // Temporary workaround for .NET 9: set MainPage even though obsolete
-        if (!Config.IsSetupComplete())
+        try
         {
-            MainPage = new Pages.Onboarding.OnboardingPage();
+            if (!Config.IsSetupComplete())
+            {
+                MainPage = new Pages.Onboarding.OnboardingPage();
+            }
+            else
+            {
+                MainPage = new AppShell();
+            }
         }
-        else
+        catch (Exception ex)
         {
-            MainPage = new AppShell();
+            try { File.AppendAllText(Path.Combine(Config.spokeUserFolder, "startup_diag.txt"), $"MainPage init failed: {ex}\n"); } catch { }
+            throw;
         }
     }
 

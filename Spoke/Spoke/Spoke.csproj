@@ -4,6 +4,7 @@
     <DefineConstants Condition="'$(RunTests)' == 'true'">$(DefineConstants);RUN_TESTS</DefineConstants>
     <TargetFrameworks>net10.0-android;net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
     <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.19041.0</TargetFrameworks>
+    <DefineConstants Condition="$(TargetFramework.Contains('-windows'))">$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
     <OutputType>Exe</OutputType>
     <RootNamespace>Spoke</RootNamespace>
     <UseMaui>true</UseMaui>

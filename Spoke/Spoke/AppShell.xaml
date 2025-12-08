@@ -12,7 +12,7 @@
               HeightRequest="200" 
               Padding="20">
             <VerticalStackLayout VerticalOptions="Center">
-                <Image Source="Spoke_logo.png" 
+                <Image Source="logo.png" 
                        HeightRequest="80" 
                        WidthRequest="80"
                        HorizontalOptions="Center"/>

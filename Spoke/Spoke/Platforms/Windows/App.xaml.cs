@@ -29,7 +29,7 @@ public partial class App : MauiWinUIApplication
             return;
         }
 
-        // Note: singleInstance.Activated event removed - OnAppInstanceActivated extension doesn't exist in .NET 10
+        singleInstance.Activated += OnAppInstanceActivated;
 
         InitializeComponent();
 
@@ -100,5 +100,11 @@ public partial class App : MauiWinUIApplication
             }
         }
         catch { }
+    }
+
+
+    private void OnAppInstanceActivated(object? sender, AppActivationArguments e)
+    {
+        Services.GetRequiredService<ILifecycleEventService>().OnAppInstanceActivated(sender, e);
     }
 }
