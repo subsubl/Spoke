@@ -6,7 +6,7 @@ using Spoke.Network;
 
 namespace Spoke.Meta;
 
-public class Node : IxianNode
+internal class Node : IxianNode
 {
     private static Node? _instance = null;
     public static Node Instance

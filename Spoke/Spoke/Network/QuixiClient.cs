@@ -13,7 +13,7 @@ namespace Spoke.Network;
 /// Client for communicating with QuIXI bridge
 /// </summary>
 // TODO: Fully implement IQuixiClient interface (signature mismatches to resolve)
-public class QuixiClient // : IQuixiClient
+internal class QuixiClient // : IQuixiClient
 {
     private readonly string _host;
     private readonly int _port;
